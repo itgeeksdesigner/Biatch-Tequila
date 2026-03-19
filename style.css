@@ -19,7 +19,7 @@
   --color-pink-light: #FFC3B7;
   --color-pink-mid: #FF7579;
   --color-pink-bright: #FFB6ED;
-  --color-blush: #FFEFEC;
+  --color-blush: #FAF7F2;
   --color-gray-50: #FAFAFA;
   --color-gray-100: #F5F5F5;
   --color-gray-200: #E5E5E5;
@@ -34,7 +34,7 @@
 
   /* — HEADING FONT SIZES (H1 → H6) — */
   --font-size-h1: 88px;
-  --font-size-h2: 64px;
+  --font-size-h2: 48px;
   --font-size-h3: 44px;
   --font-size-h4: 32px;
   --font-size-h5: 24px;
@@ -299,7 +299,7 @@ p {
 }
 
 .section__heading--light {
-  color: var(--color-white);
+  color: var(--color-black);
 }
 
 .section__subtext {
@@ -311,6 +311,26 @@ p {
 
 .section__subtext--light {
   color: rgba(255, 255, 255, 0.65);
+}
+
+.section__subtext--wide {
+  max-width: 780px;
+}
+
+.story__collection-link {
+  font-family: var(--font-body);
+  font-size: var(--font-size-body);
+  color: var(--color-black);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  font-weight: var(--weight-regular);
+  margin-top: 8px;
+  display: inline-block;
+  transition: color 0.2s ease;
+}
+
+.story__collection-link:hover {
+  color: var(--color-gold);
 }
 
 /* Scroll reveal animation */
@@ -843,7 +863,7 @@ p {
 
 .brand-intro__heading {
   font-family: var(--font-heading);
-  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-size: var(--font-size-h2);
   font-weight: var(--weight-regular);
   color: var(--color-black);
   line-height: 1.15;
@@ -1152,12 +1172,32 @@ p {
    SECTION 3 — BRAND MANIFESTO
    ============================================================ */
 .manifesto {
-  background-color: var(--color-black);
+  position: relative;
+  overflow: hidden;
   padding-top: var(--section-pad-y);
   padding-bottom: var(--section-pad-y);
 }
 
+.manifesto__bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+
+.manifesto__overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(18, 18, 18, 0.68);
+  z-index: 1;
+}
+
 .manifesto__inner {
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -1182,61 +1222,267 @@ p {
 }
 
 /* ============================================================
-   SECTION 4 — PASSIONATE MISSION
+   SECTION 4 — HOW SHE'S MADE (CRAFT)
    ============================================================ */
-.mission {
-  background-color: var(--color-blush);
+.craft {
+  background-color: #ffffff;
   padding-top: var(--section-pad-y);
   padding-bottom: var(--section-pad-y);
 }
 
-.mission__inner {
+.craft__inner {
   display: flex;
   align-items: center;
-  gap: var(--gap-80);
+  gap: 80px;
 }
 
-.mission__content {
+/* Left — image with gold corner brackets */
+.craft__visual {
+  flex: 0 0 460px;
+}
+
+.craft__frame {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.craft__frame::before,
+.craft__frame::after {
+  content: '';
+  position: absolute;
+  width: 52px;
+  height: 52px;
+  z-index: 2;
+}
+
+.craft__frame::before {
+  top: -14px;
+  left: -14px;
+  border-top: 2px solid var(--color-gold);
+  border-left: 2px solid var(--color-gold);
+}
+
+.craft__frame::after {
+  bottom: -14px;
+  right: -14px;
+  border-bottom: 2px solid var(--color-gold);
+  border-right: 2px solid var(--color-gold);
+}
+
+.craft__image {
+  width: 100%;
+  height: 580px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  display: block;
+}
+
+/* Right — content */
+.craft__content {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: var(--gap-24);
-  flex: 1;
+  gap: 24px;
 }
 
-.mission__heading {
+.craft__rule {
+  width: 36px;
+  height: 2px;
+  background-color: var(--color-gold);
+  margin-top: -8px;
+}
+
+.craft__heading {
   font-family: var(--font-heading);
   font-size: var(--font-size-h2);
-  font-weight: var(--weight-bold);
+  font-weight: var(--weight-regular);
   color: var(--color-black);
-  line-height: 1.1;
-  letter-spacing: -0.5px;
+  line-height: 1.15;
 }
 
-.mission__body {
+.craft__body {
   font-size: var(--font-size-body);
   color: var(--color-gray-600);
-  max-width: 480px;
-  line-height: 1.75;
+  line-height: 1.8;
 }
 
-.mission__visual {
-  flex: 0 0 480px;
+/* Stats */
+.craft__stats {
+  display: flex;
+  gap: 48px;
+  padding-top: 4px;
+}
+
+.craft__stat {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.craft__stat-num {
+  font-family: var(--font-heading);
+  font-size: 36px;
+  font-weight: var(--weight-regular);
+  color: var(--color-gold);
+  line-height: 1;
+}
+
+.craft__stat-label {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: var(--weight-semibold);
+  color: var(--color-gray-600);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Divider */
+.craft__divider {
+  border: none;
+  border-top: 1px solid rgba(28, 20, 16, 0.12);
+  margin: 0;
+}
+
+/* Award badges */
+.craft__badges {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.craft__badge {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+}
+
+.craft__badge:hover {
+  opacity: 1;
+}
+
+/* ============================================================
+   CURATED COLLECTIONS
+   ============================================================ */
+.curated {
+  background-color: var(--color-white);
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.curated__header {
+  margin-bottom: 36px;
+}
+
+.curated__panels {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+}
+
+.curated__panel {
+  position: relative;
   overflow: hidden;
+  cursor: pointer;
 }
 
-.mission__image {
+.curated__panel-img {
   width: 100%;
   height: 560px;
   object-fit: cover;
   object-position: center;
   display: block;
+  transition: transform 0.6s ease;
+}
+
+.curated__panel:hover .curated__panel-img {
+  transform: scale(1.04);
+}
+
+.curated__panel-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10, 6, 4, 0.75) 0%, rgba(10, 6, 4, 0.15) 55%, transparent 100%);
+}
+
+.curated__panel-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 48px 52px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.curated__panel-eyebrow {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: var(--weight-bold);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+.curated__panel-heading {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3.2vw, 3rem);
+  font-weight: var(--weight-regular);
+  color: var(--color-white);
+  line-height: 1.1;
+  margin: 0;
+}
+
+.curated__panel-sub {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0 0 8px;
+}
+
+.curated__panel-btn {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: var(--weight-bold);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 14px 28px;
+  width: fit-content;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.curated__panel-btn--solid {
+  background-color: var(--color-gold);
+  color: var(--color-white);
+}
+
+.curated__panel-btn--solid:hover {
+  background-color: #9A6F09;
+}
+
+.curated__panel-btn--outline {
+  background-color: transparent;
+  color: var(--color-white);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.curated__panel-btn--outline:hover {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  border-color: var(--color-white);
 }
 
 /* ============================================================
    SECTION 5 — ABOUT US / STORY
    ============================================================ */
 .story {
-  background-color: var(--color-white);
   padding-top: var(--section-pad-y);
 }
 
@@ -1247,7 +1493,7 @@ p {
 }
 
 .story-block--tinted {
-  background-color: var(--color-blush);
+  background-color: var(--color-white);
 }
 
 .story-block__inner {
@@ -1442,9 +1688,33 @@ p {
    SECTION 7 — EVENTS & COLLABS
    ============================================================ */
 .events {
-  background-color: var(--color-black);
+  background-color: var(--color-blush);
   padding-top: var(--section-pad-y);
   padding-bottom: var(--section-pad-y);
+}
+
+.events__section-header {
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 36px;
+}
+
+.events__explore-link {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: var(--weight-semibold);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  text-decoration: none;
+  white-space: nowrap;
+  padding-bottom: 6px;
+  transition: opacity 0.2s ease;
+}
+
+.events__explore-link:hover {
+  opacity: 0.75;
 }
 
 .events__grid {
