@@ -141,7 +141,7 @@
       <div class="container trust-bar__inner">
 
         <div class="trust-bar__item">
-          <i class="ph ph-diamond trust-bar__icon"></i>
+          <i class="ph ph-shield-check trust-bar__icon"></i>
           <span class="trust-bar__text">100% Blue Weber Agave</span>
         </div>
 
@@ -170,68 +170,164 @@
     </div>
 
     <!-- ============================================================
+         BRAND INTRO
+    ============================================================ -->
+    <section class="brand-intro">
+      <div class="container brand-intro__inner">
+        <span class="eyebrow brand-intro__eyebrow">The Biatch Standard</span>
+        <div class="brand-intro__rule" aria-hidden="true"></div>
+        <h2 class="brand-intro__heading">Premium Tequilas, Made <em>Without Apology</em></h2>
+        <p class="brand-intro__body">BIATCH was created for women who own their power and pour with intention. Distilled from 100% Blue Weber Agave in the heart of México, every bottle is a toast to the unapologetic woman — her ambition, her taste, and her right to the finest spirits on earth.</p>
+        <a href="#story" class="brand-intro__link">Our Story &rarr;</a>
+      </div>
+    </section>
+
+    <!-- ============================================================
          SECTION 2 — PRODUCT EXPLORE
     ============================================================ -->
     <section class="section product-explore" id="shop">
       <div class="container">
-        <div class="section__header">
-          <span class="eyebrow reveal">Our Collection</span>
-          <h2 class="section__heading reveal">The Bottles</h2>
-          <p class="section__subtext reveal">Each expression is a statement. Choose yours.</p>
+
+        <div class="product-explore__header">
+          <div>
+            <span class="eyebrow reveal">Our Collection</span>
+            <h2 class="section__heading reveal">Premium Tequilas</h2>
+          </div>
+          <div class="product-explore__nav">
+            <button class="product-explore__arrow" id="productPrev" aria-label="Previous product">&#8249;</button>
+            <button class="product-explore__arrow" id="productNext" aria-label="Next product">&#8250;</button>
+          </div>
         </div>
 
         <div class="product-explore__scroll-area">
           <div class="product-explore__track" id="productTrack">
 
+            <!-- Rosa Blanco -->
             <article class="product-card reveal">
-              <div class="product-card__image-wrap">
-                <img src="images/RosaNoWords_800h.jpg" alt="BIATCH Blanco Tequila bottle" class="product-card__image" />
-                <span class="product-card__badge">Best Seller</span>
-              </div>
-              <div class="product-card__body">
-                <h3 class="product-card__name">Rosa Blanco Premium Tequila</h3>
-                <p class="product-card__desc">750ml</p>
-                <span class="product-card__price">$16.00 | $63.00</span>
-                <a href="#" class="btn btn--dark">LEARN MORE</a>
+              <div class="product-card__inner">
+                <div class="product-card__front">
+                  <div class="product-card__image-wrap">
+                    <img src="images/RosaNoWords_800h.jpg" alt="Rosa Blanco Tequila bottle" class="product-card__image" />
+                    <span class="product-card__badge product-card__badge--rose">Best Seller</span>
+                  </div>
+                  <div class="product-card__body">
+                    <h3 class="product-card__name">Rosa Blanco</h3>
+                    <p class="product-card__desc">Premium Blanco · 750ml</p>
+                    <span class="product-card__price">From $63.00</span>
+                  </div>
+                </div>
+                <div class="product-card__back">
+                  <span class="product-card__tasting-label">Tasting Notes</span>
+                  <dl class="product-card__notes">
+                    <dt>Nose</dt><dd>Fresh agave, citrus, delicate florals</dd>
+                    <dt>Palate</dt><dd>Smooth entry, vanilla, sweet agave finish</dd>
+                    <dt>Style</dt><dd>Crisp unaged blanco with rose gold elegance</dd>
+                  </dl>
+                  <a href="#" class="product-card__cart-btn">Add to Cart — $63</a>
+                </div>
               </div>
             </article>
 
+            <!-- Reposado -->
             <article class="product-card reveal">
-              <div class="product-card__image-wrap">
-                <img src="images/ReposadoNoWords_800h.jpg" alt="BIATCH Reposado Tequila bottle"
-                  class="product-card__image" />
-              </div>
-              <div class="product-card__body">
-                <h3 class="product-card__name">Reposado Ultra Premium Tequila</h3>
-                <p class="product-card__desc">100ml | 750ml</p>
-                <span class="product-card__price">$17.00 | $83.00</span>
-                <a href="#" class="btn btn--dark">LEARN MORE</a>
+              <div class="product-card__inner">
+                <div class="product-card__front">
+                  <div class="product-card__image-wrap">
+                    <img src="images/ReposadoNoWords_800h.jpg" alt="Reposado Tequila bottle" class="product-card__image" />
+                    <span class="product-card__badge product-card__badge--gold">Award Winner</span>
+                  </div>
+                  <div class="product-card__body">
+                    <h3 class="product-card__name">Reposado</h3>
+                    <p class="product-card__desc">Ultra Premium · 750ml</p>
+                    <span class="product-card__price">From $83.00</span>
+                  </div>
+                </div>
+                <div class="product-card__back">
+                  <span class="product-card__tasting-label">Tasting Notes</span>
+                  <dl class="product-card__notes">
+                    <dt>Nose</dt><dd>Oak, caramel, roasted agave</dd>
+                    <dt>Palate</dt><dd>Rich vanilla, dried fruit, warm oak spice</dd>
+                    <dt>Style</dt><dd>Aged 6 months in American white oak barrels</dd>
+                  </dl>
+                  <a href="#" class="product-card__cart-btn">Add to Cart — $83</a>
+                </div>
               </div>
             </article>
 
+            <!-- Extra Añejo -->
             <article class="product-card reveal">
-              <div class="product-card__image-wrap">
-                <img src="images/AnejoNoWords_800h.jpg" alt="BIATCH Añejo Tequila bottle" class="product-card__image" />
-              </div>
-              <div class="product-card__body">
-                <h3 class="product-card__name">Añejo Ultra Premium Tequila</h3>
-                <p class="product-card__desc">750ml</p>
-                <span class="product-card__price">$425</span>
-                <a href="#" class="btn btn--dark">LEARN MORE</a>
+              <div class="product-card__inner">
+                <div class="product-card__front">
+                  <div class="product-card__image-wrap">
+                    <img src="images/ExtraAnejoNoWords_800h.jpg" alt="Extra Añejo Tequila bottle" class="product-card__image" />
+                    <span class="product-card__badge product-card__badge--gold">Limited</span>
+                  </div>
+                  <div class="product-card__body">
+                    <h3 class="product-card__name">Extra Añejo</h3>
+                    <p class="product-card__desc">Reserve · 750ml</p>
+                    <span class="product-card__price">From $129.00</span>
+                  </div>
+                </div>
+                <div class="product-card__back">
+                  <span class="product-card__tasting-label">Tasting Notes</span>
+                  <dl class="product-card__notes">
+                    <dt>Nose</dt><dd>Dark chocolate, dried fig, toasted oak</dd>
+                    <dt>Palate</dt><dd>Deep complexity, mahogany, long velvet finish</dd>
+                    <dt>Style</dt><dd>Aged 3+ years — the pinnacle of BIATCH craft</dd>
+                  </dl>
+                  <a href="#" class="product-card__cart-btn">Add to Cart — $129</a>
+                </div>
               </div>
             </article>
 
+            <!-- Blanco -->
             <article class="product-card reveal">
-              <div class="product-card__image-wrap">
-                <img src="images/ExtraAnejoNoWords_800h.jpg" alt="BIATCH Extra Añejo Tequila bottle"
-                  class="product-card__image" />
-                <span class="product-card__badge product-card__badge--gold">Limited</span>
+              <div class="product-card__inner">
+                <div class="product-card__front">
+                  <div class="product-card__image-wrap">
+                    <img src="images/AnejoNoWords_800h.jpg" alt="Blanco Tequila bottle" class="product-card__image" />
+                  </div>
+                  <div class="product-card__body">
+                    <h3 class="product-card__name">Blanco</h3>
+                    <p class="product-card__desc">Classic Expression · 750ml</p>
+                    <span class="product-card__price">From $57.00</span>
+                  </div>
+                </div>
+                <div class="product-card__back">
+                  <span class="product-card__tasting-label">Tasting Notes</span>
+                  <dl class="product-card__notes">
+                    <dt>Nose</dt><dd>Bright agave, citrus zest, fresh herbs</dd>
+                    <dt>Palate</dt><dd>Clean, crisp, long minerality</dd>
+                    <dt>Style</dt><dd>Pure expression of Blue Weber Agave character</dd>
+                  </dl>
+                  <a href="#" class="product-card__cart-btn">Add to Cart — $57</a>
+                </div>
               </div>
-              <div class="product-card__body">
-                <h3 class="product-card__name">Extra Añejo Ultra Premium Tequila</h3>
-                <p class="product-card__desc">750ml</p>
-                <span class="product-card__price">Coming Soon</span>
-                <a href="#" class="btn btn--dark">LEARN MORE</a>
+            </article>
+
+            <!-- Sample Pack -->
+            <article class="product-card reveal">
+              <div class="product-card__inner">
+                <div class="product-card__front">
+                  <div class="product-card__image-wrap">
+                    <img src="images/RosaNoWords_800h.jpg" alt="Sample Pack — all 4 expressions" class="product-card__image" />
+                    <span class="product-card__badge product-card__badge--gold">Best Value</span>
+                  </div>
+                  <div class="product-card__body">
+                    <h3 class="product-card__name">Sample Pack</h3>
+                    <p class="product-card__desc">All 4 Expressions</p>
+                    <span class="product-card__price">From $29.00</span>
+                  </div>
+                </div>
+                <div class="product-card__back">
+                  <span class="product-card__tasting-label">Tasting Notes</span>
+                  <dl class="product-card__notes">
+                    <dt>Includes</dt><dd>Rosa Blanco, Reposado, Extra Añejo &amp; Blanco</dd>
+                    <dt>Size</dt><dd>4 × 100ml mini bottles</dd>
+                    <dt>Ideal for</dt><dd>First-timers, gifts &amp; tasting experiences</dd>
+                  </dl>
+                  <a href="#" class="product-card__cart-btn">Add to Cart — $29</a>
+                </div>
               </div>
             </article>
 
@@ -243,6 +339,7 @@
           <button class="dot" data-index="1" role="tab" aria-selected="false" aria-label="Slide 2"></button>
           <button class="dot" data-index="2" role="tab" aria-selected="false" aria-label="Slide 3"></button>
           <button class="dot" data-index="3" role="tab" aria-selected="false" aria-label="Slide 4"></button>
+          <button class="dot" data-index="4" role="tab" aria-selected="false" aria-label="Slide 5"></button>
         </div>
 
       </div>

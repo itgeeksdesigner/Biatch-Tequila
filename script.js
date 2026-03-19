@@ -120,20 +120,24 @@
   }
 
   /* ============================================================
-     4. PRODUCT TRACK — scroll + dots sync
+     4. PRODUCT TRACK — scroll + dots + prev/next arrows
      ============================================================ */
   function initProductTrack() {
-    var track = qs('#productTrack');
-    var dots  = qsa('.dot', qs('#productDots'));
+    var track    = qs('#productTrack');
+    var dots     = qsa('.dot', qs('#productDots'));
+    var prevBtn  = qs('#productPrev');
+    var nextBtn  = qs('#productNext');
 
-    if (!track || !dots.length) return;
+    if (!track) return;
+
+    function cardWidth() {
+      var cards = qsa('.product-card', track);
+      return cards[0] ? cards[0].offsetWidth + 24 : 0;
+    }
 
     function updateDots() {
-      var cards       = qsa('.product-card', track);
-      var scrollLeft  = track.scrollLeft;
-      var cardWidth   = cards[0] ? cards[0].offsetWidth + 24 : 1; // card width + gap
-      var activeIndex = Math.round(scrollLeft / cardWidth);
-
+      if (!dots.length) return;
+      var activeIndex = Math.round(track.scrollLeft / (cardWidth() || 1));
       dots.forEach(function (dot, i) {
         var isActive = i === activeIndex;
         dot.classList.toggle('dot--active', isActive);
@@ -141,13 +145,23 @@
       });
     }
 
+    // Prev / Next arrows
+    if (prevBtn) {
+      prevBtn.addEventListener('click', function () {
+        track.scrollBy({ left: -cardWidth(), behavior: 'smooth' });
+      });
+    }
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function () {
+        track.scrollBy({ left: cardWidth(), behavior: 'smooth' });
+      });
+    }
+
     // Click dot to scroll
     dots.forEach(function (dot) {
       dot.addEventListener('click', function () {
-        var index     = parseInt(dot.getAttribute('data-index'), 10);
-        var cards     = qsa('.product-card', track);
-        var cardWidth = cards[0] ? cards[0].offsetWidth + 24 : 0;
-        track.scrollTo({ left: index * cardWidth, behavior: 'smooth' });
+        var index = parseInt(dot.getAttribute('data-index'), 10);
+        track.scrollTo({ left: index * cardWidth(), behavior: 'smooth' });
       });
     });
 
