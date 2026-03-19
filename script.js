@@ -494,6 +494,60 @@
   }
 
   /* ============================================================
+     12. REVIEW TRACK — prev/next arrows
+     ============================================================ */
+  function initReviewTrack() {
+    var track   = qs('#reviewTrack');
+    var prevBtn = qs('#reviewPrev');
+    var nextBtn = qs('#reviewNext');
+
+    if (!track) return;
+
+    function cardWidth() {
+      var cards = qsa('.review-card', track);
+      return cards[0] ? cards[0].offsetWidth + 20 : 0;
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', function () {
+        track.scrollBy({ left: -cardWidth(), behavior: 'smooth' });
+      });
+    }
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function () {
+        track.scrollBy({ left: cardWidth(), behavior: 'smooth' });
+      });
+    }
+  }
+
+  /* ============================================================
+     13. RECIPE TRACK — prev/next arrows
+     ============================================================ */
+  function initRecipeTrack() {
+    var track   = qs('#recipeTrack');
+    var prevBtn = qs('#recipePrev');
+    var nextBtn = qs('#recipeNext');
+
+    if (!track) return;
+
+    function cardWidth() {
+      var cards = qsa('.recipe-card', track);
+      return cards[0] ? cards[0].offsetWidth + 24 : 0;
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', function () {
+        track.scrollBy({ left: -cardWidth(), behavior: 'smooth' });
+      });
+    }
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function () {
+        track.scrollBy({ left: cardWidth(), behavior: 'smooth' });
+      });
+    }
+  }
+
+  /* ============================================================
      INIT — DOMContentLoaded
      ============================================================ */
   document.addEventListener('DOMContentLoaded', function () {
@@ -502,6 +556,8 @@
     initScrollReveal();
     initProductTrack();
     initRecipeModal();
+    initRecipeTrack();
+    initReviewTrack();
     initEmailForm();
     initAnchorNav();
     initStoryVideo();
