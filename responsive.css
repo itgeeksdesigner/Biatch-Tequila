@@ -1,0 +1,654 @@
+/* ============================================================
+   BIATCH TEQUILA — RESPONSIVE.CSS
+   Breakpoints: Tablet (max 1024px) | Mobile (max 768px) | Small (max 480px)
+   Mobile-first responsive overrides.
+   All font size and spacing variables are re-scoped per breakpoint.
+   ============================================================ */
+
+/* ============================================================
+   TABLET — max-width: 1024px
+   ============================================================ */
+@media (max-width: 1024px) {
+
+  /* — Redefine font-size tokens — */
+  :root {
+    --font-size-h1:   64px;
+    --font-size-h2:   48px;
+    --font-size-h3:   36px;
+    --font-size-h4:   28px;
+    --font-size-h5:   22px;
+    --font-size-h6:   17px;
+    --font-size-body: 17px;
+
+    --section-pad-y:    72px;
+    --section-pad-y-sm: 48px;
+    --container-gutter: 32px;
+    --gap-80:  56px;
+    --gap-96:  72px;
+    --gap-120: 88px;
+  }
+
+  /* Header: hide desktop nav row, show mobile toggle */
+  .header__nav-row {
+    display: none;
+  }
+
+  .header__menu-toggle {
+    display: flex;
+  }
+
+  :root {
+    --header-h: 64px;
+  }
+
+  .header__top-inner {
+    height: 64px;
+  }
+
+  /* Hide social icons on tablet to save space */
+  .header__social {
+    display: none;
+  }
+
+  .header__actions {
+    flex: unset;
+  }
+
+  /* Hero */
+  .hero__heading {
+    font-size: var(--font-size-h1);
+  }
+
+  /* Product cards */
+  .product-card {
+    flex: 0 0 260px;
+  }
+
+  .product-card__image {
+    height: 320px;
+  }
+
+  /* Manifesto */
+  .manifesto__heading {
+    font-size: var(--font-size-h2);
+  }
+
+  /* Mission */
+  .mission__inner {
+    gap: var(--gap-48);
+  }
+
+  .mission__visual {
+    flex: 0 0 380px;
+  }
+
+  .mission__image {
+    height: 480px;
+  }
+
+  /* Story blocks */
+  .story-block__inner {
+    gap: var(--gap-48);
+  }
+
+  .story-block__visual {
+    flex: 0 0 360px;
+  }
+
+  .story-block__image {
+    height: 480px;
+  }
+
+  .story-block__heading {
+    font-size: var(--font-size-h3);
+  }
+
+  /* Lifestyle */
+  .lifestyle__item--large {
+    height: 480px;
+  }
+
+  .lifestyle__stack .lifestyle__item {
+    height: 232px;
+  }
+
+  /* Events grid */
+  .events__card-img {
+    height: 280px;
+  }
+
+  .events__card--large .events__card-img {
+    height: 380px;
+  }
+
+  .events__card--wide .events__card-img {
+    height: 220px;
+  }
+
+  /* Recipes */
+  .recipes__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Reviews */
+  .reviews__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Email Capture */
+  .email-capture__panel {
+    padding: var(--section-pad-y) var(--gap-48);
+  }
+
+  .email-capture__heading {
+    font-size: var(--font-size-h2);
+  }
+
+  /* Footer */
+  .footer__top {
+    gap:        var(--gap-48);
+    flex-wrap:  wrap;
+  }
+
+  .footer__brand {
+    flex: 0 0 100%;
+  }
+
+  .footer__nav {
+    flex: 0 0 100%;
+    gap:  var(--gap-32);
+  }
+
+  /* Press */
+  .press__logo-item {
+    min-width: 100px;
+  }
+}
+
+/* ============================================================
+   MOBILE — max-width: 768px
+   ============================================================ */
+@media (max-width: 768px) {
+
+  /* — Redefine font-size tokens — */
+  :root {
+    --font-size-h1:   48px;
+    --font-size-h2:   36px;
+    --font-size-h3:   28px;
+    --font-size-h4:   24px;
+    --font-size-h5:   20px;
+    --font-size-h6:   16px;
+    --font-size-body: 16px;
+    --font-size-body-sm: 15px;
+
+    --section-pad-y:    56px;
+    --section-pad-y-sm: 40px;
+    --container-gutter: 20px;
+
+    --gap-48:  40px;
+    --gap-56:  44px;
+    --gap-64:  48px;
+    --gap-80:  48px;
+    --gap-96:  56px;
+    --gap-120: 72px;
+  }
+
+  /* ---- Header ---- */
+  .header__top-inner {
+    gap: var(--gap-16);
+  }
+
+  /* On mobile: hide search + account, keep cart + menu toggle */
+  .header__action-btn:not(.header__cart-btn):not(.header__menu-toggle) {
+    display: none;
+  }
+
+  .header__logo-img {
+    height: 34px;
+  }
+
+  /* ---- Trust Bar ---- */
+  .trust-bar__divider {
+    display: none;
+  }
+
+  .trust-bar__inner {
+    gap: var(--gap-16);
+    justify-content: center;
+  }
+
+  .trust-bar__text {
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
+  .trust-bar__icon {
+    font-size: 17px;
+  }
+
+  /* ---- Hero ---- */
+  .hero__content {
+    gap: var(--gap-20);
+  }
+
+  .hero__heading {
+    font-size:      var(--font-size-h1);
+    letter-spacing: -1px;
+  }
+
+  .hero__subtext {
+    font-size: var(--font-size-body);
+    max-width: 320px;
+  }
+
+  /* ---- Product Explore ---- */
+  .product-explore {
+    padding-top:    var(--section-pad-y);
+    padding-bottom: var(--section-pad-y);
+  }
+
+  .product-card {
+    flex: 0 0 240px;
+  }
+
+  .product-card__image {
+    height: 280px;
+  }
+
+  /* ---- Manifesto ---- */
+  .manifesto__inner {
+    gap: var(--gap-24);
+  }
+
+  .manifesto__heading {
+    font-size:      var(--font-size-h2);
+    letter-spacing: -0.5px;
+  }
+
+  .manifesto__body {
+    font-size: var(--font-size-body);
+  }
+
+  /* ---- Mission ---- */
+  .mission__inner {
+    flex-direction: column;
+    gap:            var(--gap-40);
+  }
+
+  .mission__visual {
+    flex:  none;
+    width: 100%;
+  }
+
+  .mission__image {
+    height: 360px;
+  }
+
+  .mission__heading {
+    font-size: var(--font-size-h2);
+  }
+
+  .mission__content {
+    order: 1;
+  }
+
+  .mission__visual {
+    order: 2;
+  }
+
+  /* ---- Story Blocks ---- */
+  .story-block {
+    padding-top:    var(--gap-56);
+    padding-bottom: var(--gap-56);
+  }
+
+  .story-block__inner {
+    flex-direction: column;
+    gap:            var(--gap-32);
+  }
+
+  .story-block--right .story-block__inner {
+    flex-direction: column;
+  }
+
+  .story-block__visual {
+    flex:  none;
+    width: 100%;
+  }
+
+  .story-block__image {
+    height: 300px;
+  }
+
+  .story-block__heading {
+    font-size: var(--font-size-h3);
+  }
+
+  .story-block__body {
+    font-size: var(--font-size-body);
+  }
+
+  /* Story video */
+  .story-video__poster {
+    height: 220px;
+  }
+
+  .story-video__play {
+    font-size: 52px;
+  }
+
+  /* ---- Lifestyle ---- */
+  .lifestyle__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lifestyle__item--large {
+    height: 380px;
+  }
+
+  .lifestyle__stack {
+    flex-direction: row;
+  }
+
+  .lifestyle__stack .lifestyle__item {
+    flex:   1;
+    height: 200px;
+  }
+
+  /* Always show overlay on mobile (no hover) */
+  .lifestyle__overlay {
+    opacity: 1;
+  }
+
+  /* ---- Events ---- */
+  .events__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .events__card--large,
+  .events__card--wide {
+    grid-column: span 1;
+  }
+
+  .events__card-img {
+    height: 260px;
+  }
+
+  .events__card--large .events__card-img {
+    height: 300px;
+  }
+
+  .events__card--wide .events__card-img {
+    height: 220px;
+  }
+
+  /* ---- Recipes ---- */
+  .recipes__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap:                   var(--gap-16);
+  }
+
+  .recipe-card__img {
+    height: 240px;
+  }
+
+  /* Show play icon always on mobile */
+  .recipe-card__play {
+    opacity: 1;
+    background-color: rgba(18, 18, 18, 0.30);
+  }
+
+  /* ---- Recipe Modal ---- */
+  .recipe-modal__panel {
+    width:      100%;
+    max-width:  100%;
+    max-height: 100vh;
+    height:     100%;
+    overflow-y: auto;
+  }
+
+  .recipe-modal__poster {
+    height: 220px;
+  }
+
+  .recipe-modal__body {
+    padding: var(--gap-24);
+    gap:     var(--gap-24);
+  }
+
+  .recipe-modal__cols {
+    flex-direction: column;
+    gap:            var(--gap-24);
+  }
+
+  /* ---- Reviews ---- */
+  .reviews__grid {
+    grid-template-columns: 1fr;
+    gap:                   var(--gap-16);
+  }
+
+  /* ---- Press ---- */
+  .press__strip {
+    gap: var(--gap-20);
+  }
+
+  .press__logo-item {
+    flex:      0 0 calc(33.333% - var(--gap-20));
+    min-width: 80px;
+  }
+
+  /* ---- Email Capture ---- */
+  .email-capture__split {
+    flex-direction: column;
+  }
+
+  .email-capture__divider {
+    width:  100%;
+    height: 1px;
+  }
+
+  .email-capture__panel {
+    padding: var(--gap-48) var(--container-gutter);
+  }
+
+  .email-capture__heading {
+    font-size: var(--font-size-h2);
+  }
+
+  .email-capture__field {
+    flex-direction: column;
+    gap:            var(--gap-12);
+  }
+
+  .email-capture__input {
+    width: 100%;
+  }
+
+  /* ---- Footer ---- */
+  .footer__top {
+    flex-direction: column;
+    gap:            var(--gap-40);
+  }
+
+  .footer__brand {
+    flex: none;
+  }
+
+  .footer__nav {
+    flex-wrap: wrap;
+    gap:       var(--gap-32);
+  }
+
+  .footer__nav-col {
+    flex: 0 0 calc(50% - var(--gap-32));
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    align-items:    flex-start;
+    gap:            var(--gap-16);
+  }
+
+  /* ---- Section Header ---- */
+  .section__header {
+    padding-bottom: var(--gap-32);
+  }
+
+  .section__heading {
+    font-size: var(--font-size-h2);
+  }
+
+  /* ---- Search Drawer ---- */
+  .search-drawer__panel {
+    padding: var(--gap-56) var(--container-gutter);
+    padding-top: calc(var(--header-h) + var(--gap-32));
+  }
+
+  .search-drawer__label {
+    font-size: var(--font-size-h4);
+  }
+
+  /* ---- Cart Drawer — full width on mobile ---- */
+  .cart-drawer__panel {
+    width: 100%;
+  }
+
+  /* ---- Cart Popup ---- */
+  .cart-popup {
+    width:  calc(100% - 32px);
+    left:   16px;
+    right:  16px;
+    bottom: 16px;
+  }
+}
+
+/* ---- Search Drawer ---- */
+  .search-drawer__panel {
+    padding: var(--gap-64) var(--container-gutter);
+    padding-top: calc(var(--header-h) + var(--gap-32));
+  }
+
+  .search-drawer__label {
+    font-size: var(--font-size-h5);
+  }
+
+  /* ---- Cart Drawer ---- */
+  .cart-drawer__panel {
+    width: 360px;
+  }
+
+  /* ---- Cart Popup ---- */
+  .cart-popup {
+    width: 280px;
+    bottom: 16px;
+    right:  16px;
+  }
+
+/* ============================================================
+   SMALL MOBILE — max-width: 480px
+   ============================================================ */
+@media (max-width: 480px) {
+
+  /* — Redefine critical font-size tokens — */
+  :root {
+    --font-size-h1:   40px;
+    --font-size-h2:   30px;
+    --font-size-h3:   24px;
+    --font-size-h4:   20px;
+    --font-size-h5:   18px;
+    --font-size-body: 15px;
+    --font-size-body-sm: 14px;
+
+    --section-pad-y:    44px;
+    --container-gutter: 16px;
+  }
+
+  /* Hero */
+  .hero__heading {
+    font-size:      var(--font-size-h1);
+    letter-spacing: -0.5px;
+  }
+
+  .hero__subtext {
+    max-width: 100%;
+  }
+
+  /* Recipes: single column on very small screens */
+  .recipes__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .recipe-card__img {
+    height: 280px;
+  }
+
+  /* Product cards */
+  .product-card {
+    flex: 0 0 220px;
+  }
+
+  .product-card__image {
+    height: 260px;
+  }
+
+  /* Reviews */
+  .review-card {
+    padding: var(--gap-24);
+  }
+
+  /* Email capture */
+  .email-capture__panel {
+    padding: var(--gap-40) var(--container-gutter);
+  }
+
+  /* Footer nav: single column */
+  .footer__nav-col {
+    flex: 0 0 100%;
+  }
+
+  /* Press logos: 2 per row */
+  .press__logo-item {
+    flex: 0 0 calc(50% - var(--gap-20));
+  }
+
+  /* Story block images shorter */
+  .story-block__image {
+    height: 240px;
+  }
+
+  .story-video__poster {
+    height: 180px;
+  }
+
+  /* Manifesto */
+  .manifesto__inner {
+    align-items: flex-start;
+  }
+
+  /* Lifestyle stack back to column */
+  .lifestyle__stack {
+    flex-direction: column;
+  }
+
+  .lifestyle__stack .lifestyle__item {
+    height: 220px;
+  }
+
+  /* Cart drawer full width on small mobile */
+  .cart-drawer__panel {
+    width: 100%;
+  }
+
+  /* Search drawer compact */
+  .search-drawer__input {
+    font-size: var(--font-size-body);
+  }
+
+  /* Popup full-width on small screens */
+  .cart-popup {
+    width:  calc(100% - 32px);
+    left:   16px;
+    right:  16px;
+    bottom: 16px;
+  }
+}
