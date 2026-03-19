@@ -3,7 +3,8 @@
     "allow": [
       "WebFetch(domain:biatch-tequila-prototype.vercel.app)",
       "Bash(curl -s https://biatch-tequila-prototype.vercel.app/css/styles.css)",
-      "Bash(curl -s https://biatch-tequila-prototype.vercel.app/)"
+      "Bash(curl -s https://biatch-tequila-prototype.vercel.app/)",
+      "WebFetch(domain:biatch.com)"
     ]
   }
 }
