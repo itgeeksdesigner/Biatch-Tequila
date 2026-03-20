@@ -11,7 +11,8 @@
   <!-- Google Fonts: Kaisei Tokumin -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Kaisei+Tokumin:wght@400;500;700;800&display=swap"
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Jost:wght@300;400;500;600;700&display=swap"
     rel="stylesheet" />
 
   <!-- Phosphor Icons -->
@@ -33,7 +34,13 @@
     <div class="header__top">
       <div class="container header__top-inner">
 
-        <!-- Social Icons (left) -->
+        <!-- Hamburger (mobile left / desktop hidden) -->
+        <button class="header__menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false"
+          aria-controls="mobileNav">
+          <i class="ph ph-list"></i>
+        </button>
+
+        <!-- Social Icons (left, desktop only) -->
         <div class="header__social">
           <a href="#" class="header__social-link" aria-label="Facebook">
             <i class="ph ph-facebook-logo"></i>
@@ -52,7 +59,7 @@
             onerror="this.src='https://placehold.co/130x36/FFFFFF/FFFFFF?text=BIATCH'" />
         </a>
 
-        <!-- Actions (right) + Mobile Toggle -->
+        <!-- Actions (right) -->
         <div class="header__actions">
           <button class="header__action-btn" id="searchBtn" aria-label="Open search" aria-expanded="false"
             aria-controls="searchDrawer">
@@ -65,10 +72,6 @@
             aria-controls="cartDrawer">
             <i class="ph ph-shopping-bag"></i>
             <span class="header__cart-count" aria-label="0 items in cart">0</span>
-          </button>
-          <button class="header__menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false"
-            aria-controls="mobileNav">
-            <i class="ph ph-list"></i>
           </button>
         </div>
 
@@ -94,8 +97,7 @@
   <!-- Mobile Navigation -->
   <div class="mobile-nav" id="mobileNav" aria-hidden="true" role="dialog" aria-label="Mobile navigation">
     <div class="mobile-nav__header">
-      <img src="images/logo.png" alt="BIATCH Tequila" class="mobile-nav__logo"
-        onerror="this.src='https://placehold.co/130x36/FFFFFF/FFFFFF?text=BIATCH'" />
+      <img src="images/biatch-logo (1).png" alt="BIATCH Tequila" class="mobile-nav__logo" />
       <button class="mobile-nav__close" id="mobileNavClose" aria-label="Close navigation menu">
         <i class="ph ph-x"></i>
       </button>
@@ -108,7 +110,7 @@
       <li><a href="#press" class="mobile-nav__link">Press</a></li>
     </ul>
     <div class="mobile-nav__footer">
-      <a href="#email-capture" class="btn btn--outline-white">Join the Club</a>
+      <a href="#email-capture" class="btn btn--gold">Join the Club</a>
     </div>
   </div>
   <div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
@@ -120,9 +122,7 @@
     ============================================================ -->
     <section class="hero" id="hero" aria-label="Hero">
       <div class="hero__bg">
-        <video class="hero__bg-img" autoplay muted loop playsinline>
-          <source src="images/VQIgmaN0EwetCzFu2Jk421kHLiA.mp4" type="video/mp4" />
-        </video>
+        <img class="hero__bg-img" src="images/biatch-hero (1).jpg" alt="BIATCH Tequila hero" />
       </div>
       <div class="hero__overlay" aria-hidden="true"></div>
       <div class="container hero__content">
@@ -140,32 +140,54 @@
          TRUST BADGES BAR
     ============================================================ -->
     <div class="trust-bar" aria-label="Trust badges">
-      <div class="container trust-bar__inner">
+      <div class="trust-bar__inner">
 
-        <div class="trust-bar__item">
-          <i class="ph ph-shield-check trust-bar__icon"></i>
-          <span class="trust-bar__text">100% Blue Weber Agave</span>
+        <!-- Track 1 -->
+        <div class="trust-bar__track">
+          <div class="trust-bar__item">
+            <i class="ph ph-shield-check trust-bar__icon"></i>
+            <span class="trust-bar__text">100% Blue Weber Agave</span>
+          </div>
+          <span class="trust-bar__divider" aria-hidden="true">·</span>
+          <div class="trust-bar__item">
+            <i class="ph ph-star trust-bar__icon"></i>
+            <span class="trust-bar__text">4.8 Stars &mdash; 1,200+ Reviews</span>
+          </div>
+          <span class="trust-bar__divider" aria-hidden="true">·</span>
+          <div class="trust-bar__item">
+            <i class="ph ph-truck trust-bar__icon"></i>
+            <span class="trust-bar__text">Free Shipping Over $75</span>
+          </div>
+          <span class="trust-bar__divider" aria-hidden="true">·</span>
+          <div class="trust-bar__item">
+            <i class="ph ph-heart trust-bar__icon"></i>
+            <span class="trust-bar__text">Women-Owned &amp; Operated</span>
+          </div>
+          <span class="trust-bar__divider" aria-hidden="true">·</span>
         </div>
 
-        <span class="trust-bar__divider" aria-hidden="true">·</span>
-
-        <div class="trust-bar__item">
-          <i class="ph ph-star trust-bar__icon"></i>
-          <span class="trust-bar__text">4.8 Stars &mdash; 1,200+ Reviews</span>
-        </div>
-
-        <span class="trust-bar__divider" aria-hidden="true">·</span>
-
-        <div class="trust-bar__item">
-          <i class="ph ph-truck trust-bar__icon"></i>
-          <span class="trust-bar__text">Free Shipping Over $75</span>
-        </div>
-
-        <span class="trust-bar__divider" aria-hidden="true">·</span>
-
-        <div class="trust-bar__item">
-          <i class="ph ph-heart trust-bar__icon"></i>
-          <span class="trust-bar__text">Women-Owned &amp; Operated</span>
+        <!-- Track 2 — duplicate for seamless loop (mobile only) -->
+        <div class="trust-bar__track" aria-hidden="true">
+          <div class="trust-bar__item">
+            <i class="ph ph-shield-check trust-bar__icon"></i>
+            <span class="trust-bar__text">100% Blue Weber Agave</span>
+          </div>
+          <span class="trust-bar__divider" aria-hidden="true">·</span>
+          <div class="trust-bar__item">
+            <i class="ph ph-star trust-bar__icon"></i>
+            <span class="trust-bar__text">4.8 Stars &mdash; 1,200+ Reviews</span>
+          </div>
+          <span class="trust-bar__divider" aria-hidden="true">·</span>
+          <div class="trust-bar__item">
+            <i class="ph ph-truck trust-bar__icon"></i>
+            <span class="trust-bar__text">Free Shipping Over $75</span>
+          </div>
+          <span class="trust-bar__divider" aria-hidden="true">·</span>
+          <div class="trust-bar__item">
+            <i class="ph ph-heart trust-bar__icon"></i>
+            <span class="trust-bar__text">Women-Owned &amp; Operated</span>
+          </div>
+          <span class="trust-bar__divider" aria-hidden="true">·</span>
         </div>
 
       </div>
@@ -306,7 +328,7 @@
                   </div>
                   <div class="product-card__body">
                     <h3 class="product-card__name">Blanco</h3>
-                    <p class="product-card__desc">Classic Expression · 750ml</p>
+                    <p class="product-card__desc">Blanco Classic · 750ml</p>
                     <span class="product-card__price">From $57.00</span>
                   </div>
                 </div>
@@ -396,9 +418,8 @@
         <!-- Left: Video with corner accents -->
         <div class="craft__visual reveal">
           <div class="craft__frame">
-            <video class="craft__image" autoplay muted loop playsinline>
-              <source src="images/df522bf48c5c4d339bd6c8f862271073.HD-1080p-2.5Mbps-38419077.mp4" type="video/mp4" />
-            </video>
+            <img class="craft__image" src="images/df522bf48c5c4d339bd6c8f862271073.thumbnail.0000000000.jpg"
+              alt="BIATCH Tequila craftsmanship" />
           </div>
         </div>
 
@@ -455,8 +476,8 @@
           <div class="curated__panel-overlay"></div>
           <div class="curated__panel-content">
             <span class="curated__panel-eyebrow">Save up to 20%</span>
-            <h3 class="curated__panel-heading">Stack &amp; Save</h3>
-            <p class="curated__panel-sub">Bundle your favourites and save more</p>
+            <h3 class="curated__panel-heading">Stylish Upgrades</h3>
+            <p class="curated__panel-sub">Elevate your event with bold favors.</p>
             <a href="#shop" class="curated__panel-btn curated__panel-btn--solid">Shop Bundles</a>
           </div>
         </div>
@@ -466,8 +487,8 @@
           <div class="curated__panel-overlay"></div>
           <div class="curated__panel-content">
             <span class="curated__panel-eyebrow">Limited Edition</span>
-            <h3 class="curated__panel-heading">The Gift Edit</h3>
-            <p class="curated__panel-sub">Curated sets for the women in your life</p>
+            <h3 class="curated__panel-heading">Premium Pairings</h3>
+            <p class="curated__panel-sub">Ultimate sets for tequila lovers.</p>
             <a href="#shop" class="curated__panel-btn curated__panel-btn--outline">Shop Gifts</a>
           </div>
         </div>
@@ -507,7 +528,7 @@
           <div class="section__header events__section-header">
             <div>
               <span class="eyebrow eyebrow--gold reveal">Events &amp; Collabs</span>
-              <h2 class="section__heading reveal">Where BIATCH Shows Up</h2>
+              <h2 class="section__heading reveal">Sightings In The Wild</h2>
             </div>
             <a href="#" class="events__explore-link reveal">Explore the Scene &rarr;</a>
           </div>
@@ -567,7 +588,7 @@
               <!-- Blood Orange Margarita -->
               <article class="recipe-card reveal" tabindex="0" role="button"
                 aria-label="View recipe: Blood Orange Margarita" data-title="Blood Orange Margarita"
-                data-video-poster="https://placehold.co/1280x720/F4A261/FFFFFF?text=Blood+Orange+Margarita"
+                data-tag="SIGNATURE COCKTAIL" data-spirit="Rosa Blanco" data-time="5 MIN" data-servings="1 SERVING"
                 data-ingredients='["2 oz BIATCH Rosa Blanco Tequila","1 oz blood orange juice","0.75 oz fresh lime juice","0.5 oz agave nectar","Tajín rim","Ice cubes"]'
                 data-instructions='["Rim a rocks glass with Tajín.","Combine tequila, blood orange juice, lime juice, and agave in a shaker with ice.","Shake vigorously for 15 seconds.","Strain over fresh ice.","Garnish with a blood orange wheel."]'>
                 <div class="recipe-card__media">
@@ -589,7 +610,7 @@
               <!-- Reposado Paloma -->
               <article class="recipe-card reveal" tabindex="0" role="button" aria-label="View recipe: Reposado Paloma"
                 data-title="Reposado Paloma"
-                data-video-poster="https://placehold.co/1280x720/E8A5C0/FFFFFF?text=Reposado+Paloma"
+                data-tag="CLASSIC REMIX" data-spirit="Reposado" data-time="4 MIN" data-servings="1 SERVING"
                 data-ingredients='["2 oz BIATCH Reposado Tequila","4 oz grapefruit soda","0.5 oz fresh lime juice","Pinch of sea salt","Grapefruit wedge","Ice cubes"]'
                 data-instructions='["Fill a highball glass with ice.","Pour tequila and lime juice over the ice.","Top gently with grapefruit soda.","Add a pinch of sea salt.","Garnish with a grapefruit wedge."]'>
                 <div class="recipe-card__media">
@@ -611,7 +632,7 @@
               <!-- Añejo Espresso Martini -->
               <article class="recipe-card reveal" tabindex="0" role="button"
                 aria-label="View recipe: Añejo Espresso Martini" data-title="Añejo Espresso Martini"
-                data-video-poster="https://placehold.co/1280x720/2C1A0E/D6A432?text=Anejo+Espresso+Martini"
+                data-tag="AFTER DARK" data-spirit="Extra Añejo" data-time="6 MIN" data-servings="1 SERVING"
                 data-ingredients='["2 oz BIATCH Extra Añejo Tequila","1 oz fresh espresso","0.5 oz coffee liqueur","0.25 oz agave syrup","3 coffee beans for garnish"]'
                 data-instructions='["Brew a fresh shot of espresso and let cool slightly.","Combine tequila, espresso, coffee liqueur, and agave syrup in a shaker with ice.","Shake hard for 20 seconds until frothy.","Double strain into a chilled coupe.","Garnish with 3 coffee beans."]'>
                 <div class="recipe-card__media">
@@ -633,7 +654,7 @@
               <!-- Cucumber Jalapeño Spritz -->
               <article class="recipe-card reveal" tabindex="0" role="button"
                 aria-label="View recipe: Cucumber Jalapeño Spritz" data-title="Cucumber Jalapeño Spritz"
-                data-video-poster="https://placehold.co/1280x720/4CAF7D/FFFFFF?text=Cucumber+Jalapeno+Spritz"
+                data-tag="GARDEN FRESH" data-spirit="Blanco" data-time="7 MIN" data-servings="1 SERVING"
                 data-ingredients='["2 oz BIATCH Blanco Tequila","4 jalapeño slices (seeded)","4 cucumber slices","1 oz fresh lime juice","2 oz sparkling water","0.5 oz agave nectar"]'
                 data-instructions='["Muddle cucumber and jalapeño in a shaker.","Add tequila, lime juice, and agave nectar with ice.","Shake well for 15 seconds.","Double strain into an ice-filled glass.","Top with sparkling water and garnish with cucumber ribbon."]'>
                 <div class="recipe-card__media">
@@ -668,25 +689,20 @@
           <button class="recipe-modal__close" id="modalClose" aria-label="Close recipe">
             <i class="ph ph-x"></i>
           </button>
-          <div class="recipe-modal__media">
-            <img src="" alt="" class="recipe-modal__poster" id="modalPoster" />
-            <div class="recipe-modal__video-overlay" aria-hidden="true">
-              <i class="ph-fill ph-play-circle"></i>
-            </div>
-          </div>
           <div class="recipe-modal__body">
+            <span class="recipe-modal__tag" id="modalTag"></span>
             <h2 class="recipe-modal__title" id="modalTitle"></h2>
-            <div class="recipe-modal__cols">
-              <div class="recipe-modal__col">
-                <h4 class="recipe-modal__col-label">Ingredients</h4>
-                <ul class="recipe-modal__list" id="modalIngredients"></ul>
-              </div>
-              <div class="recipe-modal__col">
-                <h4 class="recipe-modal__col-label">Instructions</h4>
-                <ol class="recipe-modal__list recipe-modal__list--ordered" id="modalInstructions"></ol>
-              </div>
+            <p class="recipe-modal__meta" id="modalMeta"></p>
+            <div class="recipe-modal__section">
+              <h4 class="recipe-modal__section-label">Ingredients</h4>
+              <hr class="recipe-modal__rule" />
+              <ul class="recipe-modal__list" id="modalIngredients"></ul>
             </div>
-            <a href="#shop" class="btn btn--primary recipe-modal__cta" id="modalShopBtn">Shop the Spirit</a>
+            <div class="recipe-modal__section">
+              <h4 class="recipe-modal__section-label">Method</h4>
+              <hr class="recipe-modal__rule" />
+              <ol class="recipe-modal__steps" id="modalInstructions"></ol>
+            </div>
           </div>
         </div>
       </div>

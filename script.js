@@ -167,6 +167,26 @@
 
     track.addEventListener('scroll', updateDots, { passive: true });
     updateDots();
+
+    // Tap-to-flip for touch devices (no hover support)
+    var cards = qsa('.product-card', track);
+    cards.forEach(function (card) {
+      var startX = 0;
+      card.addEventListener('touchstart', function (e) {
+        startX = e.touches[0].clientX;
+      }, { passive: true });
+
+      card.addEventListener('touchend', function (e) {
+        var dx = Math.abs(e.changedTouches[0].clientX - startX);
+        if (dx < 10) {
+          // It's a tap, not a swipe — toggle flip
+          var isFlipped = card.classList.contains('is-flipped');
+          // Unflip all others first
+          cards.forEach(function (c) { c.classList.remove('is-flipped'); });
+          if (!isFlipped) card.classList.add('is-flipped');
+        }
+      }, { passive: true });
+    });
   }
 
   /* ============================================================
@@ -176,8 +196,9 @@
     var modal        = qs('#recipeModal');
     var closeBtn     = qs('#modalClose');
     var backdrop     = qs('#modalBackdrop');
+    var tagEl        = qs('#modalTag');
     var titleEl      = qs('#modalTitle');
-    var posterEl     = qs('#modalPoster');
+    var metaEl       = qs('#modalMeta');
     var ingredList   = qs('#modalIngredients');
     var instructList = qs('#modalInstructions');
     var cards        = qsa('.recipe-card');
@@ -185,15 +206,18 @@
     if (!modal || !cards.length) return;
 
     function openModal(card) {
-      var title       = card.getAttribute('data-title') || '';
-      var videoPoster = card.getAttribute('data-video-poster') || '';
-      var ingredients = JSON.parse(card.getAttribute('data-ingredients') || '[]');
+      var title        = card.getAttribute('data-title') || '';
+      var tag          = card.getAttribute('data-tag') || '';
+      var spirit       = card.getAttribute('data-spirit') || '';
+      var time         = card.getAttribute('data-time') || '';
+      var servings     = card.getAttribute('data-servings') || '';
+      var ingredients  = JSON.parse(card.getAttribute('data-ingredients') || '[]');
       var instructions = JSON.parse(card.getAttribute('data-instructions') || '[]');
 
       // Populate
+      if (tagEl)   tagEl.textContent  = tag;
       titleEl.textContent = title;
-      posterEl.src        = videoPoster;
-      posterEl.alt        = title + ' cocktail recipe video';
+      if (metaEl)  metaEl.textContent = [spirit, time, servings].filter(Boolean).join(' · ');
 
       ingredList.innerHTML = ingredients.map(function (ing) {
         return '<li>' + ing + '</li>';
