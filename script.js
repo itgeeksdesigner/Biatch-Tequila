@@ -521,27 +521,54 @@
      12. REVIEW TRACK — prev/next arrows
      ============================================================ */
   function initReviewTrack() {
-    var track   = qs('#reviewTrack');
-    var prevBtn = qs('#reviewPrev');
-    var nextBtn = qs('#reviewNext');
+    var track    = qs('#reviewTrack');
+    var prevBtn  = qs('#reviewPrev');
+    var nextBtn  = qs('#reviewNext');
+    var dotsWrap = qs('#reviewDots');
 
     if (!track) return;
 
-    function cardWidth() {
-      var cards = qsa('.review-card', track);
-      return cards[0] ? cards[0].offsetWidth + 20 : 0;
+    function vpWidth() {
+      var vp = qs('.reviews__viewport');
+      return vp ? vp.offsetWidth : 300;
     }
 
-    if (prevBtn) {
-      prevBtn.addEventListener('click', function () {
-        track.scrollBy({ left: -cardWidth(), behavior: 'smooth' });
+    function buildDots() {
+      if (!dotsWrap) return;
+      dotsWrap.innerHTML = '';
+      var vp = qs('.reviews__viewport');
+      if (!vp || !track.scrollWidth) return;
+      var pages = Math.max(1, Math.ceil(track.scrollWidth / vp.offsetWidth));
+      for (var i = 0; i < pages; i++) {
+        var dot = document.createElement('span');
+        dot.className = 'reviews__dot' + (i === 0 ? ' reviews__dot--active' : '');
+        (function (idx) {
+          dot.addEventListener('click', function () {
+            track.scrollTo({ left: idx * vpWidth(), behavior: 'smooth' });
+          });
+        })(i);
+        dotsWrap.appendChild(dot);
+      }
+    }
+
+    function updateDots() {
+      if (!dotsWrap) return;
+      var w = vpWidth() || 1;
+      var activeIdx = Math.round(track.scrollLeft / w);
+      qsa('.reviews__dot', dotsWrap).forEach(function (d, i) {
+        d.classList.toggle('reviews__dot--active', i === activeIdx);
       });
     }
-    if (nextBtn) {
-      nextBtn.addEventListener('click', function () {
-        track.scrollBy({ left: cardWidth(), behavior: 'smooth' });
-      });
-    }
+
+    if (prevBtn) prevBtn.addEventListener('click', function () {
+      track.scrollBy({ left: -vpWidth(), behavior: 'smooth' });
+    });
+    if (nextBtn) nextBtn.addEventListener('click', function () {
+      track.scrollBy({ left: vpWidth(), behavior: 'smooth' });
+    });
+
+    track.addEventListener('scroll', updateDots, { passive: true });
+    setTimeout(buildDots, 150);
   }
 
   /* ============================================================
