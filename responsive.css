@@ -12,19 +12,19 @@
 
   /* — Redefine font-size tokens — */
   :root {
-    --font-size-h1:   64px;
-    --font-size-h2:   48px;
-    --font-size-h3:   36px;
-    --font-size-h4:   28px;
-    --font-size-h5:   22px;
-    --font-size-h6:   17px;
+    --font-size-h1: 64px;
+    --font-size-h2: 48px;
+    --font-size-h3: 36px;
+    --font-size-h4: 28px;
+    --font-size-h5: 22px;
+    --font-size-h6: 17px;
     --font-size-body: 17px;
 
-    --section-pad-y:    72px;
+    --section-pad-y: 72px;
     --section-pad-y-sm: 48px;
     --container-gutter: 32px;
-    --gap-80:  56px;
-    --gap-96:  72px;
+    --gap-80: 56px;
+    --gap-96: 72px;
     --gap-120: 88px;
   }
 
@@ -146,8 +146,8 @@
 
   /* Footer */
   .footer__top {
-    gap:        var(--gap-48);
-    flex-wrap:  wrap;
+    gap: var(--gap-48);
+    flex-wrap: wrap;
   }
 
   .footer__brand {
@@ -156,7 +156,7 @@
 
   .footer__nav {
     flex: 0 0 100%;
-    gap:  var(--gap-32);
+    gap: var(--gap-32);
   }
 
   /* Press */
@@ -172,24 +172,24 @@
 
   /* — Redefine font-size tokens — */
   :root {
-    --font-size-h1:   48px;
-    --font-size-h2:   36px;
-    --font-size-h3:   28px;
-    --font-size-h4:   24px;
-    --font-size-h5:   20px;
-    --font-size-h6:   16px;
+    --font-size-h1: 48px;
+    --font-size-h2: 36px;
+    --font-size-h3: 28px;
+    --font-size-h4: 24px;
+    --font-size-h5: 20px;
+    --font-size-h6: 16px;
     --font-size-body: 16px;
     --font-size-body-sm: 15px;
 
-    --section-pad-y:    56px;
+    --section-pad-y: 56px;
     --section-pad-y-sm: 40px;
     --container-gutter: 20px;
 
-    --gap-48:  40px;
-    --gap-56:  44px;
-    --gap-64:  48px;
-    --gap-80:  48px;
-    --gap-96:  56px;
+    --gap-48: 40px;
+    --gap-56: 44px;
+    --gap-64: 48px;
+    --gap-80: 48px;
+    --gap-96: 56px;
     --gap-120: 72px;
   }
 
@@ -227,12 +227,20 @@
   }
 
   /* ---- Hero ---- */
+  .hero {
+    align-items: flex-end;
+    padding-bottom: 60px;
+  }
+
   .hero__content {
     gap: var(--gap-20);
+    padding-top: 0;
+    align-items: flex-start;
+    text-align: left;
   }
 
   .hero__heading {
-    font-size:      var(--font-size-h1);
+    font-size: var(--font-size-h1);
     letter-spacing: -1px;
   }
 
@@ -241,9 +249,13 @@
     max-width: 320px;
   }
 
+  .hero__scroll-cue {
+    bottom: 24px;
+  }
+
   /* ---- Product Explore ---- */
   .product-explore {
-    padding-top:    var(--section-pad-y);
+    padding-top: var(--section-pad-y);
     padding-bottom: var(--section-pad-y);
   }
 
@@ -261,7 +273,7 @@
   }
 
   .manifesto__heading {
-    font-size:      var(--font-size-h2);
+    font-size: var(--font-size-h2);
     letter-spacing: -0.5px;
   }
 
@@ -272,11 +284,11 @@
   /* ---- Mission ---- */
   .mission__inner {
     flex-direction: column;
-    gap:            var(--gap-40);
+    gap: var(--gap-40);
   }
 
   .mission__visual {
-    flex:  none;
+    flex: none;
     width: 100%;
   }
 
@@ -298,13 +310,13 @@
 
   /* ---- Story Blocks ---- */
   .story-block {
-    padding-top:    var(--gap-56);
+    padding-top: var(--gap-56);
     padding-bottom: var(--gap-56);
   }
 
   .story-block__inner {
     flex-direction: column;
-    gap:            var(--gap-32);
+    gap: var(--gap-32);
   }
 
   .story-block--right .story-block__inner {
@@ -312,7 +324,7 @@
   }
 
   .story-block__visual {
-    flex:  none;
+    flex: none;
     width: 100%;
   }
 
@@ -351,7 +363,7 @@
   }
 
   .lifestyle__stack .lifestyle__item {
-    flex:   1;
+    flex: 1;
     height: 200px;
   }
 
@@ -385,7 +397,7 @@
   /* ---- Recipes ---- */
   .recipes__grid {
     grid-template-columns: repeat(2, 1fr);
-    gap:                   var(--gap-16);
+    gap: var(--gap-16);
   }
 
   .recipe-card__img {
@@ -400,10 +412,10 @@
 
   /* ---- Recipe Modal ---- */
   .recipe-modal__panel {
-    width:      100%;
-    max-width:  100%;
+    width: 100%;
+    max-width: 100%;
     max-height: 100vh;
-    height:     100%;
+    height: 100%;
     overflow-y: auto;
   }
 
@@ -413,18 +425,18 @@
 
   .recipe-modal__body {
     padding: var(--gap-24);
-    gap:     var(--gap-24);
+    gap: var(--gap-24);
   }
 
   .recipe-modal__cols {
     flex-direction: column;
-    gap:            var(--gap-24);
+    gap: var(--gap-24);
   }
 
   /* ---- Reviews ---- */
   .reviews__grid {
     grid-template-columns: 1fr;
-    gap:                   var(--gap-16);
+    gap: var(--gap-16);
   }
 
   /* ---- Press ---- */
@@ -433,7 +445,7 @@
   }
 
   .press__logo-item {
-    flex:      0 0 calc(33.333% - var(--gap-20));
+    flex: 0 0 calc(33.333% - var(--gap-20));
     min-width: 80px;
   }
 
@@ -443,7 +455,7 @@
   }
 
   .email-capture__divider {
-    width:  100%;
+    width: 100%;
     height: 1px;
   }
 
@@ -455,19 +467,33 @@
     font-size: var(--font-size-h2);
   }
 
+  .email-capture__form {
+    width: 100%;
+  }
+
   .email-capture__field {
     flex-direction: column;
-    gap:            var(--gap-12);
+    gap: var(--gap-12);
+    width: 100%;
   }
 
   .email-capture__input {
     width: 100%;
+    height: 52px;
+    font-size: 16px;
+    padding: 12px 24px;
+  }
+
+  .email-capture__field .btn {
+    width: 100%;
+    height: 52px;
+    padding: 0 24px;
   }
 
   /* ---- Footer ---- */
   .footer__top {
     flex-direction: column;
-    gap:            var(--gap-40);
+    gap: var(--gap-40);
   }
 
   .footer__brand {
@@ -476,7 +502,7 @@
 
   .footer__nav {
     flex-wrap: wrap;
-    gap:       var(--gap-32);
+    gap: var(--gap-32);
   }
 
   .footer__nav-col {
@@ -485,8 +511,8 @@
 
   .footer__bottom {
     flex-direction: column;
-    align-items:    flex-start;
-    gap:            var(--gap-16);
+    align-items: flex-start;
+    gap: var(--gap-16);
   }
 
   /* ---- Section Header ---- */
@@ -515,34 +541,34 @@
 
   /* ---- Cart Popup ---- */
   .cart-popup {
-    width:  calc(100% - 32px);
-    left:   16px;
-    right:  16px;
+    width: calc(100% - 32px);
+    left: 16px;
+    right: 16px;
     bottom: 16px;
   }
 }
 
 /* ---- Search Drawer ---- */
-  .search-drawer__panel {
-    padding: var(--gap-64) var(--container-gutter);
-    padding-top: calc(var(--header-h) + var(--gap-32));
-  }
+.search-drawer__panel {
+  padding: var(--gap-64) var(--container-gutter);
+  padding-top: calc(var(--header-h) + var(--gap-32));
+}
 
-  .search-drawer__label {
-    font-size: var(--font-size-h5);
-  }
+.search-drawer__label {
+  font-size: var(--font-size-h5);
+}
 
-  /* ---- Cart Drawer ---- */
-  .cart-drawer__panel {
-    width: 360px;
-  }
+/* ---- Cart Drawer ---- */
+.cart-drawer__panel {
+  width: 360px;
+}
 
-  /* ---- Cart Popup ---- */
-  .cart-popup {
-    width: 280px;
-    bottom: 16px;
-    right:  16px;
-  }
+/* ---- Cart Popup ---- */
+.cart-popup {
+  width: 280px;
+  bottom: 16px;
+  right: 16px;
+}
 
 /* ============================================================
    SMALL MOBILE — max-width: 480px
@@ -551,21 +577,21 @@
 
   /* — Redefine critical font-size tokens — */
   :root {
-    --font-size-h1:   40px;
-    --font-size-h2:   30px;
-    --font-size-h3:   24px;
-    --font-size-h4:   20px;
-    --font-size-h5:   18px;
+    --font-size-h1: 40px;
+    --font-size-h2: 30px;
+    --font-size-h3: 24px;
+    --font-size-h4: 20px;
+    --font-size-h5: 18px;
     --font-size-body: 15px;
     --font-size-body-sm: 14px;
 
-    --section-pad-y:    44px;
+    --section-pad-y: 44px;
     --container-gutter: 16px;
   }
 
   /* Hero */
   .hero__heading {
-    font-size:      var(--font-size-h1);
+    font-size: var(--font-size-h1);
     letter-spacing: -0.5px;
   }
 
@@ -611,6 +637,11 @@
     flex: 0 0 calc(50% - var(--gap-20));
   }
 
+  /* Brand Intro heading stays 36px on small screens */
+  .brand-intro__heading {
+    font-size: 36px;
+  }
+
   /* Story block images shorter */
   .story-block__image {
     height: 240px;
@@ -646,9 +677,9 @@
 
   /* Popup full-width on small screens */
   .cart-popup {
-    width:  calc(100% - 32px);
-    left:   16px;
-    right:  16px;
+    width: calc(100% - 32px);
+    left: 16px;
+    right: 16px;
     bottom: 16px;
   }
 }

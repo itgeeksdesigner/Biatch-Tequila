@@ -816,7 +816,7 @@ p {
 }
 
 /* Hide second duplicate track on desktop */
-.trust-bar__track + .trust-bar__track {
+.trust-bar__track+.trust-bar__track {
   display: none;
 }
 
@@ -1923,7 +1923,7 @@ p {
 
 .recipe-card__img {
   width: 100%;
-  height: 200px;
+  height: 280px;
   object-fit: cover;
   object-position: center;
   display: block;
@@ -2068,7 +2068,9 @@ p {
   transition: color var(--trans-fast);
 }
 
-.recipe-modal__close:hover { color: var(--color-black); }
+.recipe-modal__close:hover {
+  color: var(--color-black);
+}
 
 .recipe-modal__body {
   display: flex;
@@ -2596,7 +2598,7 @@ p {
 
 .email-capture__input {
   flex: 1;
-  height: 48px;
+  height: 55px;
   background-color: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.15);
   color: var(--color-white);
@@ -3248,14 +3250,23 @@ body.is-locked {
    ============================================================ */
 @media (max-width: 768px) {
 
-  :root { --header-h: 64px; }
+  :root {
+    --header-h: 64px;
+  }
 
   /* Hide desktop-only rows */
-  .header__social  { display: none !important; }
-  .header__nav-row { display: none !important; }
+  .header__social {
+    display: none !important;
+  }
+
+  .header__nav-row {
+    display: none !important;
+  }
 
   /* Top bar: hamburger left | logo center (absolute) | icons right */
-  .header__top { border-bottom: none; }
+  .header__top {
+    border-bottom: none;
+  }
 
   .header__top-inner {
     position: relative;
@@ -3275,7 +3286,10 @@ body.is-locked {
     font-size: 24px;
     color: var(--color-white);
   }
-  .site-header--scrolled .header__menu-toggle { color: var(--color-black); }
+
+  .site-header--scrolled .header__menu-toggle {
+    color: var(--color-black);
+  }
 
   /* Logo — centered absolutely so it doesn't depend on siblings */
   .header__logo {
@@ -3284,7 +3298,10 @@ body.is-locked {
     transform: translateX(-50%);
     z-index: 1;
   }
-  .header__logo-img { height: 38px; }
+
+  .header__logo-img {
+    height: 38px;
+  }
 
   /* Actions — flex-end, no stretching, all 3 icons always visible */
   .header__actions {
@@ -3293,6 +3310,7 @@ body.is-locked {
     align-items: center;
     gap: 0;
   }
+
   .header__actions .header__action-btn {
     display: flex !important;
     width: 36px;
@@ -3300,7 +3318,10 @@ body.is-locked {
     font-size: 20px;
     color: var(--color-white);
   }
-  .site-header--scrolled .header__actions .header__action-btn { color: var(--color-black); }
+
+  .site-header--scrolled .header__actions .header__action-btn {
+    color: var(--color-black);
+  }
 
   /* ── Recipe modal on mobile ── */
   .recipe-modal {
@@ -3466,7 +3487,9 @@ body.is-locked {
   }
 
   /* ── Trust bar ticker on mobile ── */
-  .trust-bar { padding: 14px 0; }
+  .trust-bar {
+    padding: 14px 0;
+  }
 
   .trust-bar__inner {
     overflow: hidden;
@@ -3485,13 +3508,19 @@ body.is-locked {
     animation: trust-ticker 18s linear infinite;
   }
 
-  .trust-bar__track + .trust-bar__track {
-    display: flex; /* show duplicate for seamless loop */
+  .trust-bar__track+.trust-bar__track {
+    display: flex;
+    /* show duplicate for seamless loop */
   }
 
   @keyframes trust-ticker {
-    from { transform: translateX(0); }
-    to   { transform: translateX(-100%); }
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-100%);
+    }
   }
 
   /* Cart badge */
@@ -3504,7 +3533,9 @@ body.is-locked {
   }
 
   /* ── Reviews ── */
-  .reviews__carousel { gap: 8px; }
+  .reviews__carousel {
+    gap: 8px;
+  }
 
   .reviews__arrow {
     width: 36px;
