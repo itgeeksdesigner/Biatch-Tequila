@@ -439,6 +439,14 @@
     gap: var(--gap-16);
   }
 
+  .reviews__dots {
+    margin-bottom: 24px;
+  }
+
+  .reviews__head {
+    margin-bottom: 28px;
+  }
+
   /* ---- Press ---- */
   .press__strip {
     gap: var(--gap-20);
