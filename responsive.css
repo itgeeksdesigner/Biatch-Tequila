@@ -163,6 +163,23 @@
   .press__logo-item {
     min-width: 100px;
   }
+
+  /* ---- PDP Tablet ---- */
+  .pdp-hero__inner {
+    gap: 40px;
+  }
+
+  .pdp-related__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pdp-lounge__card {
+    flex: 0 0 calc(33.333% - 16px);
+  }
+
+  .pdp-ugc__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* ============================================================
@@ -227,14 +244,13 @@
   }
 
   /* ---- Hero ---- */
-  .hero {
+  .hero__slide {
     align-items: flex-end;
     padding-bottom: 60px;
   }
 
   .hero__content {
-    gap: var(--gap-20);
-    padding-top: 0;
+    gap: var(--gap-12);
     align-items: flex-start;
     text-align: left;
   }
@@ -554,6 +570,110 @@
     right: 16px;
     bottom: 16px;
   }
+
+  /* ---- PDP Mobile ---- */
+  .pdp-hero {
+    padding-top: 24px;
+    padding-bottom: 40px;
+  }
+
+  .pdp-hero__inner {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .pdp-hero__gallery {
+    flex: none;
+    max-width: 100%;
+  }
+
+  .pdp-hero__main-image {
+    padding: 20px;
+    aspect-ratio: auto;
+  }
+
+  .pdp-hero__img {
+    max-height: 360px;
+  }
+
+  .pdp-hero__title {
+    font-size: var(--font-size-h4);
+  }
+
+  .pdp-hero__actions {
+    flex-direction: column;
+  }
+
+  .pdp-hero__variants {
+    flex-wrap: wrap;
+  }
+
+  .pdp-awards__inner {
+    gap: 32px;
+  }
+
+  .pdp-awards__badge-img {
+    max-height: 120px;
+  }
+
+  .pdp-reviews__heading {
+    font-size: var(--font-size-h4);
+  }
+
+  .pdp-review-card {
+    flex: 0 0 calc(100% - 4px);
+  }
+
+  .pdp-review-card {
+    padding: 24px;
+  }
+
+  .pdp-related__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .pdp-related__banner {
+    padding: 28px 0;
+  }
+
+  .pdp-related__heading {
+    font-size: var(--font-size-h4);
+  }
+
+  .pdp-related__card-body {
+    padding: 14px;
+  }
+
+  .pdp-lounge__card {
+    flex: 0 0 calc(75% - 12px);
+    min-width: 220px;
+  }
+
+  .pdp-ugc__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .pdp-ugc__heading {
+    font-size: var(--font-size-h4);
+  }
+
+  .pdp-lifestyle__banner {
+    max-height: 300px;
+  }
+
+  .pdp-signup__split {
+    flex-direction: column;
+  }
+
+  .pdp-signup__panel {
+    padding: 48px 24px;
+  }
+
+  .pdp-signup__heading {
+    font-size: var(--font-size-h5);
+  }
 }
 
 /* ---- Search Drawer ---- */
@@ -564,6 +684,11 @@
 
 .search-drawer__label {
   font-size: var(--font-size-h5);
+}
+
+.search-drawer__featured-grid {
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--gap-12);
 }
 
 /* ---- Cart Drawer ---- */

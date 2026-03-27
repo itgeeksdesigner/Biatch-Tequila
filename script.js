@@ -186,6 +186,25 @@
           if (!isFlipped) card.classList.add('is-flipped');
         }
       }, { passive: true });
+
+      // Close button on back face
+      var closeBtn = qs('.product-card__close-btn', card);
+      if (closeBtn) {
+        closeBtn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          card.classList.remove('is-flipped');
+        });
+      }
+
+      // Flip hint button on front
+      var flipHint = qs('.product-card__flip-hint', card);
+      if (flipHint) {
+        flipHint.addEventListener('click', function (e) {
+          e.stopPropagation();
+          cards.forEach(function (c) { c.classList.remove('is-flipped'); });
+          card.classList.add('is-flipped');
+        });
+      }
     });
   }
 
@@ -201,6 +220,8 @@
     var metaEl       = qs('#modalMeta');
     var ingredList   = qs('#modalIngredients');
     var instructList = qs('#modalInstructions');
+    var videoWrap    = qs('#modalVideoWrap');
+    var videoEl      = qs('#modalVideo');
     var cards        = qsa('.recipe-card');
 
     if (!modal || !cards.length) return;
@@ -211,6 +232,7 @@
       var spirit       = card.getAttribute('data-spirit') || '';
       var time         = card.getAttribute('data-time') || '';
       var servings     = card.getAttribute('data-servings') || '';
+      var videoSrc     = card.getAttribute('data-video') || '';
       var ingredients  = JSON.parse(card.getAttribute('data-ingredients') || '[]');
       var instructions = JSON.parse(card.getAttribute('data-instructions') || '[]');
 
@@ -227,6 +249,15 @@
         return '<li>' + step + '</li>';
       }).join('');
 
+      // Video
+      if (videoSrc && videoEl && videoWrap) {
+        videoEl.src = videoSrc;
+        videoWrap.style.display = 'block';
+        videoEl.play();
+      } else if (videoWrap) {
+        videoWrap.style.display = 'none';
+      }
+
       modal.classList.add('is-open');
       modal.setAttribute('aria-hidden', 'false');
       document.body.classList.add('is-locked');
@@ -239,6 +270,15 @@
       modal.classList.remove('is-open');
       modal.setAttribute('aria-hidden', 'true');
       document.body.classList.remove('is-locked');
+
+      // Stop video
+      if (videoEl) {
+        videoEl.pause();
+        videoEl.src = '';
+      }
+      if (videoWrap) {
+        videoWrap.style.display = 'none';
+      }
     }
 
     cards.forEach(function (card) {
@@ -468,53 +508,39 @@
   }
 
   /* ============================================================
-     11. CART POPUP — timed welcome notification
+     11. AGE VERIFICATION GATE
      ============================================================ */
-  function initCartPopup() {
-    var popup    = qs('#cartPopup');
-    var closeBtn = qs('#cartPopupClose');
-    var ctaBtn   = qs('#cartPopupCta');
+  function initAgeGate() {
+    var gate = qs('#ageGate');
+    var yesBtn = qs('#ageYes');
+    var noBtn = qs('#ageNo');
 
-    if (!popup) return;
+    if (!gate) return;
 
-    // Only show once per session
-    if (sessionStorage.getItem('biatch_popup_seen')) return;
-
-    var showTimer   = null;
-    var dismissTimer = null;
-
-    function showPopup() {
-      popup.classList.add('is-visible');
-      popup.setAttribute('aria-hidden', 'false');
-      sessionStorage.setItem('biatch_popup_seen', '1');
-
-      // Auto-dismiss after 7 seconds
-      dismissTimer = setTimeout(hidePopup, 7000);
+    // If already verified this session, hide immediately
+    if (sessionStorage.getItem('biatch_age_verified')) {
+      gate.classList.add('is-hidden');
+      gate.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('is-locked');
+      return;
     }
 
-    function hidePopup() {
-      popup.classList.remove('is-visible');
-      popup.setAttribute('aria-hidden', 'true');
-      clearTimeout(dismissTimer);
+    // Lock scroll while gate is visible
+    document.body.classList.add('is-locked');
+
+    function verifyAge() {
+      sessionStorage.setItem('biatch_age_verified', '1');
+      gate.classList.add('is-hidden');
+      gate.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('is-locked');
     }
 
-    // Show after 3.5 seconds
-    showTimer = setTimeout(showPopup, 3500);
-
-    if (closeBtn) closeBtn.addEventListener('click', hidePopup);
-
-    // Hide when CTA is clicked
-    if (ctaBtn) {
-      ctaBtn.addEventListener('click', function () {
-        hidePopup();
-      });
+    function denyAge() {
+      window.location.href = 'https://www.google.com';
     }
 
-    // Clean up if user leaves the page quickly
-    window.addEventListener('beforeunload', function () {
-      clearTimeout(showTimer);
-      clearTimeout(dismissTimer);
-    });
+    if (yesBtn) yesBtn.addEventListener('click', verifyAge);
+    if (noBtn) noBtn.addEventListener('click', denyAge);
   }
 
   /* ============================================================
@@ -599,11 +625,112 @@
   }
 
   /* ============================================================
+     HERO CAROUSEL — auto-rotating slides
+     ============================================================ */
+  function initHeroCarousel() {
+    var slides = qsa('.hero__slide');
+    var dots = qsa('.hero__dot');
+    if (slides.length < 2) return;
+
+    var current = 0;
+    var interval = 5000; // 5 seconds per slide
+    var timer;
+
+    function goTo(index) {
+      slides[current].classList.remove('hero__slide--active');
+      dots[current].classList.remove('hero__dot--active');
+      current = (index + slides.length) % slides.length;
+      slides[current].classList.add('hero__slide--active');
+      dots[current].classList.add('hero__dot--active');
+    }
+
+    function startAuto() {
+      timer = setInterval(function () {
+        goTo(current + 1);
+      }, interval);
+    }
+
+    function resetAuto() {
+      clearInterval(timer);
+      startAuto();
+    }
+
+    dots.forEach(function (dot) {
+      dot.addEventListener('click', function () {
+        var idx = parseInt(dot.getAttribute('data-slide'), 10);
+        goTo(idx);
+        resetAuto();
+      });
+    });
+
+    startAuto();
+  }
+
+  /* ============================================================
      INIT — DOMContentLoaded
      ============================================================ */
+  /* ============================================================
+     BRAND STORY TABS
+     ============================================================ */
+  function initBrandStoryTabs() {
+    var tabs = qsa('.brand-story__tab');
+    if (!tabs.length) return;
+
+    tabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        var target = tab.getAttribute('data-tab');
+
+        // Deactivate all tabs and panels
+        tabs.forEach(function (t) {
+          t.classList.remove('brand-story__tab--active');
+          t.setAttribute('aria-selected', 'false');
+        });
+        qsa('.brand-story__panel').forEach(function (p) {
+          p.classList.remove('brand-story__panel--active');
+          p.hidden = true;
+        });
+
+        // Activate clicked tab and its panel
+        tab.classList.add('brand-story__tab--active');
+        tab.setAttribute('aria-selected', 'true');
+        var panel = qs('#storyPanel-' + target);
+        if (panel) {
+          panel.classList.add('brand-story__panel--active');
+          panel.hidden = false;
+        }
+      });
+    });
+  }
+
+  /* ============================================================
+     AWARDS CAROUSEL
+     ============================================================ */
+  function initAwardsCarousel() {
+    // Use querySelectorAll since element may be inside a hidden tab
+    var carousels = qsa('.awards-carousel');
+    carousels.forEach(function (carousel) {
+      var track = qs('.awards-carousel__track', carousel);
+      var prevBtn = qs('.awards-carousel__arrow--prev', carousel);
+      var nextBtn = qs('.awards-carousel__arrow--next', carousel);
+      var scrollAmt = 200;
+
+      if (prevBtn && track) {
+        prevBtn.addEventListener('click', function () {
+          track.scrollBy({ left: -scrollAmt, behavior: 'smooth' });
+        });
+      }
+      if (nextBtn && track) {
+        nextBtn.addEventListener('click', function () {
+          track.scrollBy({ left: scrollAmt, behavior: 'smooth' });
+        });
+      }
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     initHeader();
     initMobileNav();
+    initHeroCarousel();
     initScrollReveal();
     initProductTrack();
     initRecipeModal();
@@ -614,7 +741,9 @@
     initStoryVideo();
     initSearchDrawer();
     initCartDrawer();
-    initCartPopup();
+    initAgeGate();
+    initBrandStoryTabs();
+    initAwardsCarousel();
   });
 
 })();
