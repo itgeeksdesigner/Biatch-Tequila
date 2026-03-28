@@ -976,6 +976,12 @@ p {
   margin-bottom: 36px;
 }
 
+.product-explore__heading-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
 .product-explore__nav {
   display: flex;
   gap: 10px;
@@ -1478,6 +1484,13 @@ p {
   margin-top: -8px;
 }
 
+.section__rule {
+  border: none;
+  border-top: 1px solid rgba(28, 20, 16, 0.15);
+  margin: 0;
+  width: 100%;
+}
+
 .craft__heading {
   font-family: var(--font-heading);
   font-size: var(--font-size-h2);
@@ -1748,6 +1761,17 @@ p {
 
 .curated__header {
   margin-bottom: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.curated__header .section__rule {
+  margin: 0;
+}
+
+.curated__header .section__heading {
+  margin: 0;
 }
 
 .curated__panels {
@@ -2443,13 +2467,17 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-gray-400);
+  background: var(--color-white);
+  border-radius: var(--radius-full);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  color: var(--color-black);
   font-size: 18px;
-  transition: color var(--trans-fast);
+  transition: background var(--trans-fast), color var(--trans-fast);
 }
 
 .recipe-modal__close:hover {
-  color: var(--color-black);
+  background: var(--color-black);
+  color: var(--color-white);
 }
 
 .recipe-modal__body {
@@ -2498,12 +2526,12 @@ p {
 }
 
 .recipe-modal__section-label {
-  font-family: var(--font-body);
-  font-size: 10px;
-  font-weight: var(--weight-bold);
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  color: var(--color-gold);
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: var(--weight-semibold);
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--color-black);
   margin-bottom: 10px;
 }
 
@@ -2561,6 +2589,40 @@ p {
   flex-shrink: 0;
 }
 
+/* Share & Print actions */
+.recipe-modal__actions {
+  display: flex;
+  gap: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(28, 20, 16, 0.1);
+}
+
+.recipe-modal__action-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  border: 1px solid var(--color-black);
+  background: transparent;
+  color: var(--color-black);
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: var(--weight-semibold);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background var(--trans-fast), color var(--trans-fast);
+}
+
+.recipe-modal__action-btn:hover {
+  background: var(--color-black);
+  color: var(--color-white);
+}
+
+.recipe-modal__action-btn i {
+  font-size: 16px;
+}
+
 /* ============================================================
    SECTION 9 — REVIEWS
    ============================================================ */
@@ -2605,6 +2667,11 @@ p {
 .reviews__agg-check {
   color: var(--color-gold);
   font-size: 20px;
+}
+
+.reviews__agg-check-img {
+  height: 20px;
+  width: auto;
 }
 
 /* Carousel wrapper */
@@ -2747,11 +2814,7 @@ p {
 }
 
 .review-card__meta {
-  font-size: 11px;
-  color: var(--color-gray-400);
-  display: flex;
-  align-items: center;
-  gap: 5px;
+  display: none;
 }
 
 .review-card__vdot {

@@ -309,6 +309,32 @@
     if (ctaBtn) {
       ctaBtn.addEventListener('click', closeModal);
     }
+
+    // Share button
+    var shareBtn = qs('#modalShare');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', function () {
+        var title = titleEl ? titleEl.textContent : 'BIATCH Recipe';
+        if (navigator.share) {
+          navigator.share({ title: title, text: 'Check out this recipe: ' + title, url: window.location.href });
+        } else {
+          navigator.clipboard.writeText(window.location.href).then(function () {
+            shareBtn.innerHTML = '<i class="ph ph-check"></i> Copied!';
+            setTimeout(function () {
+              shareBtn.innerHTML = '<i class="ph ph-share-network"></i> Share';
+            }, 2000);
+          });
+        }
+      });
+    }
+
+    // Print button
+    var printBtn = qs('#modalPrint');
+    if (printBtn) {
+      printBtn.addEventListener('click', function () {
+        window.print();
+      });
+    }
   }
 
   /* ============================================================
@@ -564,7 +590,8 @@
       dotsWrap.innerHTML = '';
       var vp = qs('.reviews__viewport');
       if (!vp || !track.scrollWidth) return;
-      var pages = Math.max(1, Math.ceil(track.scrollWidth / vp.offsetWidth));
+      var maxScroll = track.scrollWidth - vp.offsetWidth;
+      var pages = Math.max(1, Math.ceil(maxScroll / vp.offsetWidth) + 1);
       for (var i = 0; i < pages; i++) {
         var dot = document.createElement('span');
         dot.className = 'reviews__dot' + (i === 0 ? ' reviews__dot--active' : '');
@@ -587,10 +614,13 @@
     }
 
     if (prevBtn) prevBtn.addEventListener('click', function () {
-      track.scrollBy({ left: -vpWidth(), behavior: 'smooth' });
+      var newLeft = Math.max(0, track.scrollLeft - vpWidth());
+      track.scrollTo({ left: newLeft, behavior: 'smooth' });
     });
     if (nextBtn) nextBtn.addEventListener('click', function () {
-      track.scrollBy({ left: vpWidth(), behavior: 'smooth' });
+      var maxScroll = track.scrollWidth - track.clientWidth;
+      var newLeft = Math.min(maxScroll, track.scrollLeft + vpWidth());
+      track.scrollTo({ left: newLeft, behavior: 'smooth' });
     });
 
     track.addEventListener('scroll', updateDots, { passive: true });
