@@ -702,20 +702,9 @@
     height: 40px;
   }
 
-  /* Reorder: brand(1) → social icons → bottom-links(2) → contact(3) → care(4) */
+  /* Reorder: brand(1) → bottom-links(2) → contact(3) → care(4) */
   .footer-col-brand {
     order: 1;
-  }
-
-  .footer-bottom-row {
-    order: 2;
-    flex-direction: column;
-    gap: 8px;
-    align-items: center;
-    text-align: center;
-    border-top: none;
-    padding: 20px 0;
-    width: 100%;
   }
 
   .footer-col-contact {
@@ -731,44 +720,48 @@
     align-items: center;
     text-align: center;
     padding: 28px 0 20px;
-    gap: 8px;
+    gap: 12px;
   }
 
   .footer-col-contact h5,
   .footer-col-care h5 {
     font-size: 16px;
     font-weight: 700;
-    text-align: center;
-    width: 100%;
   }
 
   .footer-col address {
     font-size: 15px;
     color: var(--color-text-dark);
-    text-align: center;
   }
 
   .footer-contact-link {
     font-size: 15px;
-    text-align: center;
   }
 
   .footer-links-list {
     gap: 6px;
-    align-items: center;
   }
 
   .footer-links-list a {
     font-size: 15px;
+  }
+
+  .footer-bottom-row {
+    order: 2;
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;
     text-align: center;
+    border-top: none;
+    padding: 10px 0 20px;
   }
 
   .footer-bottom-left {
     flex-direction: column;
-    gap: 8px;
-    align-items: center;
+    gap: 6px;
   }
 
+  .footer-bottom-left,
   .footer-bottom-center,
   .footer-bottom-right {
     align-items: center;
@@ -776,7 +769,6 @@
 
   .footer-bottom-row a {
     font-size: 14px;
-    text-align: center;
   }
 
   .footer-copyright {
