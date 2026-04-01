@@ -56,15 +56,15 @@
 
       <!-- Icons (right) -->
       <div class="header-icons">
-        <button aria-label="Search">
+        <button class="search-toggle" aria-label="Search">
           <i class="ph ph-magnifying-glass"></i>
         </button>
         <a href="#" class="header-account-link" aria-label="Account">
           <i class="ph ph-user"></i>
         </a>
-        <a href="#" aria-label="Cart">
+        <button class="cart-toggle" aria-label="Cart">
           <i class="ph ph-bag"></i>
-        </a>
+        </button>
       </div>
     </div>
     <div class="header-gradient-bar"></div>
@@ -76,7 +76,7 @@
   <!-- Mobile Drawer -->
   <nav class="mobile-drawer">
     <div class="drawer-header">
-      <img src="https://placehold.co/140x40/D8A728/FFFFFF?text=BIATCH" alt="BIATCH Logo">
+      <img src="images/biatch-logo (1).png" alt="BIATCH Logo" class="drawer-logo">
       <button class="drawer-close" aria-label="Close Menu">
         <i class="ph ph-x"></i>
       </button>
@@ -94,6 +94,63 @@
       <a href="#recipes">Sips &amp; Recipes</a>
     </div>
   </nav>
+
+  <!-- Search Drawer -->
+  <div class="search-drawer">
+    <div class="search-drawer-close-row">
+      <button class="search-drawer-close" aria-label="Close search">
+        <i class="ph ph-x"></i>
+      </button>
+    </div>
+    <h4 class="search-drawer-title">What are you looking for?</h4>
+    <div class="search-drawer-input">
+      <i class="ph ph-magnifying-glass"></i>
+      <input type="text" placeholder="Search tequila, gifts, cocktails...">
+      <button class="search-drawer-btn">SEARCH</button>
+    </div>
+    <div class="search-divider"></div>
+    <div class="search-popular">
+      <span class="search-popular-label">POPULAR SEARCHES</span>
+      <div class="search-popular-tags">
+        <a href="#" class="search-tag">Blanco</a>
+        <a href="#" class="search-tag">Reposado</a>
+        <a href="#" class="search-tag">Gift Sets</a>
+        <a href="#" class="search-tag">Cocktail Recipes</a>
+        <a href="#" class="search-tag">Extra Añejo</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart Drawer -->
+  <div class="cart-drawer">
+    <div class="cart-drawer-header">
+      <div class="cart-drawer-title-row">
+        <span class="cart-drawer-title">Your Cart</span>
+        <span class="cart-drawer-count">0 ITEMS</span>
+      </div>
+      <button class="cart-drawer-close" aria-label="Close cart">
+        <i class="ph ph-x"></i>
+      </button>
+    </div>
+    <div class="cart-drawer-body">
+      <div class="cart-empty">
+        <div class="cart-empty-icon">
+          <img src="images/icon-bottle.png" alt="Bottle icon" class="cart-bottle-icon">
+        </div>
+        <p class="cart-empty-title">Your cart is empty</p>
+        <p class="cart-empty-text">Discover your next bold pour.</p>
+        <a href="#products" class="cart-shop-btn">SHOP THE COLLECTION</a>
+      </div>
+    </div>
+    <div class="cart-drawer-footer">
+      <div class="cart-subtotal">
+        <span>SUBTOTAL</span>
+        <span>$0.00</span>
+      </div>
+      <button class="btn-primary cart-checkout-btn">PROCEED TO CHECKOUT</button>
+      <p class="cart-shipping-msg"><i class="ph-fill ph-circle"></i> Free shipping on orders over $75</p>
+    </div>
+  </div>
 
   <!-- ============================================
        SECTION 1: HERO SLIDESHOW
