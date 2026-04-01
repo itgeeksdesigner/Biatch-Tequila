@@ -371,14 +371,22 @@
     border-radius: var(--radius-sm);
   }
 
-  .awards-slider {
-    gap: var(--spacing-xl);
-    justify-content: flex-start;
-    padding: 0;
+  .awards-slider-wrap {
+    padding: var(--spacing-md) 0 0;
   }
 
-  .awards-slider img {
-    height: 74px;
+  .awards-arrow {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+  }
+
+  .awards-track {
+    gap: var(--spacing-md);
+  }
+
+  .awards-track img {
+    height: 64px;
   }
 
   /* Multicolumn — horizontal slider on mobile */
@@ -434,18 +442,19 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
-    padding: var(--spacing-md) var(--spacing-sm);
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    padding: var(--spacing-lg) var(--spacing-md);
   }
 
   .sightings-overlay-stats {
-    color: rgba(255, 255, 255, 0.85);
-    font-size: 12px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 15px;
+    gap: var(--spacing-md);
   }
 
   .sightings-overlay-title {
     color: #ffffff;
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 700;
   }
 

@@ -236,22 +236,53 @@ document.addEventListener('DOMContentLoaded', function () {
 
   window.addEventListener('resize', updateReviewCarousel);
 
-  /* ── REVIEWS BADGES AUTO-SLIDE (Mobile) ── */
-  var badgesTrack = document.querySelector('.reviews-badges-track');
-  var badgesGroups = document.querySelectorAll('.reviews-badges-group');
-  var badgesIndex = 0;
+  /* ── AWARDS BADGES SLIDER ── */
+  var awardsTrack = document.querySelector('.awards-track');
+  var awardsBadges = awardsTrack ? awardsTrack.querySelectorAll('img') : [];
+  var awardsPrev = document.querySelector('.awards-prev');
+  var awardsNext = document.querySelector('.awards-next');
+  var awardsIndex = 0;
 
-  function autoSlideBadges() {
-    if (!badgesTrack || badgesGroups.length < 2) return;
-    if (window.innerWidth > 768) {
-      badgesTrack.style.transform = 'translateX(0)';
-      return;
-    }
-    badgesIndex = (badgesIndex + 1) % badgesGroups.length;
-    badgesTrack.style.transform = 'translateX(-' + (badgesIndex * 100) + '%)';
+  function getAwardsMaxIndex() {
+    if (!awardsTrack || awardsBadges.length === 0) return 0;
+    var badgeWidth = awardsBadges[0].offsetWidth;
+    var gap = parseInt(getComputedStyle(awardsTrack).gap) || 16;
+    var visibleWidth = awardsTrack.parentElement.offsetWidth;
+    var visibleCount = Math.floor((visibleWidth + gap) / (badgeWidth + gap));
+    return Math.max(0, awardsBadges.length - visibleCount);
   }
 
-  setInterval(autoSlideBadges, 3000);
+  function updateAwardsSlider() {
+    if (!awardsTrack || awardsBadges.length === 0) return;
+    var badgeWidth = awardsBadges[0].offsetWidth;
+    var gap = parseInt(getComputedStyle(awardsTrack).gap) || 16;
+    var offset = awardsIndex * (badgeWidth + gap);
+    awardsTrack.style.transform = 'translateX(-' + offset + 'px)';
+  }
+
+  if (awardsPrev) {
+    awardsPrev.addEventListener('click', function () {
+      awardsIndex = Math.max(0, awardsIndex - 1);
+      updateAwardsSlider();
+    });
+  }
+
+  if (awardsNext) {
+    awardsNext.addEventListener('click', function () {
+      var maxIdx = getAwardsMaxIndex();
+      awardsIndex = Math.min(maxIdx, awardsIndex + 1);
+      updateAwardsSlider();
+    });
+  }
+
+  /* Auto-slide every 3s */
+  setInterval(function () {
+    if (!awardsTrack || awardsBadges.length === 0) return;
+    var maxIdx = getAwardsMaxIndex();
+    if (maxIdx <= 0) return;
+    awardsIndex = awardsIndex >= maxIdx ? 0 : awardsIndex + 1;
+    updateAwardsSlider();
+  }, 3000);
 
   /* ── PRODUCT SLIDER CONTROLS (Mobile) ── */
   const productsGrid = document.querySelector('.products-grid');
