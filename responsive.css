@@ -702,66 +702,78 @@
     height: 40px;
   }
 
-  /* Reorder: brand(1) → bottom-links(2) → contact(3) → care(4) */
+  /* Reorder: brand(1) → contact(2) → care(3) → bottom-links(4 last) */
   .footer-col-brand {
     order: 1;
+    width: 100%;
   }
 
   .footer-col-contact {
-    order: 3;
+    order: 2;
     align-items: center;
     text-align: center;
     padding: 28px 0;
-    gap: 20px;
+    gap: 16px;
+    width: 100%;
   }
 
   .footer-col-care {
-    order: 4;
+    order: 3;
     align-items: center;
     text-align: center;
-    padding: 28px 0 20px;
-    gap: 12px;
+    padding: 20px 0;
+    gap: 6px;
+    width: 100%;
   }
 
   .footer-col-contact h5,
   .footer-col-care h5 {
     font-size: 16px;
     font-weight: 700;
+    text-align: center;
   }
 
   .footer-col address {
     font-size: 15px;
     color: var(--color-text-dark);
+    text-align: center;
   }
 
   .footer-contact-link {
     font-size: 15px;
+    text-align: center;
+    display: block;
   }
 
   .footer-links-list {
     gap: 6px;
+    align-items: center;
+    width: 100%;
   }
 
   .footer-links-list a {
     font-size: 15px;
+    text-align: center;
+    display: block;
   }
 
   .footer-bottom-row {
-    order: 2;
+    order: 4;
     flex-direction: column;
     gap: 6px;
     align-items: center;
     text-align: center;
     border-top: none;
-    padding: 10px 0 20px;
+    padding: 20px 0;
+    width: 100%;
   }
 
   .footer-bottom-left {
     flex-direction: column;
     gap: 6px;
+    align-items: center;
   }
 
-  .footer-bottom-left,
   .footer-bottom-center,
   .footer-bottom-right {
     align-items: center;
@@ -769,6 +781,7 @@
 
   .footer-bottom-row a {
     font-size: 14px;
+    text-align: center;
   }
 
   .footer-copyright {

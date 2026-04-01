@@ -1029,7 +1029,9 @@ section {
 }
 
 .mission-stat .stat-number {
-  font-size: var(--font-size-h3);
+  font-family: var(--font-heading-serif);
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-regular);
   color: var(--color-primary-gold);
 }
 
