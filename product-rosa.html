@@ -1,663 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description"
-    content="Rosa Blanco Premium Tequila — Unexpected, dazzling, versatile. 100% Blue Weber Agave from Jalisco, México." />
-  <title>Rosa Blanco Premium Tequila | BIATCH Tequila</title>
-  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BIATCH Rosa Tequila — A smooth, floral premium tequila made for women, by women.">
+  <title>BIATCH Rosa Tequila — Premium Pink Tequila</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
 
   <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Jost:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Kaisei+Tokumin:wght@400;500;700&display=swap" rel="stylesheet">
 
   <!-- Phosphor Icons -->
-  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="responsive.css" />
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="product.css">
+  <link rel="stylesheet" href="responsive.css">
 </head>
-
 <body>
 
-  <!-- ============================================================
-       ANNOUNCEMENT BAR
-  ============================================================ -->
-  <div class="announcement-bar">
-    <div class="container">
-      <p class="announcement-bar__text">Free Shipping on orders over $100!</p>
-    </div>
-  </div>
-
-  <!-- ============================================================
-       HEADER
-  ============================================================ -->
-  <header class="site-header site-header--solid" id="siteHeader">
-    <div class="header__top">
-      <div class="container header__top-inner">
-        <button class="header__menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false"
-          aria-controls="mobileNav">
+  <!-- HEADER (Same as index) -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="header-logo">
+        <img src="https://placehold.co/180x50/D8A728/FFFFFF?text=BIATCH+Tequila" alt="BIATCH Tequila Logo">
+      </a>
+      <nav class="header-nav">
+        <a href="index.html#products">Products</a>
+        <a href="index.html#mission">How She's Made</a>
+        <a href="index.html#founder">About Us</a>
+        <a href="index.html#recipes">Sips &amp; Recipes</a>
+      </nav>
+      <div class="header-icons">
+        <button class="hamburger-btn" aria-label="Open Menu">
           <i class="ph ph-list"></i>
         </button>
-        <div class="header__social">
-          <a href="#" class="header__social-link" aria-label="Facebook"><i class="ph ph-facebook-logo"></i></a>
-          <a href="#" class="header__social-link" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
-          <a href="#" class="header__social-link" aria-label="TikTok"><i class="ph ph-tiktok-logo"></i></a>
-        </div>
-        <a href="index.html" class="header__logo" aria-label="BIATCH Tequila Home">
-          <img src="images/biatch-logo (1).png" alt="BIATCH Tequila" class="header__logo-img" />
+        <button aria-label="Search">
+          <i class="ph ph-magnifying-glass"></i>
+        </button>
+        <a href="#" aria-label="Account">
+          <i class="ph ph-user"></i>
         </a>
-        <div class="header__actions">
-          <button class="header__action-btn" id="searchBtn" aria-label="Open search"><i
-              class="ph ph-magnifying-glass"></i></button>
-          <button class="header__action-btn" aria-label="My Account"><i class="ph ph-user"></i></button>
-          <button class="header__action-btn header__cart-btn" id="cartBtn" aria-label="Open cart">
-            <i class="ph ph-shopping-bag"></i>
-            <span class="header__cart-count" data-count="0" aria-label="0 items in cart"></span>
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="header__nav-row">
-      <div class="container">
-        <nav class="header__nav" id="desktopNav" aria-label="Main navigation">
-          <ul class="header__nav-list">
-            <li class="header__nav-item"><a href="#" class="header__nav-link">Products</a></li>
-            <li class="header__nav-item"><a href="#" class="header__nav-link">How She's Made</a></li>
-            <li class="header__nav-item"><a href="#" class="header__nav-link">About Us</a></li>
-            <li class="header__nav-item"><a href="#" class="header__nav-link">Sips &amp; Recipes</a></li>
-          </ul>
-        </nav>
+        <a href="#" aria-label="Cart">
+          <i class="ph ph-bag"></i>
+          <span class="cart-count">0</span>
+        </a>
       </div>
     </div>
   </header>
 
-  <!-- Mobile Navigation -->
-  <div class="mobile-nav" id="mobileNav" aria-hidden="true" role="dialog" aria-label="Mobile navigation">
-    <div class="mobile-nav__header">
-      <img src="images/biatch-logo (1).png" alt="BIATCH Tequila" class="mobile-nav__logo" />
-      <button class="mobile-nav__close" id="mobileNavClose" aria-label="Close navigation menu">
-        <i class="ph ph-x"></i>
-      </button>
+  <div class="drawer-overlay"></div>
+  <nav class="mobile-drawer">
+    <div class="drawer-header">
+      <img src="https://placehold.co/140x40/D8A728/FFFFFF?text=BIATCH" alt="BIATCH Logo">
+      <button class="drawer-close" aria-label="Close Menu"><i class="ph ph-x"></i></button>
     </div>
-    <ul class="mobile-nav__list">
-      <li><a href="#" class="mobile-nav__link">Shop</a></li>
-      <li><a href="#" class="mobile-nav__link">Our Story</a></li>
-      <li><a href="#" class="mobile-nav__link">Recipes</a></li>
-      <li><a href="#" class="mobile-nav__link">Events</a></li>
-      <li><a href="#" class="mobile-nav__link">Press</a></li>
-    </ul>
-    <div class="mobile-nav__footer">
-      <a href="#" class="btn btn--gold">Join the Club</a>
+    <div class="drawer-social">
+      <a href="#" aria-label="Facebook"><i class="ph ph-facebook-logo"></i></a>
+      <a href="#" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+      <a href="#" aria-label="TikTok"><i class="ph ph-tiktok-logo"></i></a>
+      <a href="#" aria-label="YouTube"><i class="ph ph-youtube-logo"></i></a>
     </div>
-  </div>
-  <div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
+    <div class="drawer-nav">
+      <a href="index.html#products">Products</a>
+      <a href="index.html#mission">How She's Made</a>
+      <a href="index.html#founder">About Us</a>
+      <a href="index.html#recipes">Sips &amp; Recipes</a>
+    </div>
+  </nav>
 
-  <main id="main-content">
-
-    <!-- ============================================================
-         SECTION 1 — PRODUCT HERO
-    ============================================================ -->
-    <section class="pdp-hero">
-      <div class="container pdp-hero__inner">
-
-        <!-- Left: Product Images -->
-        <div class="pdp-hero__gallery">
-          <div class="pdp-hero__main-image">
-            <button class="pdp-hero__zoom-btn" id="pdpZoomBtn" aria-label="Zoom image">
-              <i class="ph ph-magnifying-glass-plus"></i>
-            </button>
-            <img src="images/BIatch_750_reg_Rosa_Render3000x3000.jpg" alt="Rosa Blanco Premium Tequila bottle"
-              class="pdp-hero__img" id="pdpMainImg" />
-            <video src="" class="pdp-hero__video" id="pdpMainVideo" muted loop playsinline
-              style="display:none;"></video>
+  <!-- PRODUCT DETAIL PAGE -->
+  <section class="product-detail-section">
+    <div class="container">
+      <div class="product-detail-grid">
+        <!-- Product Images -->
+        <div class="product-detail-images">
+          <div class="product-main-image">
+            <img src="https://placehold.co/600x800/F0F0F0/999999?text=Rosa+Tequila+Main" alt="BIATCH Rosa Tequila">
           </div>
-          <div class="pdp-hero__thumbs-wrap">
-            <button class="pdp-hero__thumb-arrow pdp-hero__thumb-arrow--prev" id="thumbPrev"
-              aria-label="Previous thumbnails">&#8249;</button>
-            <div class="pdp-hero__thumbs" id="pdpThumbs">
-              <button class="pdp-hero__thumb pdp-hero__thumb--active" data-type="image"
-                data-img="images/BIatch_750_reg_Rosa_Render3000x3000.jpg" aria-label="View main bottle image">
-                <img src="images/BIatch_750_reg_Rosa_Render3000x3000.jpg" alt="Rosa Blanco bottle" />
-              </button>
-              <button class="pdp-hero__thumb" data-type="video"
-                data-video="images/3541600bed5b4f48b6d812b581222458.HD-1080p-2.5Mbps-38419037.mp4"
-                data-img="images/df522bf48c5c4d339bd6c8f862271073.thumbnail.0000000000.jpg"
-                aria-label="Play product video">
-                <img src="images/3541600bed5b4f48b6d812b581222458.thumbnail.0000000000.jpg" alt="Rosa Blanco video" />
-                <span class="pdp-hero__thumb-play"><i class="ph-fill ph-play"></i></span>
-              </button>
-              <button class="pdp-hero__thumb" data-type="image" data-img="images/SexyBIATCH.png"
-                aria-label="View lifestyle image">
-                <img src="images/SexyBIATCH.png" alt="Rosa Blanco lifestyle" />
-              </button>
-              <button class="pdp-hero__thumb" data-type="image" data-img="images/BIATCHplease.png"
-                aria-label="View cocktail image">
-                <img src="images/BIATCHplease.png" alt="Rosa Blanco cocktail" />
-              </button>
-              <button class="pdp-hero__thumb" data-type="image" data-img="images/5_RosaInPurse.jpg"
-                aria-label="View Rosa in purse image">
-                <img src="images/5_RosaInPurse.jpg" alt="Rosa Blanco in purse" />
-              </button>
-              <button class="pdp-hero__thumb" data-type="image" data-img="images/4_RosaInPool.jpg"
-                aria-label="View Rosa in pool image">
-                <img src="images/4_RosaInPool.jpg" alt="Rosa Blanco poolside" />
-              </button>
-            </div>
-            <button class="pdp-hero__thumb-arrow pdp-hero__thumb-arrow--next" id="thumbNext"
-              aria-label="Next thumbnails">&#8250;</button>
+          <div class="product-thumbnails">
+            <img src="https://placehold.co/120x160/F0F0F0/999999?text=Front" alt="Rosa Front">
+            <img src="https://placehold.co/120x160/F0F0F0/999999?text=Back" alt="Rosa Back">
+            <img src="https://placehold.co/120x160/F0F0F0/999999?text=Detail" alt="Rosa Detail">
           </div>
         </div>
 
-        <!-- Right: Product Info -->
-        <div class="pdp-hero__info">
-          <div class="pdp-hero__rating">
-            <div class="pdp-hero__stars" aria-label="4.8 out of 5 stars">
-              <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
-                class="ph-fill ph-star"></i><i class="ph-fill ph-star-half"></i>
-            </div>
-            <span class="pdp-hero__review-count">209 reviews</span>
+        <!-- Product Info -->
+        <div class="product-detail-info">
+          <h1>BIATCH Rosa Tequila</h1>
+          <p class="product-detail-price">$49.99</p>
+          <div class="product-detail-rating">
+            <span class="review-star"><i class="ph-fill ph-star"></i></span>
+            <span class="review-star"><i class="ph-fill ph-star"></i></span>
+            <span class="review-star"><i class="ph-fill ph-star"></i></span>
+            <span class="review-star"><i class="ph-fill ph-star"></i></span>
+            <span class="review-star"><i class="ph-fill ph-star-half"></i></span>
+            <span>82 reviews</span>
           </div>
-
-          <h1 class="pdp-hero__title">Rosa Blanco Premium Tequila</h1>
-          <p class="pdp-hero__tagline">Unexpected, dazzling, versatile</p>
-
-          <div class="pdp-hero__tasting">
-            <h3 class="pdp-hero__tasting-title">Tasting Notes</h3>
-            <p class="pdp-hero__tasting-desc">Rosa premium tequila is the most sought-after party guest. Her reputation
-              precedes her, known for her delicately sweet manner and bright presence. Rosa tequila has yet to meet
-              someone who she couldn't win over.</p>
-            <p class="pdp-hero__tasting-desc">Packaged in a proprietary, rose gold lip-shaped bottle with Queen's crown
-              stopper.</p>
-
-            <dl class="pdp-hero__notes">
-              <div class="pdp-hero__note-row">
-                <dt>EYE</dt>
-                <dd>Rose Gold</dd>
-              </div>
-              <div class="pdp-hero__note-row">
-                <dt>AROMA</dt>
-                <dd>Honey With Hints of Agave, Lemon, and Crisp Agave</dd>
-              </div>
-              <div class="pdp-hero__note-row">
-                <dt>PALATE</dt>
-                <dd>Ripe peach notes medallion of cooked agave lightly kissed in Rose and Vanilla dried apricots, ending
-                  with light fruit tea and something like alcohol or botanical aftertaste</dd>
-              </div>
-              <div class="pdp-hero__note-row">
-                <dt>AGE</dt>
-                <dd>Natural Botanica in natural agave distilled from Agave</dd>
-              </div>
-              <div class="pdp-hero__note-row">
-                <dt>PROOF</dt>
-                <dd>Varies 80-82 Proof</dd>
-              </div>
-              <div class="pdp-hero__note-row">
-                <dt>ORIGIN</dt>
-                <dd>Mexico, 100% Blue Weber Agave</dd>
-              </div>
-            </dl>
+          <p class="product-detail-description">Experience the smooth, floral elegance of BIATCH Rosa Tequila. Crafted in the highlands of Jalisco, Mexico, this premium tequila features subtle notes of rose, vanilla, and agave. Perfect for sipping or mixing into your favorite cocktails.</p>
+          <div class="product-detail-actions">
+            <button class="btn-primary">ADD TO CART</button>
           </div>
-
-          <!-- Size Selector -->
-          <div class="pdp-hero__variants">
-            <button class="pdp-hero__variant pdp-hero__variant--active" data-price="63.00"
-              data-size="750ml">750ml</button>
-            <button class="pdp-hero__variant" data-price="46.00" data-size="100ml 3 pack">100ml 3 pack</button>
-          </div>
-
-          <!-- Price + Quantity Row -->
-          <div class="pdp-hero__price-row">
-            <span class="pdp-hero__price-value" id="pdpPrice">$63.00 USD</span>
-            <div class="pdp-hero__qty">
-              <button class="pdp-hero__qty-btn" id="qtyMinus" aria-label="Decrease quantity">&minus;</button>
-              <input type="number" class="pdp-hero__qty-input" id="qtyInput" value="1" min="1" max="99"
-                aria-label="Quantity" />
-              <button class="pdp-hero__qty-btn" id="qtyPlus" aria-label="Increase quantity">&plus;</button>
-            </div>
-          </div>
-
-          <!-- Shipping Notice -->
-          <p class="pdp-hero__shipping-note">BIATCH cannot deliver to the following states: AK, AL, HI, MA, MI, MS, TN,
-            UT</p>
-
-          <!-- Actions -->
-          <div class="pdp-hero__actions">
-            <a href="#" class="btn pdp-hero__add-to-cart">ADD TO CART</a>
-            <a href="#" class="pdp-hero__find-retailer">FIND A LOCAL RETAILER</a>
-          </div>
-
-          <!-- Total -->
-          <div class="pdp-hero__total">
-            <span class="pdp-hero__total-label">TOTAL BEFORE TAX</span>
-            <span class="pdp-hero__total-value" id="pdpTotal">$63.00 USD</span>
-          </div>
-
-          <!-- Awards -->
-          <div class="pdp-hero__awards">
-            <div class="pdp-hero__award">
-              <img src="images/tmGold_medium.png" alt="SIP Awards Gold 2025" class="pdp-hero__award-img" />
-            </div>
-            <div class="pdp-hero__award">
-              <img src="images/Rosa_BSA_82points_2025_medium.png" alt="Bartender Spirits Awards 82 Points 2025"
-                class="pdp-hero__award-img" />
-            </div>
-            <div class="pdp-hero__award">
-              <img src="images/LA-spirit-awards-2025-silver_medium.png" alt="LA Spirits Silver 2025"
-                class="pdp-hero__award-img" />
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ============================================================
-         SECTION 3 — CUSTOMER REVIEWS (PRODUCT PAGE)
-    ============================================================ -->
-    <section class="section pdp-reviews" aria-label="Customer Reviews">
-      <div class="container">
-        <div class="pdp-reviews__head reveal">
-          <h2 class="pdp-reviews__heading">Our Customers Have Something to Say</h2>
-          <div class="pdp-reviews__agg">
-            <div class="pdp-reviews__stars" aria-label="4.8 out of 5 stars">
-              <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
-                class="ph-fill ph-star"></i><i class="ph-fill ph-star-half"></i>
-            </div>
-            <span class="pdp-reviews__agg-from">from 1,242 reviews</span>
-            <i class="ph-fill ph-check-circle pdp-reviews__check"></i>
-          </div>
-        </div>
-
-        <div class="pdp-reviews__carousel">
-          <button class="pdp-reviews__arrow pdp-reviews__arrow--prev" id="pdpReviewPrev"
-            aria-label="Previous review">&#8249;</button>
-          <div class="pdp-reviews__viewport">
-            <div class="pdp-reviews__track" id="pdpReviewTrack">
-
-              <blockquote class="pdp-review-card">
-                <div class="pdp-review-card__stars" aria-label="5 stars">
-                  <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
-                    class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
-                </div>
-                <p class="pdp-review-card__title">Gorgeous bottle</p>
-                <p class="pdp-review-card__text">"Gave it to a friend! She absolutely loved it"</p>
-                <footer class="pdp-review-card__footer">
-                  <span class="pdp-review-card__author">Maria</span>
-                </footer>
-              </blockquote>
-
-              <blockquote class="pdp-review-card">
-                <div class="pdp-review-card__stars" aria-label="5 stars">
-                  <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
-                    class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
-                </div>
-                <p class="pdp-review-card__title">Beautiful!</p>
-                <p class="pdp-review-card__text">"Beautiful set!"</p>
-                <footer class="pdp-review-card__footer">
-                  <span class="pdp-review-card__author">Wendy</span>
-                </footer>
-              </blockquote>
-
-              <blockquote class="pdp-review-card">
-                <div class="pdp-review-card__stars" aria-label="5 stars">
-                  <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
-                    class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
-                </div>
-                <p class="pdp-review-card__title">Absolutely smooth and divine</p>
-                <p class="pdp-review-card__text">"The Rosa Blanco is genuinely the smoothest blanco I've ever tasted. No
-                  burn, no harshness — just pure agave perfection."</p>
-                <footer class="pdp-review-card__footer">
-                  <span class="pdp-review-card__author">Ashley M.</span>
-                </footer>
-              </blockquote>
-
-              <blockquote class="pdp-review-card">
-                <div class="pdp-review-card__stars" aria-label="5 stars">
-                  <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
-                    class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
-                </div>
-                <p class="pdp-review-card__title">Best gifting idea ever</p>
-                <p class="pdp-review-card__text">"Bought the sample pack as a gift for my girlfriend — she ordered three
-                  more the next day."</p>
-                <footer class="pdp-review-card__footer">
-                  <span class="pdp-review-card__author">Sarah K.</span>
-                </footer>
-              </blockquote>
-
-            </div>
-          </div>
-          <button class="pdp-reviews__arrow pdp-reviews__arrow--next" id="pdpReviewNext"
-            aria-label="Next review">&#8250;</button>
-        </div>
-
-        <div class="pdp-reviews__dots" id="pdpReviewDots"></div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         SECTION 4 — YOU MIGHT ALSO LIKE
-    ============================================================ -->
-    <section class="pdp-related">
-      <div class="pdp-related__banner">
-        <h2 class="pdp-related__heading">You Might Also Like</h2>
-      </div>
-      <div class="container pdp-related__grid">
-
-        <article class="pdp-related__card reveal">
-          <div class="pdp-related__card-img-wrap">
-            <img src="images/RosaNoWords_800h.jpg" alt="Special Edition Rosa Premium Tequila"
-              class="pdp-related__card-img" />
-          </div>
-          <div class="pdp-related__card-body">
-            <h3 class="pdp-related__card-name">Special Edition Rosa Premium Tequila</h3>
-            <p class="pdp-related__card-size">750ML</p>
-            <p class="pdp-related__card-price">$74.00</p>
-            <a href="#" class="pdp-related__card-link">LEARN MORE</a>
-          </div>
-        </article>
-
-        <article class="pdp-related__card reveal">
-          <div class="pdp-related__card-img-wrap">
-            <img src="images/ReposadoNoWords_800h.jpg" alt="Reposado Premium Tequila" class="pdp-related__card-img" />
-          </div>
-          <div class="pdp-related__card-body">
-            <h3 class="pdp-related__card-name">Reposado Premium Tequila</h3>
-            <p class="pdp-related__card-size">500ML / 750ML</p>
-            <p class="pdp-related__card-price">$57.00 &ndash; $83.00</p>
-            <a href="#" class="pdp-related__card-link">LEARN MORE</a>
-          </div>
-        </article>
-
-        <article class="pdp-related__card reveal">
-          <div class="pdp-related__card-img-wrap">
-            <img src="images/RosaNoWords_800h.jpg" alt="LIL' BIATCH Sample Packs" class="pdp-related__card-img" />
-          </div>
-          <div class="pdp-related__card-body">
-            <h3 class="pdp-related__card-name">LIL' BIATCH&reg; Sample Packs</h3>
-            <p class="pdp-related__card-size">100 ML</p>
-            <p class="pdp-related__card-price">$13.49</p>
-            <a href="#" class="pdp-related__card-link">LEARN MORE</a>
-          </div>
-        </article>
-
-        <article class="pdp-related__card reveal">
-          <div class="pdp-related__card-img-wrap">
-            <img src="images/PartyStarterBundleWithIceBucket.jpg" alt="LIL' BIATCH Celebration Set"
-              class="pdp-related__card-img" />
-          </div>
-          <div class="pdp-related__card-body">
-            <h3 class="pdp-related__card-name">LIL' BIATCH&reg; Celebration Set</h3>
-            <p class="pdp-related__card-size">&nbsp;</p>
-            <p class="pdp-related__card-price">&nbsp;</p>
-            <a href="#" class="pdp-related__card-link">LEARN MORE</a>
-          </div>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- ============================================================
-         SECTION 5 — THE BIATCH LOUNGE (RECIPES)
-    ============================================================ -->
-    <section class="section pdp-lounge" aria-label="The BIATCH Lounge">
-      <div class="container">
-        <div class="pdp-lounge__header">
-          <h2 class="pdp-lounge__heading">The BIATCH Lounge</h2>
-          <p class="pdp-lounge__sub">Favorite cocktail recipes for Rosa and Reposado Tequilas</p>
-          <a href="#" class="pdp-lounge__all-link">All Recipes</a>
-        </div>
-
-        <div class="pdp-lounge__scroll-area">
-          <div class="pdp-lounge__track" id="pdpRecipeTrack">
-
-            <article class="pdp-lounge__card reveal">
-              <div class="pdp-lounge__card-media">
-                <img src="images/IMG_7468_1.jpg" alt="BIATCH Blood Orange Coconut Margarita"
-                  class="pdp-lounge__card-img" />
-                <button class="pdp-lounge__play-btn" aria-label="Play video"><i class="ph-fill ph-play"></i></button>
-              </div>
-              <div class="pdp-lounge__card-info">
-                <h3 class="pdp-lounge__card-name">BIATCH Blood Orange Coconut Margarita</h3>
-                <p class="pdp-lounge__card-desc">This margarita blends blood orange, coconut, and BIATCH&reg; Reposado
-                  for a perfectly sweet, tart, and smooth sip.</p>
-                <a href="#" class="pdp-lounge__card-link">SEE RECIPE</a>
-              </div>
-            </article>
-
-            <article class="pdp-lounge__card reveal">
-              <div class="pdp-lounge__card-media">
-                <img src="images/SexyBIATCH.png" alt="BIATCH Blueberry Tequila Smash" class="pdp-lounge__card-img" />
-              </div>
-              <div class="pdp-lounge__card-info">
-                <h3 class="pdp-lounge__card-name">BIATCH Blueberry Tequila Smash</h3>
-                <p class="pdp-lounge__card-desc">This tequila smash is a bright, fizzy blend of blueberries, lime, and
-                  BIATCH&reg; Rosa &mdash; perfect for sunny days and patio vibes.</p>
-                <a href="#" class="pdp-lounge__card-link">SEE RECIPE</a>
-              </div>
-            </article>
-
-            <article class="pdp-lounge__card reveal">
-              <div class="pdp-lounge__card-media">
-                <img src="images/BIATCH_Pink_Seduction.jpg" alt="BIATCH Pink Seduction" class="pdp-lounge__card-img" />
-              </div>
-              <div class="pdp-lounge__card-info">
-                <h3 class="pdp-lounge__card-name">BIATCH Pink Seduction</h3>
-                <p class="pdp-lounge__card-desc">Creamy, dreamy, and just rebellious enough &mdash; this is the kind of
-                  drink that doesn't ask for attention, it demands it.</p>
-                <a href="#" class="pdp-lounge__card-link">SEE RECIPE</a>
-              </div>
-            </article>
-
-            <article class="pdp-lounge__card reveal">
-              <div class="pdp-lounge__card-media">
-                <img src="images/BIATCHplease.jpg" alt="BIATCH Please" class="pdp-lounge__card-img" />
-              </div>
-              <div class="pdp-lounge__card-info">
-                <h3 class="pdp-lounge__card-name">BIATCH Please</h3>
-                <p class="pdp-lounge__card-desc">This vibrant cocktail mixes floral BIATCH Rosa with tangy Fever Tree
-                  Sparkling Grapefruit, served in a Tajin-rimmed glass.</p>
-                <a href="#" class="pdp-lounge__card-link">SEE RECIPE</a>
-              </div>
-            </article>
-
+          <div class="product-detail-meta">
+            <p><strong>Size:</strong> 750ml</p>
+            <p><strong>ABV:</strong> 40%</p>
+            <p><strong>Origin:</strong> Jalisco, Mexico</p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ============================================================
-         SECTION 6 — CELEBRATE WITH US (UGC)
-    ============================================================ -->
-    <section class="section pdp-ugc" aria-label="Celebrate With Us">
-      <div class="container">
-        <div class="pdp-ugc__header reveal">
-          <h2 class="pdp-ugc__heading">Celebrate With Us</h2>
-          <p class="pdp-ugc__sub">Share your recipes, stories, and special times via Instagram, TikTok, Facebook,
-            YouTube</p>
-        </div>
-        <div class="pdp-ugc__grid">
-          <div class="pdp-ugc__item reveal">
-            <img src="images/C9zuwM6PZG0GFLs8ikkamUuMdbA.jpg" alt="Community photo" class="pdp-ugc__img" />
-            <div class="pdp-ugc__overlay"><i class="ph ph-instagram-logo"></i></div>
-          </div>
-          <div class="pdp-ugc__item reveal">
-            <img src="images/6ARWlMQQJznwbT6R52zhlr4B2E.png" alt="Community photo" class="pdp-ugc__img" />
-            <div class="pdp-ugc__overlay"><i class="ph ph-instagram-logo"></i></div>
-          </div>
-          <div class="pdp-ugc__item reveal">
-            <img src="images/RWf8pfGa0bV0mJmiq4ZkP1kc794.jpg" alt="Community photo" class="pdp-ugc__img" />
-            <div class="pdp-ugc__overlay"><i class="ph ph-tiktok-logo"></i></div>
-          </div>
-          <div class="pdp-ugc__item reveal">
-            <img src="images/freepik__create-a-banner-lifestyle-image-using-this-same-pr__70862.png"
-              alt="Community photo" class="pdp-ugc__img" />
-            <div class="pdp-ugc__overlay"><i class="ph ph-facebook-logo"></i></div>
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-main">
+        <div class="footer-col">
+          <img class="footer-logo" src="https://placehold.co/180x50/D8A728/FFFFFF?text=BIATCH+Tequila" alt="BIATCH Tequila Logo">
+          <h5>We Would Love to Hear From You</h5>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="ph ph-facebook-logo"></i></a>
+            <a href="#" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+            <a href="#" aria-label="YouTube"><i class="ph ph-youtube-logo"></i></a>
+            <a href="#" aria-label="TikTok"><i class="ph ph-tiktok-logo"></i></a>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         SECTION 7 — LIFESTYLE BANNER
-    ============================================================ -->
-    <section class="pdp-lifestyle" aria-label="Lifestyle">
-      <div class="pdp-lifestyle__banner">
-        <img src="images/freepik__create-a-banner-lifestyle-image-using-this-same-pr__70863.png"
-          alt="BIATCH Tequila lifestyle" class="pdp-lifestyle__img" />
-      </div>
-    </section>
-
-    <!-- ============================================================
-         SECTION 8 — EMAIL CAPTURE (INSIDER + RETAILER)
-    ============================================================ -->
-    <section class="section pdp-signup" aria-label="Sign Up">
-      <div class="pdp-signup__split">
-
-        <div class="pdp-signup__panel pdp-signup__panel--insider">
-          <h2 class="pdp-signup__heading">Become a BIATCH Insider</h2>
-          <p class="pdp-signup__body">Be alerted when new products are released in your area. Receive product info and
-            special offers. See what happens behind the scenes. Be part of this great community (min, too!)</p>
-          <a href="#" class="btn pdp-signup__btn pdp-signup__btn--dark">SIGN UP</a>
+        <div class="footer-col">
+          <h5>Contact:</h5>
+          <address>227 Sandy Springs Pl, Ste D #180<br>Sandy Springs, GA 30328</address>
+          <a href="mailto:hello@biatchtequila.com" class="footer-link">hello@biatchtequila.com</a>
+          <a href="tel:+14045551234" class="footer-link">(404) 555-1234</a>
         </div>
-
-        <div class="pdp-signup__panel pdp-signup__panel--retailer">
-          <h2 class="pdp-signup__heading">Retailer Sign-Up</h2>
-          <p class="pdp-signup__body">Join us in supporting a women-owned, cause-driven tequila brand dedicated to
-            quality and making a positive impact. Sign up to learn more about our premium products and how your business
-            can be part of empowering women and giving back to meaningful causes.</p>
-          <a href="#" class="btn pdp-signup__btn pdp-signup__btn--dark">SIGN UP</a>
-        </div>
-
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ============================================================
-       FOOTER
-  ============================================================ -->
-  <footer class="site-footer" id="siteFooter" aria-label="Site footer">
-    <div class="container footer__inner">
-      <div class="footer__top">
-        <div class="footer__brand">
-          <a href="index.html" class="footer__logo-link" aria-label="BIATCH Tequila Home">
-            <img src="images/biatch-logo (1).png" alt="BIATCH Tequila" class="footer__logo-img" />
-          </a>
-          <p class="footer__tagline">Crafted from 100% Blue Weber Agave in Jalisco, M&eacute;xico. For the woman who
-            pours without apology.</p>
-          <div class="footer__social">
-            <a href="#" class="footer__social-link" aria-label="Facebook"><i class="ph ph-facebook-logo"></i></a>
-            <a href="#" class="footer__social-link" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
-            <a href="#" class="footer__social-link" aria-label="TikTok"><i class="ph ph-tiktok-logo"></i></a>
-            <a href="#" class="footer__social-link" aria-label="YouTube"><i class="ph ph-youtube-logo"></i></a>
+        <div class="footer-col">
+          <h5>Customer Care:</h5>
+          <div class="footer-links-list">
+            <a href="#">CONDITIONS OF USE</a>
+            <a href="#">PRIVACY AND COOKIE NOTICE</a>
+            <a href="#">ACCESSIBILITY</a>
+            <a href="#">RESPONSIBILITY.ORG</a>
+            <a href="#">RETURN POLICY</a>
           </div>
-        </div>
-        <nav class="footer__nav" aria-label="Footer navigation">
-          <div class="footer__nav-col">
-            <h4 class="footer__nav-heading">Shop</h4>
-            <ul class="footer__nav-list">
-              <li><a href="#" class="footer__nav-link">Rosa Blanco</a></li>
-              <li><a href="#" class="footer__nav-link">Reposado</a></li>
-              <li><a href="#" class="footer__nav-link">Extra A&ntilde;ejo</a></li>
-              <li><a href="#" class="footer__nav-link">Blanco Classic</a></li>
-              <li><a href="#" class="footer__nav-link">Sample Pack</a></li>
-            </ul>
-          </div>
-          <div class="footer__nav-col">
-            <h4 class="footer__nav-heading">Discover</h4>
-            <ul class="footer__nav-list">
-              <li><a href="#" class="footer__nav-link">How She's Made</a></li>
-              <li><a href="#" class="footer__nav-link">Our Story</a></li>
-              <li><a href="#" class="footer__nav-link">Events &amp; Collabs</a></li>
-              <li><a href="#" class="footer__nav-link">Sips &amp; Recipes</a></li>
-              <li><a href="#" class="footer__nav-link">Press</a></li>
-            </ul>
-          </div>
-          <div class="footer__nav-col">
-            <h4 class="footer__nav-heading">Support</h4>
-            <ul class="footer__nav-list">
-              <li><a href="#" class="footer__nav-link">Shipping &amp; Returns</a></li>
-              <li><a href="#" class="footer__nav-link">FAQ</a></li>
-              <li><a href="#" class="footer__nav-link">Store Locator</a></li>
-              <li><a href="#" class="footer__nav-link">Contact Us</a></li>
-              <li><a href="#" class="footer__nav-link">Wholesale</a></li>
-            </ul>
-          </div>
-        </nav>
-      </div>
-      <div class="footer__bottom">
-        <p class="footer__legal">&copy; 2026 BIATCH Tequila. Please drink responsibly. 21+ only.</p>
-        <div class="footer__policies">
-          <a href="#" class="footer__policy-link">Privacy</a>
-          <a href="#" class="footer__policy-link">Terms</a>
-          <a href="#" class="footer__policy-link">Accessibility</a>
         </div>
       </div>
+      <div class="footer-bottom-row">
+        <a href="#">MEDIA INQUIRIES / CONTACT US</a>
+        <a href="#">SIGNUP TO BECOME AN INSIDER</a>
+        <a href="#">JOIN OUR STELLAR RETAIL PARTNERS</a>
+      </div>
+    </div>
+    <div class="footer-gradient"></div>
+    <div class="footer-copyright">
+      <p>&copy; 2026 BIATCH Tequila. All Rights Reserved. Please drink responsibly.</p>
     </div>
   </footer>
 
-  <!-- Search Drawer -->
-  <div class="search-drawer" id="searchDrawer" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Search">
-    <div class="search-drawer__backdrop" id="searchBackdrop"></div>
-    <div class="search-drawer__panel">
-      <button class="search-drawer__close" id="searchClose" aria-label="Close search"><i class="ph ph-x"></i></button>
-      <div class="search-drawer__inner">
-        <form class="search-drawer__form" id="searchForm" role="search" novalidate>
-          <p class="search-drawer__label">What are you looking for?</p>
-          <div class="search-drawer__field">
-            <i class="ph ph-magnifying-glass search-drawer__icon" aria-hidden="true"></i>
-            <input type="search" id="searchInput" class="search-drawer__input"
-              placeholder="Search tequila, gifts, cocktails..." autocomplete="off" />
-            <button type="submit" class="btn btn--gold">Search</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-
-  <!-- Cart Drawer -->
-  <div class="cart-drawer" id="cartDrawer" aria-hidden="true" role="dialog" aria-modal="true"
-    aria-label="Shopping cart">
-    <div class="cart-drawer__backdrop" id="cartBackdrop"></div>
-    <div class="cart-drawer__panel">
-      <div class="cart-drawer__head">
-        <div class="cart-drawer__head-left">
-          <h2 class="cart-drawer__title">Your Cart</h2>
-          <span class="cart-drawer__count" id="cartCount">0 items</span>
-        </div>
-        <button class="cart-drawer__close" id="cartClose" aria-label="Close cart"><i class="ph ph-x"></i></button>
-      </div>
-      <div class="cart-drawer__body" id="cartBody">
-        <div class="cart-drawer__empty">
-          <div class="cart-drawer__empty-icon-wrap"><i class="ph ph-wine cart-drawer__empty-icon"
-              aria-hidden="true"></i></div>
-          <p class="cart-drawer__empty-title">Your cart is empty</p>
-          <p class="cart-drawer__empty-sub">Discover your next bold pour.</p>
-          <a href="#" class="btn btn--gold cart-drawer__empty-btn">Shop the Collection</a>
-        </div>
-      </div>
-      <div class="cart-drawer__foot">
-        <div class="cart-drawer__subtotal">
-          <span class="cart-drawer__subtotal-label">Subtotal</span>
-          <span class="cart-drawer__subtotal-value" id="cartSubtotal">$0.00</span>
-        </div>
-        <a href="#" class="btn cart-drawer__checkout">Proceed to Checkout</a>
-        <p class="cart-drawer__free-ship"><i class="ph-fill ph-seal-check" aria-hidden="true"></i> Free shipping on
-          orders over $75</p>
-      </div>
-    </div>
-  </div>
+  <button class="floating-reviews-tab" aria-label="Open reviews">
+    <i class="ph-fill ph-star"></i>
+    Reviews
+  </button>
 
   <script src="script.js"></script>
-  <script src="product.js"></script>
 </body>
-
 </html>

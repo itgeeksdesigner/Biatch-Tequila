@@ -2,1244 +2,940 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="BIATCH Tequila – Premium 100% Blue Weber Agave Tequila. Born Bold. Crafted Wild." />
-  <title>BIATCH Tequila | Born Bold. Crafted Wild.</title>
-  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="BIATCH Tequila — Premium tequila made for women, by women. Bold, fierce, and unapologetic.">
+  <title>BIATCH Tequila — Premium Tequila For Fierce Women</title>
 
-  <!-- Google Fonts: Kaisei Tokumin -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Jost:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet" />
+    href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Kaisei+Tokumin:wght@400;500;700&display=swap"
+    rel="stylesheet">
 
   <!-- Phosphor Icons -->
-  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="responsive.css" />
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="responsive.css">
 </head>
 
 <body>
 
-  <!-- ============================================================
-       HEADER
-  ============================================================ -->
-  <header class="site-header" id="siteHeader">
+  <!-- ADA: Skip to main content link -->
+  <a href="#products" class="skip-to-content">Skip to main content</a>
 
-    <!-- Top Row: Social | Logo | Actions -->
-    <div class="header__top">
-      <div class="container header__top-inner">
+  <!-- ============================================
+       HEADER / NAVIGATION
+       ============================================ -->
+  <header class="site-header">
+    <div class="header-container">
+      <!-- Mobile: Hamburger (left) -->
+      <button class="hamburger-btn" aria-label="Open Menu">
+        <i class="ph ph-list"></i>
+      </button>
 
-        <!-- Hamburger (mobile left / desktop hidden) -->
-        <button class="header__menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false"
-          aria-controls="mobileNav">
-          <i class="ph ph-list"></i>
+      <!-- Logo (centered on mobile) -->
+      <a href="index.html" class="header-logo">
+        <img src="images/biatch-logo (1).png" alt="BIATCH Tequila Logo">
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="header-nav">
+        <a href="#products">Products</a>
+        <a href="#mission">How She's Made</a>
+        <a href="#founder">About Us</a>
+        <a href="#recipes">Sips &amp; Recipes</a>
+      </nav>
+
+      <!-- Icons (right) -->
+      <div class="header-icons">
+        <button aria-label="Search">
+          <i class="ph ph-magnifying-glass"></i>
         </button>
-
-        <!-- Social Icons (left, desktop only) -->
-        <div class="header__social">
-          <a href="#" class="header__social-link" aria-label="Facebook">
-            <i class="ph ph-facebook-logo"></i>
-          </a>
-          <a href="#" class="header__social-link" aria-label="Instagram">
-            <i class="ph ph-instagram-logo"></i>
-          </a>
-          <a href="#" class="header__social-link" aria-label="TikTok">
-            <i class="ph ph-tiktok-logo"></i>
-          </a>
-        </div>
-
-        <!-- Logo (center) -->
-        <a href="#" class="header__logo" aria-label="BIATCH Tequila Home">
-          <img src="images/biatch-logo (1).png" alt="BIATCH Tequila" class="header__logo-img"
-            onerror="this.src='https://placehold.co/130x36/FFFFFF/FFFFFF?text=BIATCH'" />
+        <a href="#" class="header-account-link" aria-label="Account">
+          <i class="ph ph-user"></i>
         </a>
-
-        <!-- Actions (right) -->
-        <div class="header__actions">
-          <button class="header__action-btn" id="searchBtn" aria-label="Open search" aria-expanded="false"
-            aria-controls="searchDrawer">
-            <i class="ph ph-magnifying-glass"></i>
-          </button>
-          <button class="header__action-btn" aria-label="My Account">
-            <i class="ph ph-user"></i>
-          </button>
-          <button class="header__action-btn header__cart-btn" id="cartBtn" aria-label="Open cart" aria-expanded="false"
-            aria-controls="cartDrawer">
-            <i class="ph ph-shopping-bag"></i>
-            <span class="header__cart-count" data-count="0" aria-label="0 items in cart"></span>
-          </button>
-        </div>
-
+        <a href="#" aria-label="Cart">
+          <i class="ph ph-bag"></i>
+        </a>
       </div>
     </div>
-
-    <!-- Bottom Row: Navigation (desktop only) -->
-    <div class="header__nav-row">
-      <div class="container">
-        <nav class="header__nav" id="desktopNav" aria-label="Main navigation">
-          <ul class="header__nav-list">
-            <li class="header__nav-item"><a href="#" class="header__nav-link">Tequilas</a></li>
-            <li class="header__nav-item"><a href="#" class="header__nav-link">Merchandise</a></li>
-            <li class="header__nav-item"><a href="#" class="header__nav-link">Specials</a></li>
-            <li class="header__nav-item"><a href="#" class="header__nav-link">Store Locator</a></li>
-            <li class="header__nav-item"><a href="#" class="header__nav-link">Our Story</a></li>
-          </ul>
-        </nav>
-      </div>
-    </div>
-
+    <div class="header-gradient-bar"></div>
   </header>
 
-  <!-- Mobile Navigation -->
-  <div class="mobile-nav" id="mobileNav" aria-hidden="true" role="dialog" aria-label="Mobile navigation">
-    <div class="mobile-nav__header">
-      <img src="images/biatch-logo (1).png" alt="BIATCH Tequila" class="mobile-nav__logo" />
-      <button class="mobile-nav__close" id="mobileNavClose" aria-label="Close navigation menu">
+  <!-- Mobile Drawer Overlay -->
+  <div class="drawer-overlay"></div>
+
+  <!-- Mobile Drawer -->
+  <nav class="mobile-drawer">
+    <div class="drawer-header">
+      <img src="https://placehold.co/140x40/D8A728/FFFFFF?text=BIATCH" alt="BIATCH Logo">
+      <button class="drawer-close" aria-label="Close Menu">
         <i class="ph ph-x"></i>
       </button>
     </div>
-    <ul class="mobile-nav__list">
-      <li><a href="#" class="mobile-nav__link">Tequilas</a></li>
-      <li><a href="#" class="mobile-nav__link">Merchandise</a></li>
-      <li><a href="#" class="mobile-nav__link">Specials</a></li>
-      <li><a href="#" class="mobile-nav__link">Store Locator</a></li>
-      <li><a href="#" class="mobile-nav__link">Our Story</a></li>
-    </ul>
-    <div class="mobile-nav__footer">
-      <a href="#" class="btn btn--gold">Join the Club</a>
+    <div class="drawer-social">
+      <a href="#" aria-label="Facebook"><i class="ph ph-facebook-logo"></i></a>
+      <a href="#" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+      <a href="#" aria-label="TikTok"><i class="ph ph-tiktok-logo"></i></a>
+      <a href="#" aria-label="YouTube"><i class="ph ph-youtube-logo"></i></a>
     </div>
-  </div>
-  <div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
+    <div class="drawer-nav">
+      <a href="#products">Products</a>
+      <a href="#mission">How She's Made</a>
+      <a href="#founder">About Us</a>
+      <a href="#recipes">Sips &amp; Recipes</a>
+    </div>
+  </nav>
 
-  <main id="main-content">
-
-    <!-- ============================================================
-         SECTION 1 — HERO
-    ============================================================ -->
-    <section class="hero" id="hero" aria-label="Hero">
-      <div class="hero__carousel" id="heroCarousel">
-
+  <!-- ============================================
+       SECTION 1: HERO SLIDESHOW
+       ============================================ -->
+  <section class="hero-section">
+    <div class="hero-slideshow">
+      <div class="hero-slides-wrapper">
         <!-- Slide 1 -->
-        <div class="hero__slide hero__slide--active">
-          <div class="hero__bg">
-            <picture>
-              <source srcset="images/freepik__brighten-this-hero-image-for-a-more-accessible-web__21348.png"
-                media="(max-width: 768px)" />
-              <img class="hero__bg-img"
-                src="images/freepik__brighten-this-hero-image-for-a-more-accessible-web__21348.png"
-                alt="BIATCH Tequila hero" />
-            </picture>
-          </div>
-          <div class="container hero__content">
-            <span class="eyebrow eyebrow--light">Crafted by Women. For Women.</span>
-            <h1 class="hero__heading">The Unapologetic<br>Woman’s Tequila</h1>
-            <p class="hero__subtext">100% Blue Weber Agave. Unapologetically you.</p>
-            <a href="#" class="btn btn--gold-primary">Shop Tequila</a>
-          </div>
+        <div class="hero-slide hero-slide-1">
+          <img class="hero-desktop-img" src="images/02_1.png" alt="Fierce woman holding BIATCH Tequila">
+          <img class="hero-mobile-img" src="images/Frame_427320530_1.jpg" alt="Fierce woman holding BIATCH Tequila">
         </div>
-
         <!-- Slide 2 -->
-        <div class="hero__slide">
-          <div class="hero__bg">
-            <picture>
-              <source srcset="images/bnr 2.png" media="(max-width: 768px)" />
-              <img class="hero__bg-img" src="images/bnr 2.png" alt="BIATCH Tequila seasonal offers" />
-            </picture>
-          </div>
-          <div class="container hero__content">
-            <span class="eyebrow eyebrow--light">Limited Edition</span>
-            <h2 class="hero__heading">Seasonal Bundles<br>Now Available</h2>
-            <p class="hero__subtext">Gift sets &amp; exclusive packs for every occasion.</p>
-            <a href="#" class="btn btn--gold-primary">Shop Bundles</a>
-          </div>
+        <div class="hero-slide hero-slide-2">
+          <img class="hero-desktop-img" src="images/03_1.png" alt="BIATCH Tequila Collection">
+          <img class="hero-mobile-img" src="images/Frame_427320531_1.jpg" alt="BIATCH Tequila Collection">
         </div>
-
-        <!-- Slide 3 -->
-        <div class="hero__slide">
-          <div class="hero__bg">
-            <picture>
-              <source srcset="images/BIATCH_BiatchloretteSashCloseup_copy.jpg" media="(max-width: 768px)" />
-              <img class="hero__bg-img" src="images/BIATCH_BiatchloretteSashCloseup_copy.jpg"
-                alt="BIATCH Tequila priority content" />
-            </picture>
-          </div>
-          <div class="container hero__content">
-            <span class="eyebrow eyebrow--light">New Arrival</span>
-            <h2 class="hero__heading">Rosa Blanco<br>Premium Tequila</h2>
-            <p class="hero__subtext">Unexpected, dazzling, versatile. Discover Rosa.</p>
-            <a href="#" class="btn btn--gold-primary">Explore Rosa</a>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Carousel dots -->
-      <div class="hero__dots" id="heroDots">
-        <button class="hero__dot hero__dot--active" data-slide="0" aria-label="Slide 1"></button>
-        <button class="hero__dot" data-slide="1" aria-label="Slide 2"></button>
-        <button class="hero__dot" data-slide="2" aria-label="Slide 3"></button>
-      </div>
-
-      <div class="hero__scroll-cue" aria-hidden="true">
-        <i class="ph ph-arrow-down"></i>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         TRUST BADGES BAR
-    ============================================================ -->
-    <div class="trust-bar" aria-label="Trust badges">
-      <div class="trust-bar__inner">
-
-        <!-- Track 1 -->
-        <div class="trust-bar__track">
-          <div class="trust-bar__item">
-            <i class="ph ph-shield-check trust-bar__icon"></i>
-            <span class="trust-bar__text">100% Blue Weber Agave</span>
-          </div>
-          <span class="trust-bar__divider" aria-hidden="true">·</span>
-          <div class="trust-bar__item">
-            <i class="ph ph-star trust-bar__icon"></i>
-            <span class="trust-bar__text">4.8 Stars &mdash; 1,200+ Reviews</span>
-          </div>
-          <span class="trust-bar__divider" aria-hidden="true">·</span>
-          <div class="trust-bar__item">
-            <i class="ph ph-truck trust-bar__icon"></i>
-            <span class="trust-bar__text">Free Shipping Over $100</span>
-          </div>
-          <span class="trust-bar__divider" aria-hidden="true">·</span>
-          <div class="trust-bar__item">
-            <i class="ph ph-heart trust-bar__icon"></i>
-            <span class="trust-bar__text">Women-Owned &amp; Operated</span>
-          </div>
-          <span class="trust-bar__divider" aria-hidden="true">·</span>
-        </div>
-
-        <!-- Track 2 — duplicate for seamless loop (mobile only) -->
-        <div class="trust-bar__track" aria-hidden="true">
-          <div class="trust-bar__item">
-            <i class="ph ph-shield-check trust-bar__icon"></i>
-            <span class="trust-bar__text">100% Blue Weber Agave</span>
-          </div>
-          <span class="trust-bar__divider" aria-hidden="true">·</span>
-          <div class="trust-bar__item">
-            <i class="ph ph-star trust-bar__icon"></i>
-            <span class="trust-bar__text">4.8 Stars &mdash; 1,200+ Reviews</span>
-          </div>
-          <span class="trust-bar__divider" aria-hidden="true">·</span>
-          <div class="trust-bar__item">
-            <i class="ph ph-truck trust-bar__icon"></i>
-            <span class="trust-bar__text">Free Shipping Over $75</span>
-          </div>
-          <span class="trust-bar__divider" aria-hidden="true">·</span>
-          <div class="trust-bar__item">
-            <i class="ph ph-heart trust-bar__icon"></i>
-            <span class="trust-bar__text">Women-Owned &amp; Operated</span>
-          </div>
-          <span class="trust-bar__divider" aria-hidden="true">·</span>
-        </div>
-
       </div>
     </div>
 
-    <!-- ============================================================
-         BRAND INTRO
-    ============================================================ -->
-    <section class="brand-intro" style="display:none;">
-      <div class="brand-intro__bg-letter" aria-hidden="true">B</div>
-      <div class="container brand-intro__inner">
-        <span class="eyebrow brand-intro__eyebrow">The Biatch Standard</span>
-        <div class="brand-intro__rule" aria-hidden="true"></div>
-        <h2 class="brand-intro__heading">Premium Tequilas, <br>Made <em>Without Apology</em></h2>
-        <p class="brand-intro__body">BIATCH was created for women who own their power and pour with intention. Distilled
-          from 100% Blue Weber Agave in the heart of México, every bottle is a toast to the unapologetic woman — her
-          ambition, her taste, and her right to the finest spirits on earth.</p>
-        <a href="#" class="brand-intro__link">Our Story &rarr;</a>
+    <!-- Hero Controls -->
+    <button class="hero-arrow hero-arrow-prev" aria-label="Previous Slide">
+      <i class="ph ph-caret-left"></i>
+    </button>
+    <button class="hero-arrow hero-arrow-next" aria-label="Next Slide">
+      <i class="ph ph-caret-right"></i>
+    </button>
+    <div class="hero-controls">
+      <button class="hero-dot active" aria-label="Go to slide 1"></button>
+      <button class="hero-dot" aria-label="Go to slide 2"></button>
+
+      </button>
+    </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       SECTION 2: FEATURED PRODUCT COLLECTION
+       ============================================ -->
+  <section id="products" class="products-section">
+    <div class="container">
+      <div class="section-header center">
+        <span class="eyebrow">OUR COLLECTION</span>
+        <h2 class="section-heading">Premium Tequilas</h2>
       </div>
-    </section>
 
-    <!-- ============================================================
-         SECTION 2 — PRODUCT EXPLORE
-    ============================================================ -->
-    <section class="section product-explore" id="shop">
-      <div class="container">
-
-        <div class="product-explore__header">
-          <div class="product-explore__heading-wrap reveal">
-            <span class="eyebrow eyebrow--gold">Our Collection</span>
-            <div class="craft__rule"></div>
-            <h2 class="section__heading">Premium Tequilas</h2>
-          </div>
-          <div class="product-explore__nav">
-            <button class="product-explore__arrow" id="productPrev" aria-label="Previous product">&#8249;</button>
-            <button class="product-explore__arrow" id="productNext" aria-label="Next product">&#8250;</button>
-          </div>
-        </div>
-
-        <div class="product-explore__scroll-area">
-          <div class="product-explore__track" id="productTrack">
-
-            <!-- Rosa Blanco -->
-            <article class="product-card reveal">
-              <div class="product-card__inner">
-                <div class="product-card__front">
-                  <div class="product-card__image-wrap">
-                    <img src="images/RosaNoWords_800h.jpg" alt="Rosa Blanco Tequila bottle"
-                      class="product-card__image" />
-                    <span class="product-card__badge product-card__badge--rose">Best Seller</span>
-                    <button class="product-card__flip-hint" aria-label="Flip for details">
-                      <i class="ph ph-arrows-clockwise"></i>
-                    </button>
-                  </div>
-                  <div class="product-card__body">
-                    <h3 class="product-card__name">Rosa Blanco</h3>
-                    <p class="product-card__desc">Premium Tequila · 750ml</p>
-                    <span class="product-card__price">From $16.00 | $63.00</span>
-                    <a href="#" class="product-card__front-cart-btn">Add to Cart — $63</a>
-                  </div>
-                </div>
-                <div class="product-card__back">
-                  <button class="product-card__close-btn" aria-label="Close"><i class="ph ph-x"></i></button>
-                  <span class="product-card__tasting-label">Tasting Notes</span>
-                  <dl class="product-card__notes">
-                    <dt>Palate</dt>
-                    <dd>Ripe Peach Honey Sweetness Of Cooked Agave</dd>
-                    <dt>Aroma</dt>
-                    <dd>Honey With Hints Of Apple, Lemon, And Crisp Agave</dd>
-                    <dt>Eye</dt>
-                    <dd>Rose Gold</dd>
-                    <dt>Age</dt>
-                    <dd>Lightly Rested In American Red Wine Barrels From Napa</dd>
-                    <dt>Proof</dt>
-                    <dd>40% ALC VOL.</dd>
-                    <dt>Origin</dt>
-                    <dd>México, 100% Blue Weber Agave</dd>
-                  </dl>
-                  <a href="#" class="product-card__back-link">Add to Cart — $63</a>
-                </div>
+      <div class="products-grid">
+        <!-- Product 1: Rosa Blanco -->
+        <div class="product-card">
+          <div class="product-card-image">
+            <button class="product-flip-icon" aria-label="Flip for tasting notes">
+              <i class="ph ph-arrows-clockwise"></i>
+            </button>
+            <div class="product-card-image-inner">
+              <div class="product-card-front">
+                <img src="https://placehold.co/400x533/F0F0F0/999999?text=Rosa+Tequila+Front"
+                  alt="BIATCH Rosa Tequila Front">
               </div>
-            </article>
-
-            <!-- Reposado -->
-            <article class="product-card reveal">
-              <div class="product-card__inner">
-                <div class="product-card__front">
-                  <div class="product-card__image-wrap">
-                    <img src="images/ReposadoNoWords_800h.jpg" alt="Reposado Tequila bottle"
-                      class="product-card__image" />
-                    <span class="product-card__badge product-card__badge--gold">Award Winner</span>
-                    <button class="product-card__flip-hint" aria-label="Flip for details">
-                      <i class="ph ph-arrows-clockwise"></i>
-                    </button>
+              <div class="product-card-back tasting-notes">
+                <button class="tasting-close" aria-label="Close tasting notes">
+                  <i class="ph ph-x"></i>
+                </button>
+                <h5 class="tasting-title">Tasting Notes</h5>
+                <div class="tasting-grid">
+                  <div class="tasting-item">
+                    <span class="tasting-label">PALATE</span>
+                    <span class="tasting-value">Ripe Peach Honey Sweetness Of Cooked Agave</span>
                   </div>
-                  <div class="product-card__body">
-                    <h3 class="product-card__name">Reposado</h3>
-                    <p class="product-card__desc">Ultra Premium · 750ML</p>
-                    <span class="product-card__price">From $17.00 | $83.00</span>
-                    <a href="#" class="product-card__front-cart-btn">Add to Cart — $83</a>
+                  <div class="tasting-item">
+                    <span class="tasting-label">AROMA</span>
+                    <span class="tasting-value">Honey With Hints Of Apple, Lemon, And Crisp Agave</span>
                   </div>
-                </div>
-                <div class="product-card__back">
-                  <button class="product-card__close-btn" aria-label="Close"><i class="ph ph-x"></i></button>
-                  <span class="product-card__tasting-label">Tasting Notes</span>
-                  <dl class="product-card__notes">
-                    <dt>Palate</dt>
-                    <dd>Naturally Sweet</dd>
-                    <dt>Aroma</dt>
-                    <dd>Caramel Nose With Hints Of Dates &amp; Nutmeg</dd>
-                    <dt>Eye</dt>
-                    <dd>Sun-Kissed Gold</dd>
-                    <dt>Age</dt>
-                    <dd>9 Month In Brilliant Gold American Oak Bourbon Barrels</dd>
-                    <dt>Proof</dt>
-                    <dd>40% ALC VOL.</dd>
-                    <dt>Origin</dt>
-                    <dd>México, 100% Blue Weber Agave</dd>
-                  </dl>
-                  <a href="#" class="product-card__back-link">Add to Cart — $83</a>
-                </div>
-              </div>
-            </article>
-
-            <!-- Añejo -->
-            <article class="product-card reveal">
-              <div class="product-card__inner">
-                <div class="product-card__front">
-                  <div class="product-card__image-wrap">
-                    <img src="images/AnejoNoWords_800h.jpg" alt="Añejo Ultra Premium Tequila bottle"
-                      class="product-card__image" />
-                    <button class="product-card__flip-hint" aria-label="Flip for details">
-                      <i class="ph ph-arrows-clockwise"></i>
-                    </button>
+                  <div class="tasting-item">
+                    <span class="tasting-label">EYE</span>
+                    <span class="tasting-value">Rose Gold</span>
                   </div>
-                  <div class="product-card__body">
-                    <h3 class="product-card__name">Añejo Ultra</h3>
-                    <p class="product-card__desc">Premium Tequila · 750ml</p>
-                    <span class="product-card__price">$425.00</span>
-                    <a href="#" class="product-card__front-cart-btn">Add to Cart — $425</a>
+                  <div class="tasting-item">
+                    <span class="tasting-label">AGE</span>
+                    <span class="tasting-value">Lightly Rested In American Red Wine Barrels From Napa</span>
+                  </div>
+                  <div class="tasting-item">
+                    <span class="tasting-label">PROOF</span>
+                    <span class="tasting-value">40% ALC VOL.</span>
+                  </div>
+                  <div class="tasting-item">
+                    <span class="tasting-label">ORIGIN</span>
+                    <span class="tasting-value">M&eacute;xico, 100% Blue Weber Agave</span>
                   </div>
                 </div>
-                <div class="product-card__back">
-                  <button class="product-card__close-btn" aria-label="Close"><i class="ph ph-x"></i></button>
-                  <span class="product-card__tasting-label">Tasting Notes</span>
-                  <dl class="product-card__notes">
-                    <dt>Palate</dt>
-
-                    <dt>Aroma</dt>
-                    <dd>Oak, Citrus Notes, Barrel Spice, Roasted Agave</dd>
-                    <dt>Eye</dt>
-                    <dd>Slightly Shimmery Amber</dd>
-                    <dt>Age</dt>
-                    <dd>Aged For 26 Months In Red Wine And Bourbon</dd>
-                    <dt>Proof</dt>
-                    <dd>40% ABV</dd>
-                    <dt>Origin</dt>
-                    <dd>El Arenal, Jalisco MX</dd>
-                  </dl>
-                  <a href="#" class="product-card__back-link">Add to Cart — $425</a>
-                </div>
-              </div>
-            </article>
-
-            <!-- Bundle Specials -->
-            <article class="product-card reveal">
-              <div class="product-card__inner">
-                <div class="product-card__front">
-                  <div class="product-card__image-wrap">
-                    <img src="images/Bundle Special.jpg" alt="Bundle Specials" class="product-card__image" />
-                    <span class="product-card__badge product-card__badge--gold">Bundle</span>
-                    <button class="product-card__flip-hint" aria-label="Flip for details">
-                      <i class="ph ph-arrows-clockwise"></i>
-                    </button>
-                  </div>
-                  <div class="product-card__body">
-                    <h3 class="product-card__name">Bundle Specials</h3>
-                    <p class="product-card__desc">Curated Gift Sets</p>
-                    <span class="product-card__price">From $52.00</span>
-                    <a href="#" class="product-card__front-cart-btn">Shop Bundles</a>
-                  </div>
-                </div>
-                <div class="product-card__back">
-                  <span class="product-card__tasting-label">What's Inside</span>
-                  <dl class="product-card__notes">
-                    <dt>Light Up</dt>
-                    <dd>750ml Tequila + Light-Up Topper</dd>
-                    <dt>Mother's Day</dt>
-                    <dd>750ml Tequila + Sipping Glass</dd>
-                    <dt>Party Starter</dt>
-                    <dd>Tequila + Premium Accessories</dd>
-                    <dt>Hostess</dt>
-                    <dd>Premium Entertaining Collection</dd>
-                    <dt>Cowgirl</dt>
-                    <dd>LiL BIATCH® + Cowgirl Hat Toppers</dd>
-                  </dl>
-                  <a href="#" class="product-card__back-link">Shop Bundles</a>
-                </div>
-              </div>
-            </article>
-
-            <!-- Sample Pack -->
-            <article class="product-card reveal">
-              <div class="product-card__inner">
-                <div class="product-card__front">
-                  <div class="product-card__image-wrap">
-                    <img src="images/sample pack.jpg" alt="Sample Pack — all 4 expressions"
-                      class="product-card__image" />
-                    <span class="product-card__badge product-card__badge--gold">Best Value</span>
-                    <button class="product-card__flip-hint" aria-label="Flip for details">
-                      <i class="ph ph-arrows-clockwise"></i>
-                    </button>
-                  </div>
-                  <div class="product-card__body">
-                    <h3 class="product-card__name">Sample Pack</h3>
-                    <p class="product-card__desc">All 4 Expressions</p>
-                    <span class="product-card__price">From $29.00</span>
-                    <a href="#" class="product-card__front-cart-btn">Add to Cart — $29</a>
-                  </div>
-                </div>
-                <div class="product-card__back">
-                  <span class="product-card__tasting-label">What's Inside</span>
-                  <dl class="product-card__notes">
-                    <dt>Includes</dt>
-                    <dd>Rosa Blanco, Reposado, Extra Añejo &amp; Blanco</dd>
-                    <dt>Size</dt>
-                    <dd>4 × 100ml Mini Bottles</dd>
-                    <dt>Ideal For</dt>
-                    <dd>First-Timers, Gifts &amp; Tasting Experiences</dd>
-                    <dt>Origin</dt>
-                    <dd>México, 100% Blue Weber Agave</dd>
-                  </dl>
-                  <a href="#" class="product-card__back-link">Add to Cart — $29</a>
-                </div>
-              </div>
-            </article>
-
-          </div>
-        </div>
-
-        <div class="product-explore__dots" id="productDots" role="tablist" aria-label="Product slides">
-          <button class="dot dot--active" data-index="0" role="tab" aria-selected="true" aria-label="Slide 1"></button>
-          <button class="dot" data-index="1" role="tab" aria-selected="false" aria-label="Slide 2"></button>
-          <button class="dot" data-index="2" role="tab" aria-selected="false" aria-label="Slide 3"></button>
-          <button class="dot" data-index="3" role="tab" aria-selected="false" aria-label="Slide 4"></button>
-          <button class="dot" data-index="4" role="tab" aria-selected="false" aria-label="Slide 5"></button>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ============================================================
-         BRAND STORY — Tabbed Section (Our Mission / How It's Made / Founder Story)
-    ============================================================ -->
-    <section class="section brand-story" id="story" aria-label="The BIATCH Story">
-      <div class="container">
-
-        <!-- Tab Navigation -->
-        <div class="brand-story__tabs" role="tablist">
-          <button class="brand-story__tab brand-story__tab--active" role="tab" aria-selected="true"
-            data-tab="mission">Our Mission</button>
-          <button class="brand-story__tab" role="tab" aria-selected="false" data-tab="howmade">How It's Made</button>
-          <button class="brand-story__tab" role="tab" aria-selected="false" data-tab="founder">Founder Story</button>
-        </div>
-
-        <!-- TAB 1: Our Mission -->
-        <div class="brand-story__panel brand-story__panel--active" id="storyPanel-mission" role="tabpanel">
-          <div class="brand-story__layout">
-            <div class="brand-story__media reveal">
-              <div class="craft__frame">
-                <video class="brand-story__video"
-                  src="images/df522bf48c5c4d339bd6c8f862271073.HD-1080p-2.5Mbps-38419077.mp4" muted loop playsinline
-                  autoplay poster="images/df522bf48c5c4d339bd6c8f862271073.thumbnail.0000000000.jpg"></video>
-              </div>
-            </div>
-            <div class="brand-story__content reveal">
-              <span class="eyebrow eyebrow--gold">About BIATCH</span>
-              <div class="craft__rule"></div>
-              <h2 class="brand-story__heading">The Story Behind the Bottle</h2>
-              <p class="brand-story__body">Every bottle of BIATCH is more than tequila — it's a jewel forged for women
-                who refuse to be small. Premium, unapologetic, and crafted to celebrate bold elegance, our collection
-                crowns every occasion with power and grace. This isn't just what you drink — it's what you stand for.
-              </p>
-              <a href="#" class="brand-story__cta">Learn More &rarr;</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- TAB 2: How It's Made -->
-        <div class="brand-story__panel" id="storyPanel-howmade" role="tabpanel" hidden>
-          <div class="brand-story__layout">
-            <div class="brand-story__media reveal">
-              <div class="craft__frame">
-                <img class="brand-story__img" src="images//560749238_18050994590646015_643495055774703383_n..jpg"
-                  alt="BIATCH Tequila craftsmanship" />
-              </div>
-            </div>
-            <div class="brand-story__content reveal">
-              <span class="eyebrow eyebrow--gold">How She's Made</span>
-              <div class="craft__rule"></div>
-              <h2 class="brand-story__heading">From Agave Field to Your Glass</h2>
-              <p class="brand-story__body">Deep in the highlands of Jalisco, every BIATCH bottle begins its journey
-                among the volcanic soils of Los Altos. Our Blue Weber Agave plants mature 7–10 years before harvest —
-                coaxed to peak sweetness by altitude, mineral-rich earth, and generations of craft.</p>
-
-              <hr class="craft__divider" />
-              <div class="craft__stats">
-                <div class="craft__stat">
-                  <span class="craft__stat-num">100%</span>
-                  <span class="craft__stat-label">Blue Weber Agave</span>
-                </div>
-                <div class="craft__stat">
-                  <span class="craft__stat-num">7+</span>
-                  <span class="craft__stat-label">Years Agave Maturity</span>
-                </div>
-                <div class="craft__stat">
-                  <span class="craft__stat-num">3</span>
-                  <span class="craft__stat-label">Award-Winning Expressions</span>
-                </div>
-              </div>
-              <hr class="craft__divider" />
-
-              <!-- Awards Carousel -->
-              <div class="awards-carousel">
-                <button class="awards-carousel__arrow awards-carousel__arrow--prev"
-                  aria-label="Previous awards">&#8249;</button>
-                <div class="awards-carousel__track">
-                  <img src="images/Badge 1.png" alt="Award badge" class="awards-carousel__badge" />
-                  <img src="images/Badge 2.png" alt="Award badge" class="awards-carousel__badge" />
-                  <img src="images/Badge 3.png" alt="Award badge" class="awards-carousel__badge" />
-                  <img src="images/Badge 4.png" alt="Award badge" class="awards-carousel__badge" />
-                  <img src="images/Badge 5.png" alt="Award badge" class="awards-carousel__badge" />
-                  <img src="images/Badge 6.png" alt="Award badge" class="awards-carousel__badge" />
-                  <img src="images/Badge 7.png" alt="Award badge" class="awards-carousel__badge" />
-                  <img src="images/Badge 8.png" alt="Award badge" class="awards-carousel__badge" />
-                  <img src="images/Badge 9.png" alt="Award badge" class="awards-carousel__badge" />
-                </div>
-                <button class="awards-carousel__arrow awards-carousel__arrow--next"
-                  aria-label="Next awards">&#8250;</button>
               </div>
             </div>
           </div>
-        </div>
-
-        <!-- TAB 3: Founder Story -->
-        <div class="brand-story__panel" id="storyPanel-founder" role="tabpanel" hidden>
-          <div class="brand-story__layout">
-            <div class="brand-story__media reveal">
-              <div class="craft__frame">
-                <img class="brand-story__img"
-                  src="images/sue_hrib_founder_biatch_story_1200x_4331d5c2-724c-4a36-aad4-9e6d5cab072a.jpg"
-                  alt="Sue, Founder of BIATCH Tequila" />
-              </div>
-            </div>
-            <div class="brand-story__content reveal">
-              <span class="eyebrow eyebrow--gold">The Founder</span>
-              <div class="craft__rule"></div>
-              <h2 class="brand-story__heading">Meet Sue. The woman who changed the pour.</h2>
-              <p class="brand-story__body">Sue Hrib, a seasoned entrepreneur with a proven track record of success,
-                launched BIATCH tequila with a mission to empower women. After building and selling a successful
-                consulting firm, Sue channeled her passion for community service — honed through a decade of work with
-                the Carter Center and Usher's New Look — into reclaiming the strong female spirit "BIATCH". BIATCH is
-                not just about quality spirits; it's about making a meaningful impact.</p>
-              <blockquote class="brand-story__quote">
-                <p>"I wanted to create a tequila for the woman who owns every room she walks into."</p>
-                <cite>— Sue, Founder of BIATCH Tequila</cite>
-              </blockquote>
-            </div>
+          <div class="product-card-info">
+            <h4 class="product-card-title">Rosa Blanco</h4>
+            <p class="product-card-subtitle">PREMIUM TEQUILA &middot; 750ML</p>
+            <p class="product-card-price">From <s>$16.00</s> | $63.00</p>
+          </div>
+          <div class="product-card-action">
+            <button class="btn-primary">ADD TO CART &mdash; $63</button>
           </div>
         </div>
 
-      </div>
-    </section>
+        <!-- Product 2: Reposado -->
+        <div class="product-card">
+          <div class="product-card-image">
+            <button class="product-flip-icon" aria-label="Flip for tasting notes">
+              <i class="ph ph-arrows-clockwise"></i>
+            </button>
+            <div class="product-card-image-inner">
+              <div class="product-card-front">
+                <img src="https://placehold.co/400x533/F0F0F0/999999?text=Reposado+Front"
+                  alt="BIATCH Reposado Tequila Front">
+              </div>
+              <div class="product-card-back tasting-notes">
+                <button class="tasting-close" aria-label="Close tasting notes">
+                  <i class="ph ph-x"></i>
+                </button>
+                <h5 class="tasting-title">Tasting Notes</h5>
+                <div class="tasting-grid">
+                  <div class="tasting-item">
+                    <span class="tasting-label">PALATE</span>
+                    <span class="tasting-value">Warm Honey, Vanilla, Caramel With Smooth Agave Finish</span>
+                  </div>
+                  <div class="tasting-item">
+                    <span class="tasting-label">AROMA</span>
+                    <span class="tasting-value">Toasted Oak, Butterscotch, Hints Of Cinnamon</span>
+                  </div>
+                  <div class="tasting-item">
+                    <span class="tasting-label">EYE</span>
+                    <span class="tasting-value">Golden Amber</span>
+                  </div>
+                  <div class="tasting-item">
+                    <span class="tasting-label">AGE</span>
+                    <span class="tasting-value">Aged 4+ Months In American Oak Barrels</span>
+                  </div>
+                  <div class="tasting-item">
+                    <span class="tasting-label">PROOF</span>
+                    <span class="tasting-value">40% ALC VOL.</span>
+                  </div>
+                  <div class="tasting-item">
+                    <span class="tasting-label">ORIGIN</span>
+                    <span class="tasting-value">M&eacute;xico, 100% Blue Weber Agave</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="product-card-info">
+            <h4 class="product-card-title">Reposado</h4>
+            <p class="product-card-subtitle">PREMIUM TEQUILA &middot; 750ML</p>
+            <p class="product-card-price">From <s>$17.00</s> | $83.00</p>
+          </div>
+          <div class="product-card-action">
+            <button class="btn-primary">ADD TO CART &mdash; $83</button>
+          </div>
+        </div>
 
-    <!-- ============================================================
-         CURATED COLLECTIONS
-    ============================================================ -->
-    <section class="curated" id="collections" aria-label="Curated Collections">
-      <div class="container">
-        <div class="curated__header reveal">
-          <span class="eyebrow eyebrow--gold">Shop the Collection</span>
-          <div class="craft__rule"></div>
-          <h2 class="section__heading">Merchandise, Gifts &amp; Accessories</h2>
+        <!-- Product 3: Añejo Ultra -->
+        <div class="product-card">
+          <div class="product-card-image">
+            <button class="product-flip-icon" aria-label="Flip for tasting notes">
+              <i class="ph ph-arrows-clockwise"></i>
+            </button>
+            <div class="product-card-image-inner">
+              <div class="product-card-front">
+                <img src="https://placehold.co/400x533/F0F0F0/999999?text=Anejo+Front" alt="BIATCH Anejo Tequila Front">
+              </div>
+              <div class="product-card-back tasting-notes">
+                <button class="tasting-close" aria-label="Close tasting notes">
+                  <i class="ph ph-x"></i>
+                </button>
+                <h5 class="tasting-title">Tasting Notes</h5>
+                <div class="tasting-grid">
+                  <div class="tasting-item">
+                    <span class="tasting-label">PALATE</span>
+                    <span class="tasting-value">Rich Dark Chocolate, Dried Fruit, Toasted Almond</span>
+                  </div>
+                  <div class="tasting-item">
+                    <span class="tasting-label">AROMA</span>
+                    <span class="tasting-value">Deep Vanilla, Smoky Oak, Brown Sugar</span>
+                  </div>
+                  <div class="tasting-item">
+                    <span class="tasting-label">EYE</span>
+                    <span class="tasting-value">Deep Amber</span>
+                  </div>
+                  <div class="tasting-item">
+                    <span class="tasting-label">AGE</span>
+                    <span class="tasting-value">Aged 18+ Months In French Oak Barrels</span>
+                  </div>
+                  <div class="tasting-item">
+                    <span class="tasting-label">PROOF</span>
+                    <span class="tasting-value">40% ALC VOL.</span>
+                  </div>
+                  <div class="tasting-item">
+                    <span class="tasting-label">ORIGIN</span>
+                    <span class="tasting-value">M&eacute;xico, 100% Blue Weber Agave</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="product-card-info">
+            <h4 class="product-card-title">&Aacute;nejo Ultra</h4>
+            <p class="product-card-subtitle">PREMIUM TEQUILA &middot; 750ML</p>
+            <p class="product-card-price">$425.00</p>
+          </div>
+          <div class="product-card-action">
+            <button class="btn-primary">CHOOSE OPTIONS</button>
+          </div>
+        </div>
+
+        <!-- Product 4: Bundle Specials -->
+        <div class="product-card">
+          <div class="product-card-image">
+            <button class="product-flip-icon" aria-label="Flip for tasting notes">
+              <i class="ph ph-arrows-clockwise"></i>
+            </button>
+            <div class="product-card-image-inner">
+              <div class="product-card-front">
+                <img src="https://placehold.co/400x533/F0F0F0/999999?text=Bundle+Specials" alt="BIATCH Bundle Specials">
+              </div>
+              <div class="product-card-back tasting-notes">
+                <button class="tasting-close" aria-label="Close tasting notes">
+                  <i class="ph ph-x"></i>
+                </button>
+                <h5 class="tasting-title">What's Included</h5>
+                <div class="tasting-grid">
+                  <div class="tasting-item">
+                    <span class="tasting-label">INCLUDES</span>
+                    <span class="tasting-value">Rosa Blanco 750ML + Reposado 750ML</span>
+                  </div>
+                  <div class="tasting-item">
+                    <span class="tasting-label">SAVINGS</span>
+                    <span class="tasting-value">Save 15% When You Bundle</span>
+                  </div>
+                  <div class="tasting-item">
+                    <span class="tasting-label">PERFECT FOR</span>
+                    <span class="tasting-value">Gifts, Parties, And Tequila Lovers</span>
+                  </div>
+                  <div class="tasting-item">
+                    <span class="tasting-label">SHIPPING</span>
+                    <span class="tasting-value">Free Shipping On Orders Over $100</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="product-card-info">
+            <h4 class="product-card-title">Bundle Specials</h4>
+            <p class="product-card-subtitle">CURATED COLLECTION</p>
+            <p class="product-card-price">From $52.00</p>
+          </div>
+          <div class="product-card-action">
+            <button class="btn-primary sold-out">SOLD OUT</button>
+          </div>
         </div>
       </div>
-      <div class="curated__panels">
 
-        <div class="curated__panel reveal">
-          <img src="images/freepik__create-a-banner-lifestyle-image-using-this-same-pr__70862.png"
-            alt="Gift Sets &amp; Bundles" class="curated__panel-img" />
-          <div class="curated__panel-overlay"></div>
-          <div class="curated__panel-content">
-            <span class="curated__panel-eyebrow">Save up to 20%</span>
-            <h3 class="curated__panel-heading">Gift Sets &amp; Bundles</h3>
-            <p class="curated__panel-sub">Curated sets for every occasion.</p>
-            <a href="#" class="curated__panel-btn curated__panel-btn--solid">Shop Bundles</a>
-          </div>
-        </div>
-
-        <div class="curated__panel reveal">
-          <img src="images/freepik__create-a-banner-lifestyle-image-using-this-same-pr__70863.png" alt="Bar Accessories"
-            class="curated__panel-img" />
-          <div class="curated__panel-overlay"></div>
-          <div class="curated__panel-content">
-            <span class="curated__panel-eyebrow">New Arrivals</span>
-            <h3 class="curated__panel-heading">Bar Accessories</h3>
-            <p class="curated__panel-sub">Premium barware for tequila lovers.</p>
-            <a href="#" class="curated__panel-btn curated__panel-btn--solid">Shop Accessories</a>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ============================================================
-         SECTION 7 — EVENTS & COLLABS
-    ============================================================ -->
-    <section class="section events" id="events" aria-label="Events">
-      <div class="container">
-        <div class="events__header reveal">
-          <span class="eyebrow eyebrow--gold">Upcoming Events</span>
-          <div class="craft__rule"></div>
-          <h2 class="section__heading">Where to Find BIATCH</h2>
-          <p class="events__subtitle">Join us at our next event — tastings, pop-ups, and exclusive experiences.</p>
-        </div>
-        <div class="events__grid">
-          <!-- Featured Event — spans full width -->
-          <div class="events__card events__card--featured reveal">
-            <img src="images/C9zuwM6PZG0GFLs8ikkamUuMdbA.jpg" alt="BIATCH at Miami Art Basel"
-              class="events__card-img" />
-            <div class="events__card-info">
-              <span class="events__card-tag">Pop-Up</span>
-              <h3 class="events__card-title">Miami Art Basel</h3>
-              <p class="events__card-date">Jun 14–16, 2026 &middot; Miami Beach, FL</p>
-            </div>
-          </div>
-          <!-- Side Events -->
-          <div class="events__card reveal">
-            <img src="images/6ARWlMQQJznwbT6R52zhlr4B2E.png" alt="BIATCH Brand Takeover collab"
-              class="events__card-img" />
-            <div class="events__card-info">
-              <span class="events__card-tag">Collab</span>
-              <h3 class="events__card-title">The Brand Takeover</h3>
-              <p class="events__card-date">May 8, 2026 &middot; Los Angeles, CA</p>
-            </div>
-          </div>
-          <div class="events__card reveal">
-            <img src="images/RWf8pfGa0bV0mJmiq4ZkP1kc794.jpg" alt="BIATCH NYC private dinner"
-              class="events__card-img" />
-            <div class="events__card-info">
-              <span class="events__card-tag">Tasting</span>
-              <h3 class="events__card-title">NYC Private Dinner</h3>
-              <p class="events__card-date">Apr 25, 2026 &middot; New York, NY</p>
-            </div>
-          </div>
-        </div>
-        <div class="events__cta reveal">
-          <a href="#" class="curated__panel-btn curated__panel-btn--solid">View All Events</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         SECTION 8 — RECIPES: BIATCH LOUNGE
-    ============================================================ -->
-    <section class="section recipes" id="recipes" aria-label="BIATCH Lounge Cocktail Recipes">
-      <div class="container">
-
-        <div class="recipes__header reveal">
-          <span class="eyebrow eyebrow--gold">Sips &amp; Recipes</span>
-          <div class="craft__rule"></div>
-          <h2 class="section__heading">The BIATCH Lounge</h2>
-          <p class="recipes__subtitle">Favorite cocktail recipes for Rosa and Reposado Tequilas</p>
-        </div>
-
-        <div class="recipes__scroll-area">
-          <div class="recipes__track" id="recipeTrack">
-
-            <!-- Blood Orange Coconut Margarita -->
-            <article class="recipe-card reveal" tabindex="0" role="button"
-              aria-label="View recipe: BIATCH Blood Orange Coconut Margarita"
-              data-title="BIATCH Blood Orange Coconut Margarita" data-tag="SIGNATURE COCKTAIL" data-spirit="Reposado"
-              data-time="5 MIN" data-servings="1 SERVING"
-              data-video="images/ea9665b3d83e4602af40d56170eee94c.HD-1080p-3.3Mbps-45327641 (1).mp4"
-              data-ingredients='["2 oz BIATCH Reposado Tequila","1/2 oz orange liqueur","1 oz lime juice","1 oz blood orange juice","1/2 oz cream of coconut"]'
-              data-instructions='["Add all ingredients to a shaker filled with ice.","Shake it like a BIATCH — vigorously for about 15 seconds until well chilled.","Strain into a rocks glass over fresh ice (optional: rim glass with salt or coconut sugar).","Garnish with a blood orange wheel or lime wedge for extra flair.","Add salt and lime zest to the rim (and of course enjoy)."]'>
-              <div class="recipe-card__media">
-                <span class="recipe-card__play-btn"><i class="ph-fill ph-play"></i></span>
-                <img src="images/IMG_7468_1.jpg" alt="Blood Orange Coconut Margarita cocktail"
-                  class="recipe-card__img" />
-              </div>
-              <div class="recipe-card__info">
-                <span class="recipe-card__tag recipe-card__tag--signature">SIGNATURE COCKTAIL</span>
-                <h3 class="recipe-card__name">Blood Orange Coconut Margarita</h3>
-                <p class="recipe-card__desc">This margarita blends blood orange, coconut, and BIATCH® Reposado for a
-                  perfectly sweet, tart, and smooth sip.</p>
-                <hr class="recipe-card__divider" />
-                <div class="recipe-card__meta">
-                  <span class="recipe-card__meta-item"><i class="ph ph-clock"></i> 5 min</span>
-                  <span class="recipe-card__meta-item"><i class="ph ph-heart"></i> Reposado</span>
-                </div>
-              </div>
-            </article>
-
-            <!-- Blueberry Tequila Smash -->
-            <article class="recipe-card reveal" tabindex="0" role="button"
-              aria-label="View recipe: BIATCH Blueberry Tequila Smash" data-title="BIATCH Blueberry Tequila Smash"
-              data-tag="SUMMER VIBES" data-spirit="Rosa" data-time="5 MIN" data-servings="1 SERVING"
-              data-video="images/64335eb6641341dbbbc40f6b0139a21d.HD-720p-1.6Mbps-45334616 (1).mp4"
-              data-ingredients='["1.5 oz Blueberry Syrup","1.5 oz lime juice","1.5 oz BIATCH Rosa Tequila","Top with lime sparkling water"]'
-              data-instructions='["Fill a shaker with ice.","Add 1.5 oz blueberry syrup, 1.5 oz lime juice, and 1.5 oz BIATCH Rosa Tequila.","Shake well until chilled.","Strain into a glass over fresh ice.","Top with lime sparkling water.","Garnish with a few blueberries or a lime wheel, and enjoy!"]'>
-              <div class="recipe-card__media">
-                <span class="recipe-card__play-btn"><i class="ph-fill ph-play"></i></span>
-                <img src="images/SexyBIATCH.png" alt="Blueberry Tequila Smash cocktail" class="recipe-card__img" />
-              </div>
-              <div class="recipe-card__info">
-                <span class="recipe-card__tag recipe-card__tag--signature">SUMMER VIBES</span>
-                <h3 class="recipe-card__name">Blueberry Tequila Smash</h3>
-                <p class="recipe-card__desc">This tequila smash is a bright, fizzy blend of blueberries, lime, and
-                  BIATCH® Rosa — perfect for sunny days and patio vibes.</p>
-                <hr class="recipe-card__divider" />
-                <div class="recipe-card__meta">
-                  <span class="recipe-card__meta-item"><i class="ph ph-clock"></i> 5 min</span>
-                  <span class="recipe-card__meta-item"><i class="ph ph-heart"></i> Rosa</span>
-                </div>
-              </div>
-            </article>
-
-            <!-- BIATCH Pink Seduction -->
-            <article class="recipe-card reveal" tabindex="0" role="button"
-              aria-label="View recipe: BIATCH Pink Seduction" data-title="BIATCH Pink Seduction"
-              data-tag="SIGNATURE COCKTAIL" data-spirit="Reposado" data-time="5 MIN" data-servings="1 SERVING"
-              data-video="images/a12a26d8bcf14d88b0069481544c11f3.HD-1080p-3.3Mbps-45583835 (1).mp4"
-              data-ingredients='["2 oz BIATCH Reposado Tequila","1 oz fresh lemon juice","3/4 oz raspberry syrup (for that lush pink hue)","1 oz coconut cream (for the creamy texture)","Dash of vanilla extract","Ice"]'
-              data-instructions='["Add 2 oz BIATCH Reposado Tequila, 1 oz fresh lemon juice, ¾ oz raspberry syrup, 1 oz coconut cream, and a dash of vanilla extract to a shaker.","Fill with ice and shake vigorously until well chilled and creamy.","Strain into a rocks glass over fresh ice.","Garnish with a raspberry or lemon twist.","Sip and enjoy that dreamy, pink perfection!"]'>
-              <div class="recipe-card__media">
-                <span class="recipe-card__play-btn"><i class="ph-fill ph-play"></i></span>
-                <img src="images/BIATCH_Pink_Seduction.jpg" alt="BIATCH Pink Seduction cocktail"
-                  class="recipe-card__img" />
-              </div>
-              <div class="recipe-card__info">
-                <span class="recipe-card__tag recipe-card__tag--signature">SIGNATURE COCKTAIL</span>
-                <h3 class="recipe-card__name">Pink Seduction</h3>
-                <p class="recipe-card__desc">Creamy, dreamy, and just rebellious enough — this is the kind of drink
-                  that doesn't ask for attention, it <em>demands</em> it.</p>
-                <hr class="recipe-card__divider" />
-                <div class="recipe-card__meta">
-                  <span class="recipe-card__meta-item"><i class="ph ph-clock"></i> 5 min</span>
-                  <span class="recipe-card__meta-item"><i class="ph ph-heart"></i> Reposado</span>
-                </div>
-              </div>
-            </article>
-
-            <!-- BIATCH Please -->
-            <article class="recipe-card reveal" tabindex="0" role="button" aria-label="View recipe: BIATCH Please"
-              data-title="BIATCH Please" data-tag="SIGNATURE COCKTAIL" data-spirit="Rosa" data-time="3 MIN"
-              data-servings="1 SERVING"
-              data-video="images/d1a5d9358052459ab7755a5bb051fa07.HD-1080p-7.2Mbps-34690351.mp4"
-              data-ingredients='["2 oz BIATCH Rosa Tequila","Top with Fever Tree Sparkling Grapefruit","Tajin rim","Grapefruit garnish"]'
-              data-instructions='["Add agave onto rim of glass.","Place rim of glass into Tajin.","Build in glass over fresh ice.","Garnish with fresh grapefruit slice."]'>
-              <div class="recipe-card__media">
-                <span class="recipe-card__play-btn"><i class="ph-fill ph-play"></i></span>
-                <img src="images/BIATCHplease.jpg" alt="BIATCH Please cocktail" class="recipe-card__img" />
-              </div>
-              <div class="recipe-card__info">
-                <span class="recipe-card__tag recipe-card__tag--signature">SIGNATURE COCKTAIL</span>
-                <h3 class="recipe-card__name">BIATCH Please</h3>
-                <p class="recipe-card__desc">This vibrant cocktail mixes floral BIATCH Rosa with tangy Fever Tree
-                  Sparkling Grapefruit, served in a Tajin-rimmed glass.</p>
-                <hr class="recipe-card__divider" />
-                <div class="recipe-card__meta">
-                  <span class="recipe-card__meta-item"><i class="ph ph-clock"></i> 3 min</span>
-                  <span class="recipe-card__meta-item"><i class="ph ph-heart"></i> Rosa</span>
-                </div>
-              </div>
-            </article>
-
-          </div>
-        </div>
-
-        <div class="recipes__nav recipes__nav--centered">
-          <button class="recipes__arrow" id="recipePrev" aria-label="Previous recipe">&#8249;</button>
-          <button class="recipes__arrow" id="recipeNext" aria-label="Next recipe">&#8250;</button>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ============================================================
-         RECIPE MODAL
-    ============================================================ -->
-    <div class="recipe-modal" id="recipeModal" aria-hidden="true" role="dialog" aria-modal="true"
-      aria-labelledby="modalTitle">
-      <div class="recipe-modal__backdrop" id="modalBackdrop"></div>
-      <div class="recipe-modal__panel">
-        <button class="recipe-modal__close" id="modalClose" aria-label="Close recipe">
-          <i class="ph ph-x"></i>
+      <!-- Mobile Slider Controls -->
+      <div class="slider-controls products-slider-controls">
+        <button class="slider-arrow products-slider-prev" aria-label="Previous product">
+          <i class="ph ph-caret-left"></i>
         </button>
-        <div class="recipe-modal__video-wrap" id="modalVideoWrap" style="display:none;">
-          <video class="recipe-modal__video" id="modalVideo" controls playsinline></video>
+        <button class="slider-dot active"></button>
+        <button class="slider-dot"></button>
+        <button class="slider-dot"></button>
+        <button class="slider-dot"></button>
+        <button class="slider-arrow products-slider-next" aria-label="Next product">
+          <i class="ph ph-caret-right"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       SECTION 3: PREMIUM TEQUILAS RICH TEXT
+       ============================================ -->
+  <section class="richtext-section">
+    <div class="container-narrow">
+      <div class="section-header center">
+        <span class="eyebrow">ABOUT BIATCH</span>
+        <h2>Premium Tequilas</h2>
+      </div>
+      <p>Every bottle of B!ATCH is more than tequila—it’s a jewel forged for women who refuse to be small. Premium,
+        unapologetic, and crafted to celebrate bold elegance, our collection crowns every occasion with power and grace.
+        This isn’t just what you drink—it’s what you stand for.</p>
+      <a href="#products" class="btn-link">Shop our collection of premium tequilas - made specifically for a Women’s
+        Palette</a>
+    </div>
+  </section>
+
+  <!-- Gradient Divider -->
+  <div class="gradient-divider"></div>
+
+  <!-- ============================================
+       SECTION 4: PASSIONATE MISSION
+       ============================================ -->
+  <section id="mission" class="mission-section">
+    <div class="container">
+      <div class="mission-content">
+        <!-- Text Column -->
+        <div class="mission-text">
+          <div class="section-header">
+            <span class="eyebrow">HOW SHE'S MADE</span>
+            <h2>Passionate Mission</h2>
+          </div>
+
+          <p>BIATCH is a lifestyle brand that celebrates the flavor of luxury, and the spirit of incredible women.The
+            TequilasSpirits aren’t just for men anymore. Women are cutting calories and sugar by leaving wine and beer
+            behind while trending toward spirits in big numbers. BIATCH Tequilas are artfully handcrafted and
+            intentionally made for the woman’s palate. There is a bottle for every occasion.BIATCH offers four well
+            crafted premium and ultra premium sipping tequilas with slightly sweet, enticing flavors women already love
+            more than their favorite luggage.</p>
+          <a href="#" class="btn-link">See how our tequila is made</a>
+
+          <div class="mission-stats">
+            <div class="mission-stat">
+              <span class="stat-number">2</span>
+              <span class="stat-label">Beautiful Flavors</span>
+            </div>
+            <div class="mission-stat">
+              <span class="stat-number">9</span>
+              <span class="stat-label">Industry Awards</span>
+            </div>
+            <div class="mission-stat">
+              <span class="stat-number">+7k</span>
+              <span class="stat-label">4-Star Reviews</span>
+            </div>
+          </div>
         </div>
-        <div class="recipe-modal__body">
-          <span class="recipe-modal__tag" id="modalTag"></span>
-          <h2 class="recipe-modal__title" id="modalTitle"></h2>
-          <p class="recipe-modal__meta" id="modalMeta"></p>
-          <div class="recipe-modal__section">
-            <h4 class="recipe-modal__section-label">Ingredients</h4>
-            <hr class="recipe-modal__rule" />
-            <ul class="recipe-modal__list" id="modalIngredients"></ul>
+
+        <!-- Images Column -->
+        <div class="mission-images">
+          <div class="mission-video">
+            <video class="img-large" autoplay muted loop playsinline
+              poster="images/3541600bed5b4f48b6d812b581222458.thumbnail.0000000000.jpg">
+              <source src="images/df522bf48c5c4d339bd6c8f862271073.HD-1080p-2.5Mbps-38419077.mp4" type="video/mp4">
+            </video>
           </div>
-          <div class="recipe-modal__section">
-            <h4 class="recipe-modal__section-label">Method</h4>
-            <hr class="recipe-modal__rule" />
-            <ol class="recipe-modal__steps" id="modalInstructions"></ol>
+          <div class="mission-images-row">
+            <img src="images/560749238_18050994590646015_643495055774703383_n..jpg" alt="BIATCH Tequila Social">
+            <img src="images/RWf8pfGa0bV0mJmiq4ZkP1kc794.jpg" alt="BIATCH Tequila Social">
           </div>
-          <div class="recipe-modal__actions">
-            <button class="recipe-modal__action-btn" id="modalShare" type="button">
-              <i class="ph ph-share-network"></i> Share
-            </button>
-            <button class="recipe-modal__action-btn" id="modalPrint" type="button">
-              <i class="ph ph-printer"></i> Print
-            </button>
+        </div>
+      </div>
+
+      <!-- Awards Badge Slider -->
+      <div class="awards-slider">
+        <img src="images/Badge 1.png" alt="Spirit Award Silver 2025">
+        <img src="images/Badge 2.png" alt="Gold Medal">
+        <img src="images/Badge 3.png" alt="Silver Medal">
+        <img src="images/Badge 4.png" alt="Best Spirit Award">
+        <img src="images/Badge 5.png" alt="Tasting Award">
+        <img src="images/Badge 6.png" alt="Excellence Award">
+        <img src="images/Badge 8.png" alt="Bronze Medal">
+        <img src="images/Badge 9.png" alt="Premium Selection">
+      </div>
+    </div>
+  </section>
+
+  <!-- Gradient Divider -->
+  <div class="gradient-divider"></div>
+
+  <!-- ============================================
+       SECTION 5: STYLISH UPGRADES & PREMIUM PAIRINGS
+       ============================================ -->
+  <section class="multicolumn-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">OUR MERCHANDISE</span>
+        <h2 class="section-heading">Merchandise, Gifts &amp; Accessories</h2>
+      </div>
+
+      <div class="multicolumn-grid">
+        <!-- Card 1 -->
+        <div class="multicolumn-card">
+          <div class="multicolumn-card-image">
+            <img src="images/Screenshot_2025-07-22_052309_6117bbae-0c6a-4bcb-9568-ede6d03e6408.gif"
+              alt="Stylish Upgrades">
+          </div>
+          <div class="multicolumn-card-content">
+            <span class="subtitle">Elevate your collection</span>
+            <h3>Stylish Upgrades</h3>
+            <a href="#" class="btn-link">Shop Bundles</a>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="multicolumn-card">
+          <div class="multicolumn-card-image">
+            <img src="images/Rectangle_56.png" alt="Premium Pairings">
+          </div>
+          <div class="multicolumn-card-content">
+            <span class="subtitle">Perfect gift combinations</span>
+            <h3>Premium Pairings</h3>
+            <a href="#" class="btn-link">Shop Gift Sets</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Slider Dots -->
+      <div class="slider-controls multicolumn-slider-controls">
+        <button class="slider-dot active"></button>
+        <button class="slider-dot"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gradient Divider -->
+  <div class="gradient-divider"></div>
+
+  <!-- ============================================
+       SECTION 6: SIGHTINGS IN THE WILD
+       ============================================ -->
+  <section class="sightings-section">
+    <div class="container">
+      <div class="section-header center">
+        <span class="eyebrow">EVENTS &amp; COLLABS</span>
+        <h2 class="section-heading">Sightings In The Wild</h2>
+      </div>
+
+      <!-- Desktop Grid -->
+      <div class="sightings-grid">
+        <div class="sightings-item">
+          <img src="images/s729nsSYqNdqEQIeI4v3fxHK1dA.jpg" alt="BIATCH at Events">
+          <div class="sightings-overlay">
+            <div class="sightings-overlay-stats">
+              <span><i class="ph ph-chat-circle"></i> 24</span>
+              <span><i class="ph ph-eye"></i> 1.2k</span>
+            </div>
+            <span class="sightings-overlay-title">Launch Party Downtown LA</span>
+          </div>
+        </div>
+        <div class="sightings-item">
+          <img src="images/6ARWlMQQJznwbT6R52zhlr4B2E.png" alt="BIATCH VIP Night">
+          <div class="sightings-overlay">
+            <div class="sightings-overlay-stats">
+              <span><i class="ph ph-chat-circle"></i> 18</span>
+              <span><i class="ph ph-eye"></i> 890</span>
+            </div>
+            <span class="sightings-overlay-title">VIP Night at The Grove</span>
+          </div>
+        </div>
+        <div class="sightings-item">
+          <img src="images/WGH5umXFhY4RvHBF64szQL28MHo.jpg" alt="BIATCH Tasting Event">
+          <div class="sightings-overlay">
+            <div class="sightings-overlay-stats">
+              <span><i class="ph ph-chat-circle"></i> 32</span>
+              <span><i class="ph ph-eye"></i> 2.1k</span>
+            </div>
+            <span class="sightings-overlay-title">Exclusive Tasting Experience</span>
+          </div>
+        </div>
+        <div class="sightings-item">
+          <img src="images/RWf8pfGa0bV0mJmiq4ZkP1kc794.jpg" alt="BIATCH Brunch">
+          <div class="sightings-overlay">
+            <div class="sightings-overlay-stats">
+              <span><i class="ph ph-chat-circle"></i> 12</span>
+              <span><i class="ph ph-eye"></i> 650</span>
+            </div>
+            <span class="sightings-overlay-title">BIATCH Brunch Series</span>
+          </div>
+        </div>
+        <div class="sightings-item">
+          <img src="images/EkzBsCQ7Nf436OzkAPEhEPnVtI.jpg" alt="BIATCH Pop-up">
+          <div class="sightings-overlay">
+            <div class="sightings-overlay-stats">
+              <span><i class="ph ph-chat-circle"></i> 45</span>
+              <span><i class="ph ph-eye"></i> 3.4k</span>
+            </div>
+            <span class="sightings-overlay-title">Pop-up at Miami Beach</span>
+          </div>
+        </div>
+        <div class="sightings-item">
+          <img src="images/9uJrE9evVDE5n4OiwJdgH1pQOEg.png" alt="BIATCH Gala">
+          <div class="sightings-overlay">
+            <div class="sightings-overlay-stats">
+              <span><i class="ph ph-chat-circle"></i> 28</span>
+              <span><i class="ph ph-eye"></i> 1.8k</span>
+            </div>
+            <span class="sightings-overlay-title">Annual Empowerment Gala</span>
+          </div>
+        </div>
+        <div class="sightings-item">
+          <img src="images/wh5pWk0NDcaZATJTSPbj88HSk.jpg" alt="BIATCH Collaboration">
+          <div class="sightings-overlay">
+            <div class="sightings-overlay-stats">
+              <span><i class="ph ph-chat-circle"></i> 56</span>
+              <span><i class="ph ph-eye"></i> 4.2k</span>
+            </div>
+            <span class="sightings-overlay-title">Celebrity Collaboration Night</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Slider Dots -->
+      <div class="slider-controls sightings-slider-controls">
+        <button class="slider-dot active"></button>
+        <button class="slider-dot"></button>
+        <button class="slider-dot"></button>
+        <button class="slider-dot"></button>
+        <button class="slider-dot"></button>
+        <button class="slider-dot"></button>
+      </div>
+
+      <div class="sightings-footer">
+        <span class="subtitle">See Biatch on the street</span>
+        <h3>EVENTS &amp; COLLABS</h3>
+        <a href="#" class="btn-link">Explore the Scene</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gradient Divider -->
+  <div class="gradient-divider"></div>
+
+  <!-- ============================================
+       SECTION 7: SIPS & RECIPES
+       ============================================ -->
+  <section id="recipes" class="recipes-section">
+    <div class="container">
+      <div class="section-header center">
+        <span class="eyebrow">SIPS &amp; RECIPES</span>
+        <h2 class="section-heading">The BIATCH Lounge</h2>
+      </div>
+      <div class="recipes-grid">
+        <!-- Recipe 1 -->
+        <div class="recipe-card">
+          <div class="recipe-card-image">
+            <img src="images/IMG_7468_1.jpg" alt="Strawberry Paloma Cocktail">
+          </div>
+          <div class="recipe-card-content">
+            <span class="label">Rosa Tequila</span>
+            <h4>Strawberry Paloma</h4>
+            <p>Rosa Tequila, grapefruit and strawberry syrup, topped with fizzy
+              club soda for a sassy, sparkling sip.</p>
+          </div>
+        </div>
+
+        <!-- Recipe 2 -->
+        <div class="recipe-card">
+          <div class="recipe-card-image">
+            <img src="images/SexyBIATCH.png" alt="Sexy & Spicy Cocktail">
+          </div>
+          <div class="recipe-card-content">
+            <span class="label">Reposado Tequila</span>
+            <h4>Sexy &amp; Spicy</h4>
+            <p>Reposado with cucumber, habanero, Ancho Reyes Verde, lime,
+              and agave for a fiery yet refreshing taste.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Slider Dots -->
+      <div class="slider-controls recipes-slider-controls">
+        <button class="slider-dot active"></button>
+        <button class="slider-dot"></button>
+      </div>
+
+      <div class="recipes-footer">
+        <span class="subtitle">Mixology with class</span>
+        <h3>SIPS &amp; RECIPES</h3>
+        <a href="#" class="btn-link">Explore new Flavors</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gradient Divider -->
+  <div class="gradient-divider"></div>
+
+  <!-- ============================================
+       SECTION 8: FOUNDER / ABOUT
+       ============================================ -->
+  <section id="founder" class="founder-section">
+    <div class="container">
+      <div class="founder-grid">
+        <!-- Brand Column (left) -->
+        <div class="founder-brand">
+          <img class="brand-logo-img" src="images/biatch-logo (1).png" alt="BIATCH Tequila Logo">
+          <h3>Owned &amp; Fashioned by a Team of Spirited Women</h3>
+        </div>
+
+        <!-- Bio Column (center) -->
+        <div class="founder-bio">
+          <h3>Our Founder</h3>
+          <p>Sue Hrib, a seasoned entrepreneur with a proven track record of success, launched BIATCH tequila with a
+            mission to empower women. After building and selling a successful consulting firm, Sue channeled her passion
+            for community service&mdash;honed through a decade of work with the Carter Center and Usher's New
+            Look&mdash;into reclaiming the strong female spirit "BIATCH".</p>
+          <p>BIATCH is not just about quality spirits; it's about making a meaningful impact.</p>
+          <div class="founder-bio-bottom">
+            <a href="#" class="btn-link">Meet Our Team</a>
+            <img class="certification-badge" src="images/image_4_286458a4-e831-40d1-bab0-753d50f66169.png"
+              alt="Women Owned Business Certification">
+          </div>
+        </div>
+
+        <!-- Photo Column (right) -->
+        <div class="founder-photo">
+          <img src="images/sue_hrib_founder_biatch_story_1200x_4331d5c2-724c-4a36-aad4-9e6d5cab072a.jpg"
+            alt="Sue Hrib — Founder of BIATCH Tequila">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gradient Divider -->
+  <div class="gradient-divider"></div>
+
+  <!-- ============================================
+       SECTION 9: CUSTOMER REVIEWS
+       ============================================ -->
+  <section class="reviews-section">
+    <div class="container">
+      <div class="section-header center">
+        <h2 class="section-heading">Our Customers Have<br>Something to Say</h2>
+      </div>
+
+      <!-- Rating Summary -->
+      <div class="reviews-rating">
+        <div class="reviews-stars">
+          <span class="review-star"><i class="ph-fill ph-star"></i></span>
+          <span class="review-star"><i class="ph-fill ph-star"></i></span>
+          <span class="review-star"><i class="ph-fill ph-star"></i></span>
+          <span class="review-star"><i class="ph-fill ph-star"></i></span>
+          <span class="review-star half"><i class="ph-fill ph-star-half"></i></span>
+        </div>
+        <p class="reviews-rating-text">from 1254 reviews <img src="images/judgemeicon.svg" alt="Judge.me verified" class="reviews-judgeme-icon"></p>
+      </div>
+
+      <!-- Reviews Carousel -->
+      <div class="reviews-carousel">
+        <button class="reviews-carousel-arrow reviews-prev" aria-label="Previous reviews">
+          <i class="ph ph-caret-left"></i>
+        </button>
+
+        <div class="reviews-carousel-wrapper">
+          <div class="reviews-carousel-track">
+            <!-- Review 1 -->
+            <div class="review-card">
+              <div class="review-card-stars">
+                <span class="review-star"><i class="ph-fill ph-star"></i></span>
+                <span class="review-star"><i class="ph-fill ph-star"></i></span>
+                <span class="review-star"><i class="ph-fill ph-star"></i></span>
+                <span class="review-star"><i class="ph-fill ph-star"></i></span>
+                <span class="review-star"><i class="ph-fill ph-star"></i></span>
+              </div>
+              <h5>Awesome!</h5>
+              <p>"I'm not sure of the tequila quality as I don't drink tequila, but the set is so cute and makes an awesome display in my bar. Love the colorf... lips..."</p>
+              <div class="reviewer-info">
+                <span class="reviewer-avatar">M</span>
+                <span class="reviewer-name">Michelle</span>
+              </div>
+            </div>
+
+            <!-- Review 2 -->
+            <div class="review-card">
+              <div class="review-card-stars">
+                <span class="review-star"><i class="ph-fill ph-star"></i></span>
+                <span class="review-star"><i class="ph-fill ph-star"></i></span>
+                <span class="review-star"><i class="ph-fill ph-star"></i></span>
+                <span class="review-star"><i class="ph-fill ph-star"></i></span>
+                <span class="review-star"><i class="ph-fill ph-star"></i></span>
+              </div>
+              <h5>Obsessed is an understatement</h5>
+              <p>"Obsessed is an understatement. This crop hoodie from Biatch Tequila is the perfect mix of cozy and badass. The fit is flattering... without trying too hard, and the</p>
+              <div class="reviewer-info">
+                <span class="reviewer-avatar">B</span>
+                <span class="reviewer-name">BrenRae</span>
+              </div>
+            </div>
+
+            <!-- Review 3 -->
+            <div class="review-card">
+              <div class="review-card-stars">
+                <span class="review-star"><i class="ph-fill ph-star"></i></span>
+                <span class="review-star"><i class="ph-fill ph-star"></i></span>
+                <span class="review-star"><i class="ph-fill ph-star"></i></span>
+                <span class="review-star"><i class="ph-fill ph-star"></i></span>
+                <span class="review-star"><i class="ph-fill ph-star"></i></span>
+              </div>
+              <h5>I bought the 3 bottles of Biatch Tequila for myself and 2 friends</h5>
+              <p>"I bought the 3 bottles of Biatch Tequila for myself and 2 friends. Everyone just loved it and couldn't believe how tasty it was. My bottle...</p>
+              <div class="reviewer-info">
+                <span class="reviewer-avatar">J</span>
+                <span class="reviewer-name">Jo</span>
+              </div>
+            </div>
+
+            <!-- Review 4 -->
+            <div class="review-card">
+              <div class="review-card-stars">
+                <span class="review-star"><i class="ph-fill ph-star"></i></span>
+                <span class="review-star"><i class="ph-fill ph-star"></i></span>
+                <span class="review-star"><i class="ph-fill ph-star"></i></span>
+                <span class="review-star"><i class="ph-fill ph-star"></i></span>
+                <span class="review-star"><i class="ph-fill ph-star"></i></span>
+              </div>
+              <h5>Even though the shipping company sucks</h5>
+              <p>"Even though the shipping company sucks....... but overall she loved and we're in the process of getting and trying more!!!!!"</p>
+              <div class="reviewer-info">
+                <span class="reviewer-avatar">J</span>
+                <span class="reviewer-name">Joseph</span>
+              </div>
+            </div>
+
+            <!-- Review 5 -->
+            <div class="review-card">
+              <div class="review-card-stars">
+                <span class="review-star"><i class="ph-fill ph-star"></i></span>
+                <span class="review-star"><i class="ph-fill ph-star"></i></span>
+                <span class="review-star"><i class="ph-fill ph-star"></i></span>
+                <span class="review-star"><i class="ph-fill ph-star"></i></span>
+                <span class="review-star"><i class="ph-fill ph-star"></i></span>
+              </div>
+              <h5>Gave it to a friend for her 50th birthday</h5>
+              <p>"Gave it to a friend for her 50th birthday. She absolutely loved it. Great gift."</p>
+              <div class="reviewer-info">
+                <span class="reviewer-avatar">M</span>
+                <span class="reviewer-name">Marla</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="reviews-carousel-arrow reviews-next" aria-label="Next reviews">
+          <i class="ph ph-caret-right"></i>
+        </button>
+      </div>
+
+      <!-- Reviews Footer -->
+      <div class="reviews-footer">
+        <div class="reviews-footer-left">
+          <div class="reviews-footer-stars">
+            <i class="ph-fill ph-star"></i>
+            <i class="ph-fill ph-star"></i>
+            <i class="ph-fill ph-star"></i>
+            <i class="ph-fill ph-star"></i>
+            <i class="ph-fill ph-star-half"></i>
+            <span class="review-count">1253 reviews</span>
+          </div>
+        </div>
+        <div class="reviews-badges">
+          <div class="reviews-badges-track">
+            <!-- Group 1 -->
+            <div class="reviews-badges-group">
+              <img src="images/diamond.svg" alt="Diamond Authenticity">
+              <img src="images/diamond (1).svg" alt="1253 Verified Reviews">
+              <img src="images/platinum.svg" alt="Platinum Transparency">
+            </div>
+            <!-- Group 2 -->
+            <div class="reviews-badges-group">
+              <img src="images/platinum_hollow.svg" alt="Monthly Record 192 Verified Reviews">
+              <img src="images/5-percent.svg" alt="Top 5% Stores">
+              <img src="images/5-percent (1).svg" alt="Top 5% Trending">
+            </div>
+          </div>
+        </div>
+        <div class="reviews-verified">
+          <span>Verified by</span>
+          <img src="images/logo-judgeme-2025-rebranding.svg" alt="Judge.me Reviews" class="judgeme-logo">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       SECTION 10: FOOTER
+       ============================================ -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <!-- Top Section: 3 Columns -->
+      <div class="footer-main">
+        <!-- Column 1 — Brand & Social -->
+        <div class="footer-col footer-col-brand">
+          <img class="footer-logo" src="images/biatch-logo (1).png" alt="BIATCH Tequila Logo">
+          <h5 class="footer-tagline">We Would Love to Hear From You</h5>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="ph-fill ph-facebook-logo"></i></a>
+            <a href="#" aria-label="Instagram"><i class="ph-fill ph-instagram-logo"></i></a>
+            <a href="#" aria-label="YouTube"><i class="ph-fill ph-youtube-logo"></i></a>
+            <a href="#" aria-label="TikTok"><i class="ph-fill ph-tiktok-logo"></i></a>
+          </div>
+        </div>
+
+        <!-- Column 2 — Contact -->
+        <div class="footer-col footer-col-contact">
+          <h5>Contact:</h5>
+          <address>
+            227 Sandy Springs Pl, Ste D #180,<br>
+            Sandy Springs, GA 30328
+          </address>
+          <a href="mailto:INFO@BIATCHTEQUILA.COM" class="footer-contact-link">INFO@BIATCHTEQUILA.COM</a>
+          <a href="tel:+14042828895" class="footer-contact-link">404-282-8895</a>
+        </div>
+
+        <!-- Column 3 — Customer Care -->
+        <div class="footer-col footer-col-care">
+          <h5>Customer Care:</h5>
+          <div class="footer-links-list">
+            <a href="#">CONDITIONS OF USE</a>
+            <a href="#">PRIVACY AND COOKIE NOTICE</a>
+            <a href="#">ACCESSIBILITY</a>
+            <a href="#">RESPONSIBILITY.ORG</a>
+            <a href="#">RETURN POLICY</a>
+          </div>
+        </div>
+
+        <!-- Bottom Links Row -->
+        <div class="footer-bottom-row">
+          <div class="footer-bottom-left">
+            <a href="#">MEDIA INQUIRIES</a>
+            <a href="#">CONTACT US</a>
+          </div>
+          <div class="footer-bottom-center">
+            <a href="#">SIGNUP TO BECOME AN INSIDER</a>
+          </div>
+          <div class="footer-bottom-right">
+            <a href="#">JOIN OUR STELLAR RETAIL PARTNERS</a>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- ============================================================
-         SECTION 9 — REVIEWS
-    ============================================================ -->
-    <section class="section reviews" id="reviews" aria-label="Customer Reviews">
-      <div class="container">
+    <!-- Gradient line -->
+    <div class="footer-gradient"></div>
 
-        <!-- Centered heading + aggregate -->
-        <div class="reviews__head reveal">
-          <span class="eyebrow">CUSTOMER REVIEWS</span>
-          <h2 class="section__heading">Our Customers Have Something to Say</h2>
-          <div class="reviews__agg">
-            <div class="reviews__agg-stars" aria-label="4.8 out of 5 stars">
-              <i class="ph-fill ph-star"></i>
-              <i class="ph-fill ph-star"></i>
-              <i class="ph-fill ph-star"></i>
-              <i class="ph-fill ph-star"></i>
-              <i class="ph-fill ph-star-half"></i>
-            </div>
-            <span class="reviews__agg-from">from 1249 reviews</span>
-            <img src="images/judgemeicon.svg" alt="Verified" class="reviews__agg-check-img" />
-          </div>
-        </div>
-
-        <!-- Carousel with side arrows -->
-        <div class="reviews__carousel">
-          <button class="reviews__arrow" id="reviewPrev" aria-label="Previous reviews">&#8249;</button>
-          <div class="reviews__viewport">
-            <div class="reviews__track" id="reviewTrack">
-
-              <blockquote class="review-card">
-                <div class="review-card__stars" aria-label="5 stars">
-                  <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
-                    class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
-                </div>
-                <p class="review-card__title">Awesome!</p>
-                <p class="review-card__text">"I'm not sure of the tequila quality as I don't drink tequila, but the set
-                  is so cute and makes an awesome display in my bar. Love the colorful lips..."</p>
-                <footer class="review-card__footer">
-                  <div class="review-card__avatar">M</div>
-                  <div class="review-card__author-wrap">
-                    <span class="review-card__author">Michelle</span>
-                    <span class="review-card__meta"><span class="review-card__vdot"></span>Verified · Los Angeles,
-                      CA</span>
-                  </div>
-                </footer>
-              </blockquote>
-
-              <blockquote class="review-card">
-                <div class="review-card__stars" aria-label="5 stars">
-                  <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
-                    class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
-                </div>
-                <p class="review-card__title">Obsessed is an understatement</p>
-                <p class="review-card__text">"Obsessed is an understatement. This crop hoodie from Biatch Tequila is the
-                  perfect mix of cozy and badass. The fit is flattering without trying too hard, and the cropped cut
-                  hits just right—super"</p>
-                <footer class="review-card__footer">
-                  <div class="review-card__avatar">B</div>
-                  <div class="review-card__author-wrap">
-                    <span class="review-card__author">BrenRae</span>
-                    <span class="review-card__meta"><span class="review-card__vdot"></span>Verified · New York,
-                      NY</span>
-                  </div>
-                </footer>
-              </blockquote>
-
-              <blockquote class="review-card">
-                <div class="review-card__stars" aria-label="5 stars">
-                  <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
-                    class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
-                </div>
-                <p class="review-card__title">I bought the 3 bottles of Biatch Tequila for myself and 2 friends</p>
-                <p class="review-card__text">"I bought the 3 bottles of Biatch Tequila for myself and 2 friends.
-                  Everyone just loved it and couldn't believe how tasty it was. My bottle is almost full because I am
-                  not a huge drinker but i will save for special occasions."</p>
-                <footer class="review-card__footer">
-                  <div class="review-card__avatar">J</div>
-                  <div class="review-card__author-wrap">
-                    <span class="review-card__author">Jo</span>
-                    <span class="review-card__meta"><span class="review-card__vdot"></span>Verified · Miami, FL</span>
-                  </div>
-                </footer>
-              </blockquote>
-
-              <blockquote class="review-card">
-                <div class="review-card__stars" aria-label="5 stars">
-                  <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
-                    class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
-                </div>
-                <p class="review-card__title">Even though the shipping company sucks</p>
-                <p class="review-card__text">"Even though the shipping company sucks....... but overall she loved and
-                  we're in the process of getting and trying more!!!!!"</p>
-                <footer class="review-card__footer">
-                  <div class="review-card__avatar">J</div>
-                  <div class="review-card__author-wrap">
-                    <span class="review-card__author">Joseph</span>
-                    <span class="review-card__meta"><span class="review-card__vdot"></span>Verified · Chicago,
-                      IL</span>
-                  </div>
-                </footer>
-              </blockquote>
-
-              <blockquote class="review-card">
-                <div class="review-card__stars" aria-label="5 stars">
-                  <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
-                    class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
-                </div>
-                <p class="review-card__title">Gave it to a friend for her 50th birthday</p>
-                <p class="review-card__text">"Gave it to a friend for her 50th birthday. She absolutely loved it. Great
-                  gift."</p>
-                <footer class="review-card__footer">
-                  <div class="review-card__avatar">M</div>
-                  <div class="review-card__author-wrap">
-                    <span class="review-card__author">Marla</span>
-                    <span class="review-card__meta"><span class="review-card__vdot"></span>Verified · Houston,
-                      TX</span>
-                  </div>
-                </footer>
-              </blockquote>
-
-              <blockquote class="review-card reveal">
-                <div class="review-card__stars" aria-label="5 stars">
-                  <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
-                    class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
-                </div>
-                <p class="review-card__title">Delivery was fast</p>
-                <p class="review-card__text">"Delivery was fast, packaged perfectly. The bottles are so cute and the
-                  tequila tastes amazing."</p>
-                <footer class="review-card__footer">
-                  <div class="review-card__avatar">M</div>
-                  <div class="review-card__author-wrap">
-                    <span class="review-card__author">Maima</span>
-                    <span class="review-card__meta"><span class="review-card__vdot"></span>Verified · Nashville,
-                      TN</span>
-                  </div>
-                </footer>
-              </blockquote>
-
-            </div>
-          </div>
-          <button class="reviews__arrow" id="reviewNext" aria-label="Next reviews">&#8250;</button>
-        </div>
-
-        <!-- Pagination dots -->
-        <div class="reviews__dots" id="reviewDots"></div>
-
-    </section>
-
-    <!-- ============================================================
-         SECTION 11 — EMAIL CAPTURE
-    ============================================================ -->
-    <section class="section email-capture" id="email-capture" aria-label="Email Sign Up">
-      <div class="email-capture__split">
-
-        <div class="email-capture__panel email-capture__panel--consumer">
-          <span class="eyebrow eyebrow--gold reveal">For the Bold Ones</span>
-          <div class="craft__rule"></div>
-          <h2 class="email-capture__heading reveal">Join the BIATCH Club</h2>
-          <p class="email-capture__body reveal">First access to drops, events, and exclusive recipes. No fluff — just
-            the good stuff.</p>
-          <form class="email-capture__form reveal" id="consumerForm" novalidate>
-            <div class="email-capture__field">
-              <input type="email" class="email-capture__input" id="consumerEmail" placeholder="Your email address"
-                aria-label="Consumer email address" required />
-              <button type="submit" class="btn btn--gold">Join Now</button>
-            </div>
-            <p class="email-capture__note">By signing up you agree to our <a href="#"
-                class="email-capture__privacy-link">Privacy Policy</a>.</p>
-          </form>
-        </div>
-
-        <div class="email-capture__divider" aria-hidden="true"></div>
-
-        <div class="email-capture__panel email-capture__panel--retailer">
-          <span class="eyebrow eyebrow--gold reveal">For Trade &amp; Retail</span>
-          <div class="craft__rule"></div>
-          <h2 class="email-capture__heading reveal">Stock BIATCH</h2>
-          <p class="email-capture__body reveal">Interested in carrying BIATCH? Let's talk. We're selective — and worth
-            it.</p>
-          <a href="#" class="btn btn--outline-white reveal">Get in Touch</a>
-        </div>
-
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ============================================================
-       FOOTER
-  ============================================================ -->
-  <footer class="site-footer" id="siteFooter" aria-label="Site footer">
-    <div class="container footer__inner">
-
-      <!-- Footer Top: Logo + Nav + Contact -->
-      <div class="footer__top">
-        <div class="footer__brand">
-          <a href="#" class="footer__logo-link" aria-label="BIATCH Tequila Home">
-            <img src="images/biatch-logo (1).png" alt="BIATCH Tequila" class="footer__logo-img" />
-          </a>
-          <p class="footer__tagline">Crafted from 100% Blue Weber Agave in Jalisco, México. For the woman who pours
-            without apology.</p>
-        </div>
-
-        <nav class="footer__nav" aria-label="Footer navigation">
-          <div class="footer__nav-col">
-            <h4 class="footer__nav-heading">Shop</h4>
-            <ul class="footer__nav-list">
-              <li><a href="#" class="footer__nav-link">Rosa Blanco</a></li>
-              <li><a href="#" class="footer__nav-link">Reposado</a></li>
-              <li><a href="#" class="footer__nav-link">Extra Añejo</a></li>
-              <li><a href="#" class="footer__nav-link">Blanco Classic</a></li>
-              <li><a href="#" class="footer__nav-link">Sample Pack</a></li>
-            </ul>
-          </div>
-          <div class="footer__nav-col">
-            <h4 class="footer__nav-heading">Discover</h4>
-            <ul class="footer__nav-list">
-              <li><a href="#" class="footer__nav-link">How She's Made</a></li>
-              <li><a href="#" class="footer__nav-link">Our Story</a></li>
-              <li><a href="#" class="footer__nav-link">Events &amp; Collabs</a></li>
-              <li><a href="#" class="footer__nav-link">Sips &amp; Recipes</a></li>
-              <li><a href="#" class="footer__nav-link">Press</a></li>
-            </ul>
-          </div>
-          <div class="footer__nav-col">
-            <h4 class="footer__nav-heading">Support</h4>
-            <ul class="footer__nav-list">
-              <li><a href="#" class="footer__nav-link">Shipping &amp; Returns</a></li>
-              <li><a href="#" class="footer__nav-link">FAQ</a></li>
-              <li><a href="#" class="footer__nav-link">Store Locator</a></li>
-              <li><a href="#" class="footer__nav-link">Contact Us</a></li>
-              <li><a href="#" class="footer__nav-link">Wholesale</a></li>
-            </ul>
-          </div>
-          <div class="footer__nav-col">
-            <h4 class="footer__nav-heading">Connect</h4>
-            <ul class="footer__nav-list">
-              <li><a href="mailto:info@biatchtequila.com" class="footer__nav-link">info@biatchtequila.com</a></li>
-              <li><a href="tel:4042828895" class="footer__nav-link">404-282-8895</a></li>
-              <li><span class="footer__nav-text">227 Sandy Springs Pl, Ste D #180, Sandy Springs, GA 30328</span></li>
-            </ul>
-            <div class="footer__social">
-              <a href="#" class="footer__social-link" aria-label="TikTok"><i class="ph ph-tiktok-logo"></i></a>
-              <a href="#" class="footer__social-link" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
-              <a href="#" class="footer__social-link" aria-label="Facebook"><i class="ph ph-facebook-logo"></i></a>
-              <a href="#" class="footer__social-link" aria-label="YouTube"><i class="ph ph-youtube-logo"></i></a>
-            </div>
-          </div>
-        </nav>
-      </div>
-
-      <!-- Footer Bottom: Legal + Disclaimer -->
-      <div class="footer__bottom">
-        <div class="footer__legal-links">
-          <a href="#" class="footer__legal-link">Conditions of Use</a>
-          <a href="#" class="footer__legal-link">Privacy &amp; Cookie Notice</a>
-          <a href="#" class="footer__legal-link">Accessibility</a>
-          <a href="#" class="footer__legal-link">Responsibility.org</a>
-          <a href="#" class="footer__legal-link">Return Policy</a>
-
-          <a href="#" class="footer__legal-link">Media Inquiries</a>
-          <a href="#" class="footer__legal-link">Women of the Vine &amp; Spirits</a>
-          <a href="#" class="footer__legal-link">Woman Owned</a>
-        </div>
-        <p class="footer__legal">&copy;2024 BIATCH. BIATCH (or BIATCH) are products and brands of Boss Babes Brands,
-          Inc. <strong class="footer__legal-highlight">PLEASE DO NOT SHARE WITH ANYONE UNDER THE LEGAL PURCHASE AGE
-            FOR ALCOHOL. DRINK RESPONSIBLY.</strong></p>
-        <a href="#" class="footer__follow-shop">
-          <i class="ph-fill ph-heart"></i> Follow on Shop
-        </a>
-      </div>
-
+    <!-- Copyright -->
+    <div class="footer-copyright">
+      <p>&copy; 2026, BIATCH. BIATCH (or BIATCH) are products and brands of Boss Babes Brands, Inc. DO NOT SHARE WITH ANYONE UNDER THE LEGAL PURCHASE AGE FOR ALCOHOL. DRINK RESPONSIBLY.</p>
     </div>
   </footer>
 
-  <!-- ============================================================
-       SEARCH DRAWER
-  ============================================================ -->
-  <div class="search-drawer" id="searchDrawer" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Search">
-    <div class="search-drawer__backdrop" id="searchBackdrop"></div>
-    <div class="search-drawer__panel">
-      <button class="search-drawer__close" id="searchClose" aria-label="Close search">
-        <i class="ph ph-x"></i>
-      </button>
-      <div class="search-drawer__inner">
-        <form class="search-drawer__form" id="searchForm" role="search" novalidate>
-          <p class="search-drawer__label">What are you looking for?</p>
-          <div class="search-drawer__field">
-            <i class="ph ph-magnifying-glass search-drawer__icon" aria-hidden="true"></i>
-            <input type="search" id="searchInput" class="search-drawer__input"
-              placeholder="Search tequila, gifts, cocktails..." autocomplete="off" aria-label="Search BIATCH Tequila" />
-            <button type="submit" class="btn btn--gold">Search</button>
-          </div>
-        </form>
-        <div class="search-drawer__popular">
-          <span class="search-drawer__popular-label">Popular Searches</span>
-          <div class="search-drawer__tags">
-            <a href="#" class="search-drawer__tag">Blanco</a>
-            <a href="#" class="search-drawer__tag">Reposado</a>
-            <a href="#" class="search-drawer__tag">Gift Sets</a>
-            <a href="#" class="search-drawer__tag">Cocktail Recipes</a>
-            <a href="#" class="search-drawer__tag">Extra Añejo</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="search-drawer__backdrop-outer" id="searchBackdropOuter"></div>
+  <!-- ============================================
+       FLOATING ELEMENTS
+       ============================================ -->
+  <button class="floating-reviews-tab" aria-label="Open reviews">
+    <i class="ph-fill ph-star"></i>
+    Reviews
+  </button>
 
-  <!-- ============================================================
-       CART DRAWER
-  ============================================================ -->
-  <div class="cart-drawer" id="cartDrawer" aria-hidden="true" role="dialog" aria-modal="true"
-    aria-label="Shopping cart">
-    <div class="cart-drawer__backdrop" id="cartBackdrop"></div>
-    <div class="cart-drawer__panel">
-
-      <div class="cart-drawer__head">
-        <div class="cart-drawer__head-left">
-          <h2 class="cart-drawer__title">Your Cart</h2>
-          <span class="cart-drawer__count" id="cartCount">0 items</span>
-        </div>
-        <button class="cart-drawer__close" id="cartClose" aria-label="Close cart">
-          <i class="ph ph-x"></i>
-        </button>
-      </div>
-
-      <div class="cart-drawer__body" id="cartBody">
-        <div class="cart-drawer__empty">
-          <div class="cart-drawer__empty-icon-wrap">
-            <img src="images/icon-bottle.png" alt="" class="cart-drawer__empty-icon" aria-hidden="true" />
-          </div>
-          <p class="cart-drawer__empty-title">Your cart is empty</p>
-          <p class="cart-drawer__empty-sub">Discover your next bold pour.</p>
-          <a href="#" class="btn btn--gold cart-drawer__empty-btn">Shop the Collection</a>
-        </div>
-      </div>
-
-      <div class="cart-drawer__foot">
-        <div class="cart-drawer__subtotal">
-          <span class="cart-drawer__subtotal-label">Subtotal</span>
-          <span class="cart-drawer__subtotal-value" id="cartSubtotal">$0.00</span>
-        </div>
-        <a href="#" class="btn cart-drawer__checkout">Proceed to Checkout</a>
-        <p class="cart-drawer__free-ship">
-          <i class="ph-fill ph-seal-check" aria-hidden="true"></i>
-          Free shipping on orders over $100
-        </p>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- ============================================================
-       AGE VERIFICATION POPUP
-  ============================================================ -->
-  <div class="age-gate" id="ageGate" aria-hidden="false" role="dialog" aria-modal="true" aria-label="Age verification">
-    <div class="age-gate__backdrop"></div>
-    <div class="age-gate__panel">
-      <img src="images/biatch-logo (1).png" alt="BIATCH Tequila" class="age-gate__logo" />
-      <h2 class="age-gate__title">Welcome to BIATCH</h2>
-      <p class="age-gate__text">Please confirm that you are 21 years of age or older</p>
-      <div class="age-gate__buttons">
-        <button class="age-gate__btn age-gate__btn--yes" id="ageYes">Yes</button>
-        <button class="age-gate__btn age-gate__btn--no" id="ageNo">No</button>
-      </div>
-      <p class="age-gate__legal">By entering this site you are agreeing to the <a href="#">Terms of Use</a> and <a
-          href="#">Privacy Policy</a>.</p>
-    </div>
-  </div>
-
+  <!-- JavaScript -->
   <script src="script.js"></script>
 </body>
 

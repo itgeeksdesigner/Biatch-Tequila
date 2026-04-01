@@ -1,822 +1,939 @@
-/* ============================================================
-   BIATCH TEQUILA — RESPONSIVE.CSS
-   Breakpoints: Tablet (max 1024px) | Mobile (max 768px) | Small (max 480px)
-   Mobile-first responsive overrides.
-   All font size and spacing variables are re-scoped per breakpoint.
-   ============================================================ */
+/* ============================================
+   BIATCH TEQUILA — RESPONSIVE STYLESHEET
+   ============================================ */
 
-/* ============================================================
-   TABLET — max-width: 1024px
-   ============================================================ */
+/* ── TABLET (769px – 1024px) ── */
 @media (max-width: 1024px) {
-
-  /* — Redefine font-size tokens — */
   :root {
-    --font-size-h1: 64px;
-    --font-size-h2: 48px;
-    --font-size-h3: 36px;
-    --font-size-h4: 28px;
-    --font-size-h5: 22px;
-    --font-size-h6: 17px;
-    --font-size-body: 17px;
+    --font-size-h1: 42px;
+    --font-size-h2: 34px;
+    --font-size-h3: 26px;
+    --font-size-h4: 20px;
+    --font-size-h5: 18px;
+    --font-size-h6: 16px;
+    --font-size-body-xl: 20px;
+    --font-size-body-lg: 18px;
+    --font-size-body: 16px;
+    --font-size-body-sm: 14px;
+    --font-size-body-xs: 13px;
+    --font-size-body-xxs: 12px;
 
-    --section-pad-y: 72px;
-    --section-pad-y-sm: 48px;
-    --container-gutter: 32px;
-    --gap-80: 56px;
-    --gap-96: 72px;
-    --gap-120: 88px;
+    --spacing-3xl: 48px;
+    --spacing-4xl: 64px;
+    --spacing-5xl: 80px;
+    --spacing-6xl: 100px;
+
+    --container-width: 100%;
+    --gutter-width: 24px;
   }
 
-  /* Header: hide desktop nav row, show mobile toggle */
-  .header__nav-row {
-    display: none;
+  /* Header */
+  .header-nav {
+    gap: var(--spacing-md);
   }
 
-  .header__menu-toggle {
-    display: flex;
-  }
-
-  :root {
-    --header-h: 64px;
-  }
-
-  .header__top-inner {
-    height: 64px;
-  }
-
-  /* Hide social icons on tablet to save space */
-  .header__social {
-    display: none;
-  }
-
-  .header__actions {
-    flex: unset;
+  .header-nav a {
+    font-size: var(--font-size-body-xs);
   }
 
   /* Hero */
-  .hero__heading {
-    font-size: var(--font-size-h1);
+  .hero-slide-content {
+    padding: var(--spacing-2xl);
   }
 
-  /* Product cards */
+  .hero-slide-content h1 {
+    max-width: 400px;
+  }
+
+  /* Products — 2 visible */
+  .products-grid {
+    flex-wrap: wrap;
+  }
+
   .product-card {
-    flex: 0 0 260px;
-  }
-
-  .product-card__image {
-    height: 320px;
-  }
-
-  /* Manifesto */
-  .manifesto__heading {
-    font-size: var(--font-size-h2);
+    flex: 0 0 calc(50% - var(--spacing-md));
   }
 
   /* Mission */
-  .mission__inner {
-    gap: var(--gap-48);
+  .mission-content {
+    gap: var(--spacing-xl);
   }
 
-  .mission__visual {
-    flex: 0 0 380px;
+  /* Sightings Grid — 3 columns */
+  .sightings-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 140px);
   }
 
-  .mission__image {
-    height: 480px;
+  .sightings-item:nth-child(1) {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
   }
 
-  /* Story blocks */
-  .story-block__inner {
-    gap: var(--gap-48);
+  .sightings-item:nth-child(2) {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
   }
 
-  .story-block__visual {
-    flex: 0 0 360px;
+  .sightings-item:nth-child(3) {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
   }
 
-  .story-block__image {
-    height: 480px;
+  .sightings-item:nth-child(4) {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
   }
 
-  .story-block__heading {
-    font-size: var(--font-size-h3);
+  .sightings-item:nth-child(5) {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
   }
 
-  /* Lifestyle */
-  .lifestyle__item--large {
-    height: 480px;
+  .sightings-item:nth-child(6) {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
   }
 
-  .lifestyle__stack .lifestyle__item {
-    height: 232px;
+  .sightings-item:nth-child(7) {
+    grid-column: 1 / 4;
+    grid-row: 3 / 4;
   }
 
-  /* Events grid */
-  .events__card-img {
-    height: 280px;
-  }
-
-  .events__card--large .events__card-img {
-    height: 380px;
-  }
-
-  .events__card--wide .events__card-img {
-    height: 220px;
-  }
-
-  /* Recipes */
-  .recipes__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  /* Reviews */
-  .reviews__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  /* Email Capture */
-  .email-capture__panel {
-    padding: var(--section-pad-y) var(--gap-48);
-  }
-
-  .email-capture__heading {
-    font-size: var(--font-size-h2);
-  }
-
-  /* Footer */
-  .footer__top {
-    gap: var(--gap-48);
+  /* Founder — stack */
+  .founder-grid {
     flex-wrap: wrap;
   }
 
-  .footer__brand {
-    flex: 0 0 100%;
-  }
-
-  .footer__nav {
-    flex: 0 0 100%;
-    gap: var(--gap-32);
-  }
-
-  /* Press */
-  .press__logo-item {
-    min-width: 100px;
-  }
-
-  /* ---- PDP Tablet ---- */
-  .pdp-hero__inner {
-    gap: 40px;
-  }
-
-  .pdp-related__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .pdp-lounge__card {
-    flex: 0 0 calc(33.333% - 16px);
-  }
-
-  .pdp-ugc__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* ============================================================
-   MOBILE — max-width: 768px
-   ============================================================ */
-@media (max-width: 768px) {
-
-  /* — Redefine font-size tokens — */
-  :root {
-    --font-size-h1: 48px;
-    --font-size-h2: 36px;
-    --font-size-h3: 28px;
-    --font-size-h4: 24px;
-    --font-size-h5: 20px;
-    --font-size-h6: 16px;
-    --font-size-body: 16px;
-    --font-size-body-sm: 15px;
-
-    --section-pad-y: 56px;
-    --section-pad-y-sm: 40px;
-    --container-gutter: 20px;
-
-    --gap-48: 40px;
-    --gap-56: 44px;
-    --gap-64: 48px;
-    --gap-80: 48px;
-    --gap-96: 56px;
-    --gap-120: 72px;
-  }
-
-  /* ---- Header ---- */
-  .header__top-inner {
-    gap: var(--gap-16);
-  }
-
-  /* On mobile: hide search + account, keep cart + menu toggle */
-  .header__action-btn:not(.header__cart-btn):not(.header__menu-toggle) {
-    display: none;
-  }
-
-  .header__logo-img {
-    height: 34px;
-  }
-
-  /* ---- Trust Bar ---- */
-  .trust-bar__divider {
-    display: none;
-  }
-
-  .trust-bar__inner {
-    gap: var(--gap-16);
-    justify-content: center;
-  }
-
-  .trust-bar__text {
-    font-size: 12px;
-    letter-spacing: 1px;
-  }
-
-  .trust-bar__icon {
-    font-size: 17px;
-  }
-
-  /* ---- Hero ---- */
-  .hero__slide {
-    align-items: flex-end;
-    padding-bottom: 60px;
-  }
-
-  .hero__content {
-    gap: var(--gap-12);
-    align-items: flex-start;
-    text-align: left;
-  }
-
-  .hero__heading {
-    font-size: var(--font-size-h1);
-    letter-spacing: -1px;
-  }
-
-  .hero__subtext {
-    font-size: var(--font-size-body);
-    max-width: 320px;
-  }
-
-  .hero__scroll-cue {
-    bottom: 24px;
-  }
-
-  /* ---- Product Explore ---- */
-  .product-explore {
-    padding-top: var(--section-pad-y);
-    padding-bottom: var(--section-pad-y);
-  }
-
-  .product-card {
-    flex: 0 0 240px;
-  }
-
-  .product-card__image {
-    height: 280px;
-  }
-
-  /* ---- Manifesto ---- */
-  .manifesto__inner {
-    gap: var(--gap-24);
-  }
-
-  .manifesto__heading {
-    font-size: var(--font-size-h2);
-    letter-spacing: -0.5px;
-  }
-
-  .manifesto__body {
-    font-size: var(--font-size-body);
-  }
-
-  /* ---- Mission ---- */
-  .mission__inner {
-    flex-direction: column;
-    gap: var(--gap-40);
-  }
-
-  .mission__visual {
-    flex: none;
-    width: 100%;
-  }
-
-  .mission__image {
-    height: 360px;
-  }
-
-  .mission__heading {
-    font-size: var(--font-size-h2);
-  }
-
-  .mission__content {
-    order: 1;
-  }
-
-  .mission__visual {
-    order: 2;
-  }
-
-  /* ---- Story Blocks ---- */
-  .story-block {
-    padding-top: var(--gap-56);
-    padding-bottom: var(--gap-56);
-  }
-
-  .story-block__inner {
-    flex-direction: column;
-    gap: var(--gap-32);
-  }
-
-  .story-block--right .story-block__inner {
-    flex-direction: column;
-  }
-
-  .story-block__visual {
-    flex: none;
-    width: 100%;
-  }
-
-  .story-block__image {
-    height: 300px;
-  }
-
-  .story-block__heading {
-    font-size: var(--font-size-h3);
-  }
-
-  .story-block__body {
-    font-size: var(--font-size-body);
-  }
-
-  /* Story video */
-  .story-video__poster {
-    height: 220px;
-  }
-
-  .story-video__play {
-    font-size: 52px;
-  }
-
-  /* ---- Lifestyle ---- */
-  .lifestyle__grid {
-    grid-template-columns: 1fr;
-  }
-
-  .lifestyle__item--large {
-    height: 380px;
-  }
-
-  .lifestyle__stack {
+  .founder-brand {
+    flex: 1 1 100%;
     flex-direction: row;
-  }
-
-  .lifestyle__stack .lifestyle__item {
-    flex: 1;
-    height: 200px;
-  }
-
-  /* Always show overlay on mobile (no hover) */
-  .lifestyle__overlay {
-    opacity: 1;
-  }
-
-  /* ---- Events ---- */
-  .events__grid {
-    grid-template-columns: 1fr;
-  }
-
-  .events__card--large,
-  .events__card--wide {
-    grid-column: span 1;
-  }
-
-  .events__card-img {
-    height: 260px;
-  }
-
-  .events__card--large .events__card-img {
-    height: 300px;
-  }
-
-  .events__card--wide .events__card-img {
-    height: 220px;
-  }
-
-  /* ---- Recipes ---- */
-  .recipes__grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--gap-16);
-  }
-
-  .recipe-card__img {
-    height: 240px;
-  }
-
-  /* Show play icon always on mobile */
-  .recipe-card__play {
-    opacity: 1;
-    background-color: rgba(18, 18, 18, 0.30);
-  }
-
-  /* ---- Recipe Modal ---- */
-  .recipe-modal__panel {
-    width: 100%;
-    max-width: 100%;
-    max-height: 100vh;
-    height: 100%;
-    overflow-y: auto;
-  }
-
-  .recipe-modal__poster {
-    height: 220px;
-  }
-
-  .recipe-modal__body {
-    padding: var(--gap-24);
-    gap: var(--gap-24);
-  }
-
-  .recipe-modal__cols {
-    flex-direction: column;
-    gap: var(--gap-24);
-  }
-
-  /* ---- Reviews ---- */
-  .reviews__grid {
-    grid-template-columns: 1fr;
-    gap: var(--gap-16);
-  }
-
-  .reviews__dots {
-    margin-bottom: 24px;
-  }
-
-  .reviews__head {
-    margin-bottom: 28px;
-  }
-
-  /* ---- Press ---- */
-  .press__strip {
-    gap: var(--gap-20);
-  }
-
-  .press__logo-item {
-    flex: 0 0 calc(33.333% - var(--gap-20));
-    min-width: 80px;
-  }
-
-  /* ---- Email Capture ---- */
-  .email-capture__split {
-    flex-direction: column;
-  }
-
-  .email-capture__divider {
-    width: 100%;
-    height: 1px;
-  }
-
-  .email-capture__panel {
-    padding: var(--gap-48) var(--container-gutter);
-  }
-
-  .email-capture__heading {
-    font-size: var(--font-size-h2);
-  }
-
-  .email-capture__form {
-    width: 100%;
-  }
-
-  .email-capture__field {
-    flex-direction: column;
-    gap: var(--gap-12);
-    width: 100%;
-  }
-
-  .email-capture__input {
-    width: 100%;
-    height: 52px;
-    font-size: 16px;
-    padding: 12px 24px;
-  }
-
-  .email-capture__field .btn {
-    width: 100%;
-    height: 52px;
-    padding: 0 24px;
-  }
-
-  /* ---- Footer ---- */
-  .footer__top {
-    flex-direction: column;
-    gap: var(--gap-40);
-  }
-
-  .footer__brand {
-    flex: none;
-  }
-
-  .footer__nav {
-    flex-wrap: wrap;
-    gap: var(--gap-32);
-  }
-
-  .footer__nav-col {
-    flex: 0 0 calc(50% - var(--gap-32));
-  }
-
-  .footer__bottom {
-    flex-direction: column;
     align-items: center;
-    gap: var(--gap-16);
+    border-right: none;
+    padding-right: 0;
+    padding-bottom: var(--spacing-xl);
+    border-bottom: 2px solid var(--color-primary-gold);
+    gap: var(--spacing-xl);
   }
 
-  .footer__legal-links {
-    gap: 6px 16px;
+  .founder-bio {
+    flex: 1 1 55%;
   }
 
-  /* ---- Section Header ---- */
-  .section__header {
-    padding-bottom: var(--gap-32);
+  .founder-photo {
+    flex: 1 1 40%;
   }
 
-  .section__heading {
-    font-size: var(--font-size-h2);
-  }
-
-  /* ---- Search Drawer ---- */
-  .search-drawer__panel {
-    padding: var(--gap-56) var(--container-gutter);
-    padding-top: calc(var(--header-h) + var(--gap-32));
-  }
-
-  .search-drawer__label {
-    font-size: var(--font-size-h4);
-  }
-
-  /* ---- Cart Drawer — full width on mobile ---- */
-  .cart-drawer__panel {
-    width: 100%;
-  }
-
-  /* ---- Cart Popup ---- */
-  .cart-popup {
-    width: calc(100% - 32px);
-    left: 16px;
-    right: 16px;
-    bottom: 16px;
-  }
-
-  /* ---- PDP Mobile ---- */
-  .pdp-hero {
-    padding-top: 24px;
-    padding-bottom: 40px;
-  }
-
-  .pdp-hero__inner {
-    flex-direction: column;
-    gap: 32px;
-  }
-
-  .pdp-hero__gallery {
-    flex: none;
-    max-width: 100%;
-  }
-
-  .pdp-hero__main-image {
-    padding: 20px;
-    aspect-ratio: auto;
-  }
-
-  .pdp-hero__img {
-    max-height: 360px;
-  }
-
-  .pdp-hero__title {
-    font-size: var(--font-size-h4);
-  }
-
-  .pdp-hero__actions {
-    flex-direction: column;
-  }
-
-  .pdp-hero__variants {
-    flex-wrap: wrap;
-  }
-
-  .pdp-awards__inner {
-    gap: 32px;
-  }
-
-  .pdp-awards__badge-img {
-    max-height: 120px;
-  }
-
-  .pdp-reviews__heading {
-    font-size: var(--font-size-h4);
-  }
-
-  .pdp-review-card {
-    flex: 0 0 calc(100% - 4px);
-  }
-
-  .pdp-review-card {
-    padding: 24px;
-  }
-
-  .pdp-related__grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-  }
-
-  .pdp-related__banner {
-    padding: 28px 0;
-  }
-
-  .pdp-related__heading {
-    font-size: var(--font-size-h4);
-  }
-
-  .pdp-related__card-body {
-    padding: 14px;
-  }
-
-  .pdp-lounge__card {
-    flex: 0 0 calc(75% - 12px);
-    min-width: 220px;
-  }
-
-  .pdp-ugc__grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-  }
-
-  .pdp-ugc__heading {
-    font-size: var(--font-size-h4);
-  }
-
-  .pdp-lifestyle__banner {
-    max-height: 300px;
-  }
-
-  .pdp-signup__split {
-    flex-direction: column;
-  }
-
-  .pdp-signup__panel {
-    padding: 48px 24px;
-  }
-
-  .pdp-signup__heading {
-    font-size: var(--font-size-h5);
+  /* Reviews — still 2 cards */
+  .review-card {
+    min-width: calc(50% - var(--spacing-lg) / 2);
   }
 }
 
-/* ---- Search Drawer ---- */
-.search-drawer__panel {
-  padding: var(--gap-64) var(--container-gutter);
-  padding-top: calc(var(--header-h) + var(--gap-32));
-}
-
-.search-drawer__label {
-  font-size: var(--font-size-h5);
-}
-
-.search-drawer__featured-grid {
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--gap-12);
-}
-
-/* ---- Cart Drawer ---- */
-.cart-drawer__panel {
-  width: 360px;
-}
-
-/* ---- Cart Popup ---- */
-.cart-popup {
-  width: 280px;
-  bottom: 16px;
-  right: 16px;
-}
-
-/* ============================================================
-   SMALL MOBILE — max-width: 480px
-   ============================================================ */
-@media (max-width: 480px) {
-
-  /* — Redefine critical font-size tokens — */
+/* ── MOBILE (max-width: 768px) ── */
+/* ADA/WCAG 2.1 AA compliant: body min 16px, smallest text min 12px */
+@media (max-width: 768px) {
   :root {
-    --font-size-h1: 40px;
-    --font-size-h2: 30px;
+    --font-size-h1: 34px;
+    --font-size-h2: 28px;
     --font-size-h3: 24px;
     --font-size-h4: 20px;
     --font-size-h5: 18px;
-    --font-size-body: 15px;
-    --font-size-body-sm: 14px;
+    --font-size-h6: 16px;
+    --font-size-body-xl: 20px;
+    --font-size-body-lg: 18px;
+    --font-size-body: 17px;
+    --font-size-body-sm: 15px;
+    --font-size-body-xs: 14px;
+    --font-size-body-xxs: 13px;
 
-    --section-pad-y: 44px;
-    --container-gutter: 16px;
+    --spacing-xl: 24px;
+    --spacing-2xl: 32px;
+    --spacing-3xl: 40px;
+    --spacing-4xl: 48px;
+    --spacing-5xl: 56px;
+    --spacing-6xl: 72px;
+
+    --gutter-width: 16px;
   }
 
-  /* Hero */
-  .hero__heading {
-    font-size: var(--font-size-h1);
-    letter-spacing: -0.5px;
+  /* Header — Mobile: [☰]  [BIATCH logo]  [Q] [Bag] */
+  .header-nav {
+    display: none;
   }
 
-  .hero__subtext {
+  .site-header .header-container {
+    position: relative;
+    padding: 12px 16px;
+  }
+
+  .hamburger-btn {
+    display: flex;
+    font-size: 22px;
+    min-height: auto;
+    min-width: auto;
+    padding: 4px;
+  }
+
+  .header-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .header-logo img {
+    height: 36px;
+  }
+
+  .header-icons {
+    gap: 16px;
+  }
+
+  .header-icons button,
+  .header-icons a {
+    font-size: 20px;
+    min-height: auto;
+    min-width: auto;
+    padding: 4px;
+  }
+
+  .header-account-link {
+    display: none !important;
+  }
+
+  /* Hero — taller on mobile */
+  .hero-slide {
+    aspect-ratio: auto;
+  }
+
+  .hero-slide img.hero-desktop-img {
+    display: none;
+  }
+
+  .hero-slide img.hero-mobile-img {
+    display: block;
+  }
+
+  .hero-slide-content {
+    padding: var(--spacing-lg);
+    align-items: center;
+    justify-content: flex-end;
+    padding-bottom: var(--spacing-4xl);
+  }
+
+  .hero-slide-content h1 {
     max-width: 100%;
+    text-align: center;
+    font-size: var(--font-size-h2);
   }
 
-  /* Recipes: single column on very small screens */
-  .recipes__grid {
-    grid-template-columns: 1fr;
+  .hero-slide-2 .hero-slide-content {
+    align-items: center;
+    padding-left: var(--spacing-lg);
+    padding-top: var(--spacing-3xl);
+    justify-content: flex-start;
   }
 
-  .recipe-card__img {
-    height: 280px;
+  .hero-slide-2 .hero-slide-content h1 {
+    text-align: center;
+    font-size: var(--font-size-h3);
   }
 
-  /* Product cards */
+  .hero-slide-2 .hero-slide-content h1 em {
+    font-size: var(--font-size-h2);
+  }
+
+  /* Products — slider mode */
+  .products-grid {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    flex-wrap: nowrap;
+    gap: var(--spacing-md);
+    padding-bottom: var(--spacing-sm);
+  }
+
+  .products-grid::-webkit-scrollbar {
+    display: none;
+  }
+
   .product-card {
-    flex: 0 0 220px;
+    flex: 0 0 85%;
+    scroll-snap-align: center;
   }
 
-  .product-card__image {
-    height: 260px;
+  .product-flip-icon {
+    display: flex;
   }
 
-  /* Reviews */
-  .review-card {
-    padding: var(--gap-24);
+  .slider-controls {
+    display: flex;
   }
 
-  /* Email capture */
-  .email-capture__panel {
-    padding: var(--gap-40) var(--container-gutter);
+  /* Rich Text (Premium Tequilas) — mobile */
+  .richtext-section {
+    padding: 0 0 var(--spacing-2xl) 0;
   }
 
-  /* Footer nav: two columns */
-  .footer__nav-col {
-    flex: 0 0 calc(50% - 16px);
+  .richtext-section .container-narrow {
+    max-width: 100%;
+    padding-left: 24px;
+    padding-right: 24px;
+    align-items: center;
+    text-align: center;
+    gap: var(--spacing-md);
   }
 
-  /* Press logos: 2 per row */
-  .press__logo-item {
-    flex: 0 0 calc(50% - var(--gap-20));
+  .richtext-section h2 {
+    font-size: 28px;
+    font-family: var(--font-heading-elegant);
+    font-style: italic;
+    font-weight: var(--font-weight-regular);
   }
 
-  /* Brand Intro heading stays 36px on small screens */
-  .brand-intro__heading {
-    font-size: 36px;
+  .richtext-section p {
+    max-width: 100%;
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+    text-align: center;
   }
 
-  /* Story block images shorter */
-  .story-block__image {
-    height: 240px;
+  .richtext-section .btn-link {
+    font-size: 16px;
+    text-align: center;
+    line-height: 1.5;
   }
 
-  .story-video__poster {
-    height: 180px;
-  }
-
-  /* Manifesto */
-  .manifesto__inner {
-    align-items: flex-start;
-  }
-
-  /* Lifestyle stack back to column */
-  .lifestyle__stack {
+  /* Mission — stack */
+  .mission-content {
     flex-direction: column;
+    gap: var(--spacing-xl);
   }
 
-  .lifestyle__stack .lifestyle__item {
-    height: 220px;
+  .mission-text h2 {
+    font-size: 26px;
+    color: var(--color-text-dark);
   }
 
-  /* Cart drawer full width on small mobile */
-  .cart-drawer__panel {
+  .mission-text h4 {
+    font-size: 14px;
+    color: var(--color-text-dark);
+  }
+
+  .mission-text p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--color-text-dark);
+  }
+
+  .mission-stats {
+    justify-content: space-between;
+    padding-top: 0;
+  }
+
+  .mission-stat .stat-number {
+    font-size: 28px;
+    color: var(--color-primary-gold);
+  }
+
+  .mission-stat .stat-label {
+    font-size: 12px;
+    color: var(--color-text-dark);
+    font-weight: var(--font-weight-semibold);
+  }
+
+  /* Mission images — mobile slider */
+  .mission-images .img-large {
+    aspect-ratio: 16 / 9;
+    border-radius: var(--radius-sm);
+  }
+
+  .mission-images-row {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    flex-wrap: nowrap;
+    gap: var(--spacing-sm);
+    padding-bottom: var(--spacing-xs);
+  }
+
+  .mission-images-row::-webkit-scrollbar {
+    display: none;
+  }
+
+  .mission-images-row img {
+    flex: 0 0 48%;
+    height: auto;
+    aspect-ratio: 1;
+    scroll-snap-align: start;
+    border-radius: var(--radius-sm);
+  }
+
+  .awards-slider {
+    gap: var(--spacing-xl);
+    justify-content: flex-start;
+    padding: 0;
+  }
+
+  .awards-slider img {
+    height: 74px;
+  }
+
+  /* Multicolumn — horizontal slider on mobile */
+  .multicolumn-grid {
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    flex-wrap: nowrap;
+    gap: var(--spacing-md);
+  }
+
+  .multicolumn-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .multicolumn-card {
+    flex: 0 0 85%;
+    scroll-snap-align: start;
+  }
+
+  /* Sightings — convert grid to horizontal slider on mobile */
+  .sightings-grid {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: var(--spacing-md);
+    padding-bottom: var(--spacing-sm);
+  }
+
+  .sightings-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .sightings-item {
+    flex: 0 0 85%;
+    scroll-snap-align: center;
+    aspect-ratio: 3 / 4;
+  }
+
+  /* Reset all grid positions on mobile */
+  .sightings-item:nth-child(n) {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  /* Show overlay always on mobile — no hover needed */
+  .sightings-overlay {
+    transform: translateY(0) !important;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
+    padding: var(--spacing-md) var(--spacing-sm);
+  }
+
+  .sightings-overlay-stats {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 12px;
+  }
+
+  .sightings-overlay-title {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  /* Recipes — slider */
+  .recipes-grid {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    flex-wrap: nowrap;
+    gap: var(--spacing-md);
+  }
+
+  .recipes-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .recipe-card {
+    flex: 0 0 85%;
+    scroll-snap-align: center;
+  }
+
+  /* Founder — mobile stack: brand → photo → bio */
+  .founder-section {
+    padding: 20px 0;
+  }
+
+  .founder-grid {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .founder-brand {
+    flex: none;
+    width: 100%;
+    border-right: none;
+    border-bottom: none;
+    padding: 0 20px 16px;
+    gap: 0;
+    align-items: center;
+    text-align: center;
+    order: 1;
+  }
+
+  .founder-brand .brand-logo-img {
+    display: none;
+  }
+
+  .founder-brand h3 {
+    font-size: 18px;
+    line-height: 1.4;
+  }
+
+  .founder-photo {
+    flex: none;
+    width: 100%;
+    height: auto;
+    order: 2;
+  }
+
+  .founder-photo img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .founder-bio {
+    padding: 20px 20px 24px;
+    gap: 14px;
+    text-align: center;
+    order: 3;
+  }
+
+  .founder-bio h3 {
+    font-size: 24px;
+  }
+
+  .founder-bio p {
+    font-size: 16px;
+    line-height: 1.7;
+    text-align: center;
+  }
+
+  .founder-bio-bottom {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-top: 14px;
+  }
+
+  .founder-bio-bottom .btn-link {
+    text-align: left;
+  }
+
+  .founder-bio .certification-badge {
+    height: 70px;
+  }
+
+  /* Reviews — single card on mobile */
+  .reviews-section {
+    padding: var(--spacing-3xl) 0;
+  }
+
+  .reviews-section .container {
+    gap: var(--spacing-lg);
+  }
+
+  .reviews-section .section-heading {
+    font-size: var(--font-size-h3);
+  }
+
+  .review-star {
+    width: 24px;
+    height: 24px;
+    font-size: 12px;
+  }
+
+  .reviews-rating {
+    gap: 4px;
+  }
+
+  .reviews-rating-text {
+    font-size: var(--font-size-body-xs);
+  }
+
+  .reviews-carousel {
+    gap: 8px;
+    padding: 0;
+  }
+
+  .reviews-carousel-wrapper {
+    overflow: hidden;
     width: 100%;
   }
 
-  /* Search drawer compact */
-  .search-drawer__input {
-    font-size: var(--font-size-body);
+  .reviews-carousel-track {
+    gap: var(--spacing-md);
   }
 
-  /* Popup full-width on small screens */
-  .cart-popup {
-    width: calc(100% - 32px);
-    left: 16px;
-    right: 16px;
-    bottom: 16px;
+  .review-card {
+    min-width: 100%;
+    max-width: 100%;
+    padding: var(--spacing-lg);
+    gap: var(--spacing-xs);
+    box-sizing: border-box;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
+
+  .review-card-stars .review-star {
+    width: 20px;
+    height: 20px;
+    font-size: 10px;
+  }
+
+  .review-card h5 {
+    font-size: var(--font-size-body-sm);
+    word-break: break-word;
+  }
+
+  .review-card p {
+    font-size: var(--font-size-body-xs);
+    word-break: break-word;
+  }
+
+  .reviews-carousel-arrow {
+    width: 28px;
+    min-width: 28px;
+    height: 28px;
+    font-size: var(--font-size-body-lg);
+    flex-shrink: 0;
+  }
+
+  /* Reviews Footer — stack on mobile */
+  .reviews-footer {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-lg);
+  }
+
+  .reviews-footer-left {
+    align-items: center;
+  }
+
+  .reviews-footer-stars {
+    font-size: var(--font-size-body-sm);
+    justify-content: center;
+  }
+
+  .reviews-badges {
+    overflow: hidden;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .reviews-badges-track {
+    transition: transform 0.5s ease;
+  }
+
+  .reviews-badges-group {
+    min-width: 100%;
+    justify-content: center;
+    gap: var(--spacing-md);
+    flex-shrink: 0;
+  }
+
+  .reviews-badges img {
+    height: 80px;
+    width: 80px;
+    flex-shrink: 0;
+  }
+
+  .reviews-verified {
+    font-size: var(--font-size-body-xs);
+    justify-content: center;
+  }
+
+  .reviews-verified .judgeme-logo {
+    height: 28px;
+  }
+
+  /* Footer — stack on mobile */
+  .footer-container {
+    gap: 0;
+  }
+
+  .footer-main {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    text-align: center;
+  }
+
+  .footer-col-brand {
+    align-items: center;
+    padding-bottom: 20px;
+  }
+
+  .footer-col-brand .footer-tagline {
+    display: none;
+  }
+
+  .footer-col .footer-logo {
+    height: 55px;
+  }
+
+  .footer-social {
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .footer-social a {
+    font-size: 28px;
+    width: 40px;
+    height: 40px;
+  }
+
+  /* Reorder: brand(1) → social icons → bottom-links(2) → contact(3) → care(4) */
+  .footer-col-brand {
+    order: 1;
+  }
+
+  .footer-bottom-row {
+    order: 2;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    text-align: center;
+    border-top: none;
+    padding: 20px 0;
+    width: 100%;
+  }
+
+  .footer-col-contact {
+    order: 3;
+    align-items: center;
+    text-align: center;
+    padding: 28px 0;
+    gap: 20px;
+  }
+
+  .footer-col-care {
+    order: 4;
+    align-items: center;
+    text-align: center;
+    padding: 28px 0 20px;
+    gap: 8px;
+  }
+
+  .footer-col-contact h5,
+  .footer-col-care h5 {
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    width: 100%;
+  }
+
+  .footer-col address {
+    font-size: 15px;
+    color: var(--color-text-dark);
+    text-align: center;
+  }
+
+  .footer-contact-link {
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .footer-links-list {
+    gap: 6px;
+    align-items: center;
+  }
+
+  .footer-links-list a {
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .footer-bottom-left {
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .footer-bottom-center,
+  .footer-bottom-right {
+    align-items: center;
+  }
+
+  .footer-bottom-row a {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .footer-copyright {
+    padding: 16px 20px;
+    text-align: center;
+  }
+
+  .footer-copyright p {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  /* Floating tab — smaller */
+  .floating-reviews-tab {
+    padding: var(--spacing-sm) var(--spacing-xs);
+    font-size: var(--font-size-body-xs);
+  }
+
+  /* ── ADA / WCAG 2.1 AA COMPLIANCE ── */
+
+  /* Min touch target 44x44px (WCAG 2.5.8) — excludes header/nav/dots */
+  .btn-primary,
+  .btn-link,
+  .slider-arrow,
+  .hero-arrow,
+  .product-flip-icon,
+  .product-card-action button,
+  .footer-links-list a,
+  .drawer-nav a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Dots — keep original small size */
+  .hero-dot,
+  .slider-dot {
+    min-width: auto;
+    min-height: auto;
+    width: 10px;
+    height: 10px;
+  }
+
+  .hero-dot {
+    width: 12px;
+    height: 12px;
+  }
+
+  /* Readable line-height for body text */
+  body {
+    line-height: 1.6;
+  }
+
+  p,
+  dd,
+  address,
+  .product-card-price,
+  .product-card-subtitle {
+    line-height: 1.6;
+  }
+
+  /* Ensure links/buttons have visible focus outlines */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible {
+    outline: 2px solid var(--color-primary-gold);
+    outline-offset: 2px;
+  }
+
+  /* Tasting notes back — readable sizes */
+  .tasting-notes dt {
+    font-size: 12px;
+  }
+
+  .tasting-notes dd {
+    font-size: 14px;
+  }
+
+  .back-header h5 {
+    font-size: 13px;
+  }
+
+  .product-card-back-info .btn-primary {
+    font-size: 13px;
+    padding: var(--spacing-md);
+  }
+
+  /* Product badge readable */
+  .product-badge {
+    font-size: 12px;
+  }
+
+  /* Eyebrow text readable */
+  .eyebrow {
+    font-size: 13px;
+  }
+
+  /* Footer links readable */
+  .footer-links-list a {
+    font-size: var(--font-size-body-sm);
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+/* ── SMALL MOBILE (max-width: 480px) ── */
+/* ADA compliant: no text below 12px, body stays 16px */
+@media (max-width: 480px) {
+  :root {
+    --font-size-h1: 30px;
+    --font-size-h2: 26px;
+    --font-size-h3: 22px;
+    --font-size-h4: 18px;
+    --font-size-h5: 16px;
+    --font-size-h6: 16px;
+    --font-size-body-xl: 20px;
+    --font-size-body-lg: 18px;
+    --font-size-body: 17px;
+    --font-size-body-sm: 15px;
+    --font-size-body-xs: 14px;
+    --font-size-body-xxs: 13px;
+
+    --spacing-xl: 20px;
+    --spacing-2xl: 28px;
+    --spacing-3xl: 36px;
+    --spacing-4xl: 40px;
+    --spacing-5xl: 48px;
+
+    --gutter-width: 12px;
+  }
+
+  .hero-slide-content h1 {
+    font-size: var(--font-size-h3);
+  }
+
+  .product-card {
+    flex: 0 0 90%;
+  }
+
+  .sightings-item {
+    flex: 0 0 92%;
+  }
+
+  .recipe-card {
+    flex: 0 0 90%;
+  }
+
+  .mobile-drawer {
+    width: 280px;
+  }
+}
+
+/* ── DESKTOP ONLY SHOW/HIDE ── */
+.hero-mobile-img {
+  display: none;
+}
+
+.hero-desktop-img {
+  display: block;
 }
