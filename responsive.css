@@ -819,10 +819,7 @@
   .product-flip-icon,
   .product-card-action button,
   .footer-links-list a,
-  .drawer-nav a {
-
-    min-width: 44px;
-  }
+  .drawer-nav a {}
 
   /* Dots — keep original small size */
   .hero-dot,
