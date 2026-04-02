@@ -820,7 +820,7 @@
   .product-card-action button,
   .footer-links-list a,
   .drawer-nav a {
-    min-height: 44px;
+
     min-width: 44px;
   }
 
@@ -890,7 +890,7 @@
   /* Footer links readable */
   .footer-links-list a {
     font-size: var(--font-size-body-sm);
-    min-height: 44px;
+
     display: flex;
     align-items: center;
   }
