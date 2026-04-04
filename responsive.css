@@ -54,8 +54,8 @@
     flex: 0 0 calc(50% - var(--spacing-md));
   }
 
-  /* Mission */
-  .mission-content {
+  /* Brand Story — tablet */
+  .brand-story-layout {
     gap: var(--spacing-xl);
   }
 
@@ -276,6 +276,22 @@
     padding: 0 0 var(--spacing-2xl) 0;
   }
 
+  /* Section headers — left align on mobile */
+  .section-header.center {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .section-header.center .section-heading,
+  .section-header.center h2 {
+    text-align: left;
+  }
+
+  .section-header.center .craft-rule {
+    margin-left: 0;
+    margin-right: auto;
+  }
+
   .richtext-section .container-narrow {
     max-width: 100%;
     padding-left: 24px;
@@ -306,69 +322,45 @@
     line-height: 1.5;
   }
 
-  /* Mission — stack */
-  .mission-content {
+  /* Brand Story Tabs — mobile: equal width, no overflow */
+  .brand-story-tabs {
+    overflow: visible;
+  }
+
+  .brand-story-tab {
+    flex: 1;
+    padding: var(--spacing-sm) var(--spacing-xs);
+    font-size: 11px;
+    white-space: nowrap;
+    text-align: center;
+    letter-spacing: 1px;
+  }
+
+  .brand-story-layout {
     flex-direction: column;
+    gap: var(--spacing-xl);
+    padding-top: var(--spacing-lg);
+  }
+
+  .brand-story-media {
+    flex: none;
+    width: 100%;
+  }
+
+  .brand-story-content h2 {
+    font-size: 24px;
+  }
+
+  .craft-stats {
     gap: var(--spacing-xl);
   }
 
-  .mission-text h2 {
-    font-size: 26px;
-    color: var(--color-text-dark);
-  }
-
-  .mission-text h4 {
-    font-size: 14px;
-    color: var(--color-text-dark);
-  }
-
-  .mission-text p {
-    font-size: 16px;
-    line-height: 1.7;
-    color: var(--color-text-dark);
-  }
-
-  .mission-stats {
-    justify-content: space-between;
-    padding-top: 0;
-  }
-
-  .mission-stat .stat-number {
+  .craft-stat-num {
     font-size: 28px;
-    color: var(--color-primary-gold);
   }
 
-  .mission-stat .stat-label {
-    font-size: 12px;
-    color: var(--color-text-dark);
-    font-weight: var(--font-weight-semibold);
-  }
-
-  /* Mission images — mobile slider */
-  .mission-images .img-large {
-    aspect-ratio: 16 / 9;
-    border-radius: var(--radius-sm);
-  }
-
-  .mission-images-row {
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    flex-wrap: nowrap;
-    gap: var(--spacing-sm);
-    padding-bottom: var(--spacing-xs);
-  }
-
-  .mission-images-row::-webkit-scrollbar {
-    display: none;
-  }
-
-  .mission-images-row img {
-    flex: 0 0 48%;
-    height: auto;
-    aspect-ratio: 1;
-    scroll-snap-align: start;
-    border-radius: var(--radius-sm);
+  .craft-stat-label {
+    font-size: 11px;
   }
 
   .awards-slider-wrap {
@@ -458,22 +450,17 @@
     font-weight: 700;
   }
 
-  /* Recipes — slider */
-  .recipes-grid {
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    flex-wrap: nowrap;
-    gap: var(--spacing-md);
-  }
-
-  .recipes-grid::-webkit-scrollbar {
-    display: none;
+  /* Recipes — mobile: JS-controlled slider */
+  .recipes-scroll-area {
+    overflow: hidden;
   }
 
   .recipe-card {
-    flex: 0 0 85%;
-    scroll-snap-align: center;
+    flex: 0 0 100%;
+  }
+
+  .recipes-nav {
+    display: flex;
   }
 
   /* Founder — mobile stack: brand → photo → bio */
@@ -687,120 +674,108 @@
     text-align: center;
   }
 
+  /* Email Capture — stack on mobile */
+  .email-capture-split {
+    flex-direction: column;
+  }
+
+  .email-capture-divider {
+    width: 100%;
+    height: 1px;
+  }
+
+  .email-capture-panel {
+    padding: var(--spacing-3xl) var(--spacing-lg);
+  }
+
+  .email-capture-panel h3 {}
+
+  .email-capture-field {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .email-capture-field input {
+    width: 100%;
+  }
+
+  .email-capture-field .btn-primary {
+    width: 100%;
+  }
+
+  .btn-outline {
+    align-self: flex-start;
+  }
+
+  /* Footer — mobile layout */
+  .footer-main {
+    flex-direction: column;
+    gap: var(--spacing-2xl);
+    align-items: center;
+    text-align: center;
+  }
+
   .footer-col-brand {
     align-items: center;
-    padding-bottom: 20px;
-  }
-
-  .footer-col-brand .footer-tagline {
-    display: none;
-  }
-
-  .footer-col .footer-logo {
-    height: 55px;
-  }
-
-  .footer-social {
-    justify-content: center;
-    gap: 20px;
-  }
-
-  .footer-social a {
-    font-size: 28px;
-    width: 40px;
-    height: 40px;
-  }
-
-  /* Reorder: brand(1) → contact(2) → care(3) → bottom-links(4 last) */
-  .footer-col-brand {
-    order: 1;
+    flex: none;
     width: 100%;
   }
 
-  .footer-col-contact {
-    order: 2;
-    align-items: center;
+  .footer-tagline {
     text-align: center;
-    padding: 28px 0;
-    gap: 16px;
+  }
+
+  /* Nav: 2-column grid on mobile */
+  .footer-nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-2xl) var(--spacing-xl);
     width: 100%;
   }
 
-  .footer-col-care {
-    order: 3;
-    align-items: center;
-    text-align: center;
-    padding: 20px 0;
-    gap: 6px;
-    width: 100%;
-  }
-
-  .footer-col-contact h5,
-  .footer-col-care h5 {
-    font-size: 16px;
-    font-weight: 700;
-    text-align: center;
-  }
-
-  .footer-col address {
-    font-size: 15px;
-    color: var(--color-text-dark);
-    text-align: center;
-  }
-
-  .footer-contact-link {
-    font-size: 15px;
-    text-align: center;
-    display: block;
+  .footer-nav-col {
+    align-items: flex-start;
+    text-align: left;
   }
 
   .footer-links-list {
-    gap: 6px;
-    align-items: center;
-    width: 100%;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
   }
 
-  .footer-links-list a {
-    font-size: 15px;
+  .footer-social {
+    justify-content: flex-start;
+  }
+
+  /* Legal links — centered wrap */
+  .footer-legal-links {
+    justify-content: center;
     text-align: center;
-    display: block;
+    gap: var(--spacing-sm);
   }
 
   .footer-bottom-row {
-    order: 4;
-    flex-direction: column;
-    gap: 6px;
     align-items: center;
-    text-align: center;
-    border-top: none;
-    padding: 20px 0;
-    width: 100%;
-  }
-
-  .footer-bottom-left {
-    flex-direction: column;
-    gap: 6px;
-    align-items: center;
-  }
-
-  .footer-bottom-center,
-  .footer-bottom-right {
-    align-items: center;
-  }
-
-  .footer-bottom-row a {
-    font-size: 14px;
     text-align: center;
   }
 
   .footer-copyright {
-    padding: 16px 20px;
+    padding: var(--spacing-xl) var(--spacing-lg);
     text-align: center;
   }
 
   .footer-copyright p {
-    font-size: 13px;
-    line-height: 1.5;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  /* Age Gate — mobile */
+  .age-gate-panel {
+    padding: var(--spacing-2xl) var(--spacing-lg);
+  }
+
+  .age-gate-buttons {
+    flex-direction: column;
   }
 
   /* Floating tab — smaller */

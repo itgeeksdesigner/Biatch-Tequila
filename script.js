@@ -159,22 +159,213 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function flipCard(e) {
       e.preventDefault();
+      e.stopPropagation();
       if (inner) {
-        var isFlipped = inner.style.transform === 'rotateY(180deg)';
-        inner.style.transform = isFlipped ? 'rotateY(0deg)' : 'rotateY(180deg)';
+        var isFlipped = card.classList.contains('flipped');
+        if (isFlipped) {
+          inner.style.transform = 'rotateY(0deg)';
+          card.classList.remove('flipped');
+        } else {
+          inner.style.transform = 'rotateY(180deg)';
+          card.classList.add('flipped');
+        }
       }
     }
 
     function unflipCard(e) {
       e.preventDefault();
+      e.stopPropagation();
       if (inner) {
         inner.style.transform = 'rotateY(0deg)';
+        card.classList.remove('flipped');
       }
     }
 
     if (flipIcon) flipIcon.addEventListener('click', flipCard);
     if (closeBtn) closeBtn.addEventListener('click', unflipCard);
   });
+
+  /* ── BRAND STORY TABS ── */
+  var storyTabs = document.querySelectorAll('.brand-story-tab');
+  var storyPanels = document.querySelectorAll('.brand-story-panel');
+
+  storyTabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      var target = this.getAttribute('data-tab');
+
+      storyTabs.forEach(function (t) {
+        t.classList.remove('brand-story-tab-active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      this.classList.add('brand-story-tab-active');
+      this.setAttribute('aria-selected', 'true');
+
+      storyPanels.forEach(function (panel) {
+        if (panel.id === 'storyPanel-' + target) {
+          panel.hidden = false;
+          panel.classList.add('brand-story-panel-active');
+        } else {
+          panel.hidden = true;
+          panel.classList.remove('brand-story-panel-active');
+        }
+      });
+    });
+  });
+
+  /* ── RECIPE SLIDER ── */
+  var recipeTrack = document.getElementById('recipeTrack');
+  var recipeCards = recipeTrack ? recipeTrack.querySelectorAll('.recipe-card') : [];
+  var recipePrevBtn = document.getElementById('recipePrev');
+  var recipeNextBtn = document.getElementById('recipeNext');
+  var recipeDots = document.querySelectorAll('#recipeDots .slider-dot');
+  var recipeIdx = 0;
+
+  function getRecipePerView() {
+    if (window.innerWidth <= 768) return 1;
+    if (window.innerWidth <= 1024) return 2;
+    return 4;
+  }
+
+  function updateRecipeDots() {
+    recipeDots.forEach(function (dot, i) {
+      dot.classList.toggle('active', i === recipeIdx);
+    });
+  }
+
+  function updateRecipeSlider() {
+    if (!recipeTrack || recipeCards.length === 0) return;
+    var perView = getRecipePerView();
+    var maxIdx = Math.max(0, recipeCards.length - perView);
+    if (recipeIdx > maxIdx) recipeIdx = maxIdx;
+    var cardWidth = recipeCards[0].offsetWidth;
+    var gap = parseInt(getComputedStyle(recipeTrack).gap) || 24;
+    recipeTrack.style.transform = 'translateX(-' + (recipeIdx * (cardWidth + gap)) + 'px)';
+    updateRecipeDots();
+  }
+
+  if (recipePrevBtn) {
+    recipePrevBtn.addEventListener('click', function () {
+      recipeIdx = Math.max(0, recipeIdx - 1);
+      updateRecipeSlider();
+    });
+  }
+
+  if (recipeNextBtn) {
+    recipeNextBtn.addEventListener('click', function () {
+      var perView = getRecipePerView();
+      var maxIdx = Math.max(0, recipeCards.length - perView);
+      recipeIdx = Math.min(maxIdx, recipeIdx + 1);
+      updateRecipeSlider();
+    });
+  }
+
+  recipeDots.forEach(function (dot, i) {
+    dot.addEventListener('click', function () {
+      recipeIdx = i;
+      updateRecipeSlider();
+    });
+  });
+
+  window.addEventListener('resize', updateRecipeSlider);
+
+  /* ── RECIPE MODAL ── */
+  var recipeModal = document.getElementById('recipeModal');
+  var recipeModalBackdrop = document.getElementById('recipeModalBackdrop');
+  var recipeModalClose = document.getElementById('recipeModalClose');
+  var recipeModalVideo = document.getElementById('recipeModalVideo');
+  var recipeModalVideoWrap = document.getElementById('recipeModalVideoWrap');
+  var recipeModalTag = document.getElementById('recipeModalTag');
+  var recipeModalTitle = document.getElementById('recipeModalTitle');
+  var recipeModalMeta = document.getElementById('recipeModalMeta');
+  var recipeModalIngredients = document.getElementById('recipeModalIngredients');
+  var recipeModalInstructions = document.getElementById('recipeModalInstructions');
+  var recipeModalShare = document.getElementById('recipeModalShare');
+  var recipeModalPrint = document.getElementById('recipeModalPrint');
+
+  function openRecipeModal(card) {
+    if (!recipeModal) return;
+    var title = card.getAttribute('data-title') || '';
+    var tag = card.getAttribute('data-tag') || '';
+    var spirit = card.getAttribute('data-spirit') || '';
+    var time = card.getAttribute('data-time') || '';
+    var servings = card.getAttribute('data-servings') || '';
+    var videoSrc = card.getAttribute('data-video') || '';
+    var ingredients = [];
+    var instructions = [];
+
+    try { ingredients = JSON.parse(card.getAttribute('data-ingredients') || '[]'); } catch (e) {}
+    try { instructions = JSON.parse(card.getAttribute('data-instructions') || '[]'); } catch (e) {}
+
+    recipeModalTag.textContent = tag;
+    recipeModalTitle.textContent = title;
+    recipeModalMeta.textContent = spirit + ' \u00B7 ' + time + ' \u00B7 ' + servings;
+
+    if (videoSrc && recipeModalVideo) {
+      recipeModalVideo.src = videoSrc;
+      recipeModalVideoWrap.style.display = 'block';
+    } else {
+      recipeModalVideoWrap.style.display = 'none';
+    }
+
+    recipeModalIngredients.innerHTML = '';
+    ingredients.forEach(function (item) {
+      var li = document.createElement('li');
+      li.textContent = item;
+      recipeModalIngredients.appendChild(li);
+    });
+
+    recipeModalInstructions.innerHTML = '';
+    instructions.forEach(function (step) {
+      var li = document.createElement('li');
+      li.textContent = step;
+      recipeModalInstructions.appendChild(li);
+    });
+
+    recipeModal.classList.add('open');
+    recipeModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+
+    if (recipeModalVideo && videoSrc) {
+      recipeModalVideo.play().catch(function () {});
+    }
+  }
+
+  function closeRecipeModal() {
+    if (!recipeModal) return;
+    recipeModal.classList.remove('open');
+    recipeModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (recipeModalVideo) {
+      recipeModalVideo.pause();
+      recipeModalVideo.src = '';
+    }
+  }
+
+  recipeCards.forEach(function (card) {
+    card.addEventListener('click', function () {
+      openRecipeModal(card);
+    });
+    card.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') openRecipeModal(card);
+    });
+  });
+
+  if (recipeModalClose) recipeModalClose.addEventListener('click', closeRecipeModal);
+  if (recipeModalBackdrop) recipeModalBackdrop.addEventListener('click', closeRecipeModal);
+
+  if (recipeModalShare) {
+    recipeModalShare.addEventListener('click', function () {
+      if (navigator.share) {
+        navigator.share({ title: recipeModalTitle.textContent, url: window.location.href });
+      }
+    });
+  }
+
+  if (recipeModalPrint) {
+    recipeModalPrint.addEventListener('click', function () {
+      window.print();
+    });
+  }
 
   /* ── SIGHTINGS SLIDER DOTS ── */
   var sightingsGrid = document.querySelector('.sightings-grid');
@@ -431,5 +622,36 @@ document.addEventListener('DOMContentLoaded', function () {
       header.style.boxShadow = '0 2px 8px rgba(0,0,0,0.06)';
     }
   });
+
+  /* ── AGE VERIFICATION GATE ── */
+  var ageGate = document.getElementById('ageGate');
+  var ageYes = document.getElementById('ageYes');
+  var ageNo = document.getElementById('ageNo');
+
+  if (ageGate) {
+    var ageVerified = sessionStorage.getItem('biatch_age_verified');
+    if (ageVerified === 'true') {
+      ageGate.classList.add('hidden');
+      ageGate.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    } else {
+      document.body.style.overflow = 'hidden';
+    }
+
+    if (ageYes) {
+      ageYes.addEventListener('click', function () {
+        sessionStorage.setItem('biatch_age_verified', 'true');
+        ageGate.classList.add('hidden');
+        ageGate.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      });
+    }
+
+    if (ageNo) {
+      ageNo.addEventListener('click', function () {
+        window.location.href = 'https://www.responsibility.org/';
+      });
+    }
+  }
 
 });
